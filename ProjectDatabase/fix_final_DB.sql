@@ -1,6 +1,6 @@
-﻿create database test
+﻿create database PROJECT
 go
-use test
+use PROJECT
 go
 --CHƯA SỬA KIỂU DỮ LIỆU abcd
 CREATE TABLE [user_site] (
@@ -8,11 +8,10 @@ CREATE TABLE [user_site] (
 	[username] NVARCHAR(255) NOT NULL,
 	[gender] NVARCHAR(6),
 	[birthday] DATE,
-	[image] TEXT,
+	[image] TEXT, --nam thi de male.jpg, nu thi de female.jpg
 	[email] NVARCHAR(255) NOT NULL,
 	[phone] INT,
 	[password] NVARCHAR(32),
-	[signWithGoogle] INT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	[account_create_date] DATETIME NOT NULL DEFAULT GETDATE(),
 	PRIMARY KEY([id])
@@ -32,9 +31,7 @@ CREATE TABLE [address] (
 	[recieved_name] NVARCHAR(255) NOT NULL,
 	[detail_address] NVARCHAR(255) NOT NULL,
 	[district] NVARCHAR(255) NOT NULL,
-	[province] NVARCHAR(255) NOT NULL,
-	[city] NVARCHAR(255) NOT NULL,
-	[country_id] INT NOT NULL,
+	[city_id] INT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -54,7 +51,7 @@ CREATE TABLE [product] (
 	[sub_sub_CategoryID] INT NOT NULL,
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
-	[product_image] NVARCHAR(255) NOT NULL,
+	[product_image] TEXT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -64,8 +61,9 @@ CREATE TABLE [product_item] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[product_id] INT NOT NULL,
 	[qty_in_stock] INT NOT NULL,
-	[product_image] NVARCHAR(255) NOT NULL,
+	[product_image] TEXT NOT NULL,
 	[price] DECIMAL NOT NULL,
+	[isDeleted] INT,
 	PRIMARY KEY([id])
 );
 GO
@@ -95,12 +93,12 @@ CREATE TABLE [shop_order] (
 	[payment_method] INT NOT NULL,
 	[order_status_id] INT NOT NULL,
 	[order_total] DECIMAL NOT NULL,
-	[order_date] DATE NOT NULL,
-	[approved_date] DATETIME,
-	[shipping_date] DATETIME,
-	[arrived_date] DATETIME,
-	[canceled_date] DATETIME,
-	[canceled_reason] DATE,
+	[order_date] DATETIME NOT NULL DEFAULT GETDATE(),
+	[approved_date] DATETIME, --update sau
+	[shipping_date] DATETIME, --update sau
+	[arrived_date] DATETIME, --update sau
+	[canceled_date] DATETIME, --update khi cancel
+	[canceled_reason] DATE, --update khi cancel
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -122,8 +120,8 @@ CREATE TABLE [user_review] (
 	[feedback] TEXT,
 	[review_image] TEXT,
 	[status_id] INT NOT NULL,
-	[comment_date] DATETIME NOT NULL,
-	[approved_date] DATETIME NOT NULL,
+	[comment_date] DATETIME NOT NULL DEFAULT GETDATE(),
+	[approved_date] DATETIME, --update sau khi approve
 	[isHide] INT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -135,7 +133,7 @@ CREATE TABLE [admin] (
 	[fullname] NVARCHAR(255) NOT NULL,
 	[username] NVARCHAR(255) NOT NULL,
 	[email] NVARCHAR(255) NOT NULL,
-	[password] NVARCHAR(32) NOT NULL,
+	[password] NVARCHAR(255) NOT NULL,
 	[avatar_img] TEXT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -215,8 +213,8 @@ CREATE TABLE [discount] (
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
 	[discount_rate] DECIMAL NOT NULL,
-	[start_date] DATETIME NOT NULL,
-	[end_date] DATETIME NOT NULL,
+	[start_date] DATETIME NOT NULL, --0h 0p 0s
+	[end_date] DATETIME NOT NULL, --0h 0p 0s
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -252,15 +250,8 @@ CREATE TABLE [user_payment_method] (
 	[payment_type_id] INT NOT NULL,
 	[provider] NVARCHAR(255),
 	[account_number] INT,
-	[expiry_date] DATETIME,
+	[expiry_date] NVARCHAR(5),
 	[is_default] INT NOT NULL,
-	PRIMARY KEY([id])
-);
-GO
-
-CREATE TABLE [country] (
-	[id] INT NOT NULL IDENTITY UNIQUE,
-	[name] NVARCHAR(255) NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -271,8 +262,8 @@ CREATE TABLE [coupons] (
 	[name] NVARCHAR(255) NOT NULL,
 	[quantity] INT NOT NULL,
 	[price_discount] DECIMAL NOT NULL,
-	[start_date] DATETIME NOT NULL,
-	[end_date] DATETIME NOT NULL,
+	[start_date] DATETIME NOT NULL, --0h 0p 0s
+	[end_date] DATETIME NOT NULL, --0h 0p 0s
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -281,6 +272,13 @@ GO
 CREATE TABLE [user_review_status] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[status] NVARCHAR(255) NOT NULL,
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE TABLE [city] (
+	[id] INT NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(255),
 	PRIMARY KEY([id])
 );
 GO
@@ -373,10 +371,6 @@ ALTER TABLE [shop_order]
 ADD FOREIGN KEY([shipping_method_id]) REFERENCES [shipping_method]([id])
 ON UPDATE CASCADE ON DELETE NO ACTION;
 GO
-ALTER TABLE [address]
-ADD FOREIGN KEY([country_id]) REFERENCES [country]([id])
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-GO
 ALTER TABLE [user_payment_method]
 ADD FOREIGN KEY([payment_type_id]) REFERENCES [payment_method]([id])
 ON UPDATE CASCADE ON DELETE NO ACTION;
@@ -396,4 +390,8 @@ GO
 ALTER TABLE [product]
 ADD FOREIGN KEY([sub_sub_CategoryID]) REFERENCES [sub_sub_Category]([sub_subCateID])
 ON UPDATE CASCADE ON DELETE CASCADE;
+GO
+ALTER TABLE [address]
+ADD FOREIGN KEY([city_id]) REFERENCES [city]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO

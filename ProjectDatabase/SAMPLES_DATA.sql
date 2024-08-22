@@ -1,4 +1,4 @@
-use ten_la_gi; --ten PROJECT
+use PROJECT;
 go
 -- [user_site]
 insert into [user_site]([username], [gender], [birthday], [image], [email], [phone], [password], [signWithGoogle], [isDeleted], [account_create_date]) values
