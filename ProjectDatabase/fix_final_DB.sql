@@ -5,6 +5,8 @@ go
 --CHƯA SỬA KIỂU DỮ LIỆU abcd
 CREATE TABLE [user_site] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
+	[firstname] NVARCHAR(255) NOT NULL,
+	[lastname] NVARCHAR(255) NOT NULL,
 	[username] NVARCHAR(255) NOT NULL,
 	[gender] NVARCHAR(6),
 	[birthday] DATE,
