@@ -102,10 +102,8 @@ go
 -- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
 --============================================================================================================== 1ng duy nhat (Hieu)
 -- [user_review_status]
-insert into [user_review_status]([id], [name]) values --pending, accepted, rejected
-(01, 'accepted'),
-(02, 'pending'),
-(03, 'rejected');
+insert into [user_review_status]() values --pending, accepted, rejected
+();
 go
 -- [user_review]
 insert into [user_review]() values
