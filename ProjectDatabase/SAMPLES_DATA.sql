@@ -1,8 +1,8 @@
 use PROJECT;
 go
 -- [user_site]
-insert into [user_site]([username], [gender], [birthday], [image], [email], [phone], [password], [signWithGoogle], [isDeleted], [account_create_date]) values
-('qe', 'sf', '2004-11-10', 'vvdfvd', 'dfvfvd', '52346435', 'ssdfvsd', 1, 1, '2015-10-01');
+insert into [user_site]() values
+();
 go
 select * from user_site
 -- [user_address]
