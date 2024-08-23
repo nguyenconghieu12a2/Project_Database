@@ -77,8 +77,13 @@ insert into [shipping_method]() values
 -- creative 5 shipping method Ex: giaohangtietkiem, giaohangsieutoc, etc.
 --============================================================================================================== 1ng (Bao)
 -- [order_status]
-insert into [order_status]() values
-();
+insert into [order_status]([status], [isDeleted]) values
+('Confirm', 1),
+('Ordered', 1),
+('Shipping', 1),
+('Arived', 1),
+('', 1),
+('', 1);
 go
 -- [shop_order]
 insert into [shop_order]() values
@@ -92,8 +97,9 @@ go
 -- about date fields in shop_order just fill only order_date (fill random date)
 --============================================================================================================== 1ng duy nhat (Hieu)
 -- [payment_method]
-insert into [payment_method]() values
-();
+insert into [payment_method]([name], [isDeleted]) values
+('COD (Cash on delivery)', 1),
+('Card', 1);
 go
 -- [user_payment_method]
 insert into [user_payment_method]() values
