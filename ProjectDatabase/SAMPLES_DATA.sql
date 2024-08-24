@@ -221,11 +221,11 @@ go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
 -- [shipping_method]
 insert into [shipping_method]([name], price, isDeleted) values
-('Express Shipping', 70000, 1),
+('Express Shipping', 50000, 1),
 ('Economy Shipping', 20000, 1),
-('In-Store Pickup', 0, 1),
+('Same Day Shipping', 80000, 1),
 ('Standard Shipping', 30000, 1),
-('Next Day Shipping', 100000, 1)
+('Next Day Shipping', 60000, 1)
 go
 
 -- creative 5 shipping method Ex: giaohangtietkiem, giaohangsieutoc, etc.
