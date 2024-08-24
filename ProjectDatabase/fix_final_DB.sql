@@ -5,17 +5,17 @@ go
 --CHƯA SỬA KIỂU DỮ LIỆU abcd
 CREATE TABLE [user_site] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
-	[firstname] NVARCHAR(255) NOT NULL,
-	[lastname] NVARCHAR(255) NOT NULL,
+	[firstname] NVARCHAR(255),
+	[lastname] NVARCHAR(255),
 	[username] NVARCHAR(255) NOT NULL,
 	[gender] NVARCHAR(6),
 	[birthday] DATE,
-	[image] TEXT, --nam thi de male.jpg, nu thi de female.jpg
+	[image] TEXT,
 	[email] NVARCHAR(255) NOT NULL,
 	[phone] INT,
 	[password] NVARCHAR(32),
 	[isDeleted] INT NOT NULL,
-	[account_create_date] DATETIME NOT NULL DEFAULT GETDATE(),
+	[account_create_date] DATETIME NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -64,7 +64,7 @@ CREATE TABLE [product_item] (
 	[product_id] INT NOT NULL,
 	[qty_in_stock] INT NOT NULL,
 	[product_image] TEXT NOT NULL,
-	[price] DECIMAL NOT NULL,
+	[price] BIGINT NOT NULL,
 	[isDeleted] INT,
 	PRIMARY KEY([id])
 );
@@ -94,13 +94,13 @@ CREATE TABLE [shop_order] (
 	[shipping_address_id] INT NOT NULL,
 	[payment_method] INT NOT NULL,
 	[order_status_id] INT NOT NULL,
-	[order_total] DECIMAL NOT NULL,
-	[order_date] DATETIME NOT NULL DEFAULT GETDATE(),
-	[approved_date] DATETIME, --update sau
-	[shipping_date] DATETIME, --update sau
-	[arrived_date] DATETIME, --update sau
-	[canceled_date] DATETIME, --update khi cancel
-	[canceled_reason] DATE, --update khi cancel
+	[order_total] BIGINT NOT NULL,
+	[order_date] DATE NOT NULL,
+	[approved_date] DATETIME,
+	[shipping_date] DATETIME,
+	[arrived_date] DATETIME,
+	[canceled_date] DATETIME,
+	[canceled_reason] DATE,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -122,8 +122,8 @@ CREATE TABLE [user_review] (
 	[feedback] TEXT,
 	[review_image] TEXT,
 	[status_id] INT NOT NULL,
-	[comment_date] DATETIME NOT NULL DEFAULT GETDATE(),
-	[approved_date] DATETIME, --update sau khi approve
+	[comment_date] DATETIME NOT NULL,
+	[approved_date] DATETIME NOT NULL,
 	[isHide] INT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -147,7 +147,7 @@ CREATE TABLE [order_line] (
 	[product_item_id] INT NOT NULL,
 	[order_id] INT NOT NULL,
 	[qty] INT NOT NULL,
-	[price] DECIMAL NOT NULL,
+	[price] BIGINT NOT NULL,
 	[note] TEXT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -214,9 +214,9 @@ CREATE TABLE [discount] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
-	[discount_rate] DECIMAL NOT NULL,
-	[start_date] DATETIME NOT NULL, --0h 0p 0s
-	[end_date] DATETIME NOT NULL, --0h 0p 0s
+	[discount_rate] INT NOT NULL,
+	[start_date] DATETIME NOT NULL,
+	[end_date] DATETIME NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -232,7 +232,7 @@ GO
 CREATE TABLE [shipping_method] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
-	[price] DECIMAL NOT NULL,
+	[price] INT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -263,9 +263,9 @@ CREATE TABLE [coupons] (
 	[code] NVARCHAR(255) NOT NULL,
 	[name] NVARCHAR(255) NOT NULL,
 	[quantity] INT NOT NULL,
-	[price_discount] DECIMAL NOT NULL,
-	[start_date] DATETIME NOT NULL, --0h 0p 0s
-	[end_date] DATETIME NOT NULL, --0h 0p 0s
+	[price_discount] BIGINT NOT NULL,
+	[start_date] DATETIME NOT NULL,
+	[end_date] DATETIME NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
