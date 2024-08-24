@@ -197,7 +197,28 @@ go
 --============================================================================================================== 1ng (Bao)
 
 INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
-();
+(1, 6, 1),
+(2, 6, 1),
+(3, 6, 1),
+(4, 6, 1),
+(5, 7, 1),
+(6, 7, 1),
+(7, 11, 1),
+(8, 4, 1),
+(9, 4, 1),
+(10, 11, 1),
+(11, 14, 1),
+(12, 7, 1),
+(13, 15, 1),
+(14, 8, 1),
+(15, 9, 1),
+(16, 10, 1),
+(17, 2, 1),
+(18, 16, 1),
+(19, 5, 1),
+(20, 1, 1),
+(21, 11, 1),
+(22, 11, 1)
 go
 -- [discount]
 insert into [discount]([name], [description], discount_rate, [start_date], end_date, isDeleted) values
@@ -214,12 +235,26 @@ insert into [discount]([name], [description], discount_rate, [start_date], end_d
 ('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 1),
 ('Holiday Sale 25%', '25% discount during major holidays', 25, '2024-12-24', '2024-12-31', 1),
 ('Valentine Day', 'Special offer for Valentine Day', 18, '2025-02-01', '2025-02-14', 1),
-('Anniversary Sale', 'Annual anniversary discount', 50, '2024-012-01', '2024-12-31', 1),
-('Product Launch', 'Discount for new product launch', 20, '2024-10-01', '2025-10-31', 1)
+('Anniversary Sale', 'Annual anniversary discount', 50, '2024-12-01', '2024-12-31', 1),
+('Product Launch', 'Discount for new product launch', 20, '2024-10-01', '2025-10-31', 1),
+('Christmas Eve Special', '30% off on Christmas Eve', 30, '2024-12-24', '2024-12-24', 1);
 go
 -- [coupons]
 insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, isDeleted) values
-()
+('XMAS2024', 'Christmas Discount', 100, 20000, '2024-12-20', '2024-12-25', 1),
+('NEWYEAR2025', 'New Year Special', 140, 50000, '2025-01-01', '2025-01-31', 1),
+('SAVE15', 'Discount 15.000 VND', 500, 15000, '2024-01-01', '2024-12-31', 1),
+('SAVE20K', 'Discount 20.000 VND', 300, 20000, '2024-01-01', '2024-12-31', 0),
+('BLACKFRIDAY30', 'Black Friday Sale', 50, 30000, '2024-12-20', '2024-12-25', 1),
+('THANKSGIVING20', 'Thanksgiving Sale', 180, 20000, '2024-11-28', '2024-11-28', 1),
+('CUSTOMER20', 'Customer Appreciation', 90, 20000, '2024-10-10', '2024-10-10', 1),
+('FREESHIP50', 'Free Shipping 50.000 VND', 300, 50000, '2024-01-01', '2024-12-31', 1),
+('FREESHIP300', 'Free Shipping 300.000 VND', 100, 300000, '2024-01-01', '2024-12-31', 1),
+('WELCOME30', 'Welcome Discount', 500, 30000, '2024-01-01', '2024-12-31', 1),
+('SINGLEDAY', 'Single Day 11.11', 100, 100000, '2024-11-11', '2024-11-11', 1),
+('MOTHERDAY100', 'Mother Day', 200, 50000, '2025-05-05', '2024-05-05', 1),
+('VIPCUSTOMER1000K', 'VIP Customers - Discount 100.000VND', 200, 10000, '2024-01-01', '2024-12-31', 1),
+('LOYALTY20K', 'Loyalty Customers - Get 20.000 VND Discount', 350, 20000, '2024-10-01', '2024-12-31', 0);
 go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
 -- [shipping_method]
