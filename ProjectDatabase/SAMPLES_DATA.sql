@@ -225,7 +225,6 @@ insert into [shipping_method]([name], price, isDeleted) values
 ('Economy Shipping', 20000, 1),
 ('In-Store Pickup', 0, 1),
 ('Standard Shipping', 30000, 1),
-('Free Shipping', 0, 1),
 ('Next Day Shipping', 100000, 1)
 go
 
