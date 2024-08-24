@@ -60,7 +60,7 @@ INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
 (15, 26, 1, 1),
 (15, 27, 0, 1),
 (16, 28, 1, 1),
-(16, 29, 1, 1),
+(16, 29, 0, 1),
 (17, 30, 1, 1),
 (17, 31, 0, 1),
 (18, 32, 1, 1),
@@ -77,7 +77,7 @@ INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
 (24, 43, 1, 1),
 (24, 44, 0, 1),
 (25, 45, 1, 1),
-(25, 46, 1, 1)
+(25, 46, 0, 1)
 go
 -- [address]
 INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
@@ -208,15 +208,18 @@ insert into [discount]([name], [description], discount_rate, [start_date], end_d
 ('Back to School', 'Discount for back-to-school season', 15, '2024-08-01', '2024-08-31', 1),
 ('Flash Sale 10%', '10% discount for flash sale', 10, '2025-01-01', '2025-05-31', 1),
 ('Flash Sale 20%', '20% discount for flash sale', 20, '2025-06-01', '2025-12-31', 1),
-('End of Day Sale 10%', '10% discount for purchases made before closing', 10, '2024-01-01', '2024-12-31', 0),
-('End of Day Sale 20%', '20% discount for purchases made before closing', 20, '2024-01-01', '2024-12-31', 0),
-('End of Day Sale 30%', '30% discount for purchases made before closing', 30, '2024-01-01', '2024-12-31', 0),
-('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 0),
-
+('End of Day Sale 10%', '10% discount for purchases made before closing', 10, '2024-01-01', '2024-12-31', 1),
+('End of Day Sale 20%', '20% discount for purchases made before closing', 20, '2024-01-01', '2024-12-31', 1),
+('End of Day Sale 30%', '30% discount for purchases made before closing', 30, '2024-01-01', '2024-12-31', 1),
+('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 1),
+('Holiday Sale 25%', '25% discount during major holidays', 25, '2024-12-24', '2024-12-31', 1),
+('Valentine Day', 'Special offer for Valentine Day', 18, '2025-02-01', '2025-02-14', 1),
+('Anniversary Sale', 'Annual anniversary discount', 50, '2024-012-01', '2024-12-31', 1),
+('Product Launch', 'Discount for new product launch', 20, '2024-10-01', '2025-10-31', 1)
 go
 -- [coupons]
 insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, isDeleted) values
-();
+()
 go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
 -- [shipping_method]
