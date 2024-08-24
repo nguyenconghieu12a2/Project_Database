@@ -101,15 +101,7 @@ insert into [user_payment_method]() values
 go
 -- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
 --============================================================================================================== 1ng duy nhat (Hieu)
--- [user_review_status]
-insert into [user_review_status]([id], [name]) values --pending, accepted, rejected
-(01, 'accepted'),
-(02, 'pending'),
-(03, 'rejected');
-go
 -- [user_review]
-(12, 06, 08, 4, 'I love sweet! ' , 1),
-(13, 03, 05, 5, 'The cake was absolutely amazing! It tasted better than any other cake I''ve had.' , 1),
 insert into [user_review]([user_id], [ordered_product_id], [rating], [feedback], [status_id], []) values
 (01, 01, 5, 'This taste is like the heaven in my mouth. I love it. I will order another in future.', 1),
 (01, 02, 4, 'The flavor is melting on my tongue.', 1),
@@ -177,12 +169,11 @@ go
 --============================================================================================================== 1ng (Chinh)
 -- [banners]
 insert into [banners]([title], [image], [sortOrder]) values
-('The supreme sweety with chocolate!', 'banner1', 1),
-('Shiny blink! blink!', 'banner2', 2),
-('Yummy Yummy!', 'banner3', 3),
-('Scream Scream Scream', 'banner4', 4),
-('The Cake is the best!', 'banner5', 5),
-;
+('The supreme sweety with chocolate!', 'banner1.jpg', 1),
+('Shiny blink! blink!', 'banner2.jpg', 2),
+('Yummy Yummy!', 'banner3.jpg', 3),
+('Scream Scream Scream', 'banner4.jpg', 4),
+('The Cake is the best!', 'banner5.jpg', 5);
 go
 --5-7 banners
 -- [admin]
