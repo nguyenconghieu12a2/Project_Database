@@ -200,16 +200,34 @@ INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
 ();
 go
 -- [discount]
-insert into [discount]() values
-();
+insert into [discount]([name], [description], discount_rate, [start_date], end_date, isDeleted) values
+('Summer Sale 2024', 'Discount for summer reason', 20, '2024-06-01', '2024-09-30', 1),
+('New Year Offer 2025', 'Special discount for New Year', 30, '2025-01-01', '2025-03-31', 1),
+('Welcome Discount', 'Discount for a new customer', 10, '2024-01-01', '2025-01-01', 1),
+('Fall Sale 2024', 'Discount for fall reason', 20, '2024-09-01', '2025-11-01', 1),
+('Back to School', 'Discount for back-to-school season', 15, '2024-08-01', '2024-08-31', 1),
+('Flash Sale 10%', '10% discount for flash sale', 10, '2025-01-01', '2025-05-31', 1),
+('Flash Sale 20%', '20% discount for flash sale', 20, '2025-06-01', '2025-12-31', 1),
+('End of Day Sale 10%', '10% discount for purchases made before closing', 10, '2024-01-01', '2024-12-31', 0),
+('End of Day Sale 20%', '20% discount for purchases made before closing', 20, '2024-01-01', '2024-12-31', 0),
+('End of Day Sale 30%', '30% discount for purchases made before closing', 30, '2024-01-01', '2024-12-31', 0),
+('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 0),
+
 go
 -- [coupons]
-insert into [coupons]() values
+insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, isDeleted) values
 ();
 go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
 -- [shipping_method]
-insert into [shipping_method]() values
-();
+insert into [shipping_method]([name], price, isDeleted) values
+('Express Shipping', 70000, 1),
+('Economy Shipping', 20000, 1),
+('In-Store Pickup', 0, 1),
+('Standard Shipping', 30000, 1),
+('Free Shipping', 0, 1),
+('Next Day Shipping', 100000, 1)
+go
+
 -- creative 5 shipping method Ex: giaohangtietkiem, giaohangsieutoc, etc.
 --============================================================================================================== 1ng (Bao)
