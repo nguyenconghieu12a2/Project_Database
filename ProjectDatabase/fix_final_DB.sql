@@ -232,7 +232,7 @@ GO
 CREATE TABLE [shipping_method] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
-	[price] INT NOT NULL,
+	[price] BIGINT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -251,7 +251,7 @@ CREATE TABLE [user_payment_method] (
 	[user_id] INT NOT NULL,
 	[payment_type_id] INT NOT NULL,
 	[provider] NVARCHAR(255),
-	[account_number] INT,
+	[account_number] BIGINT,
 	[expiry_date] NVARCHAR(5),
 	[is_default] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -262,7 +262,7 @@ CREATE TABLE [coupons] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[code] NVARCHAR(255) NOT NULL,
 	[name] NVARCHAR(255) NOT NULL,
-	[quantity] INT NOT NULL,
+	[quantity] BIGINT NOT NULL,
 	[price_discount] BIGINT NOT NULL,
 	[start_date] DATETIME NOT NULL,
 	[end_date] DATETIME NOT NULL,
