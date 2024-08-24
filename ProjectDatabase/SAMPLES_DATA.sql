@@ -32,7 +32,52 @@ select * from user_site
 
 -- [user_address]
 INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
-();
+(1, 1, 1, 1),
+(2, 2, 1, 1),
+(2, 3, 0, 1),
+(3, 4, 1, 1),
+(3, 5, 0, 1),
+(4, 6, 1, 1),
+(5, 7, 1, 1),
+(6, 8, 1, 1),
+(6, 9, 0, 1),
+(7, 10, 1, 1),
+(7, 11, 0, 1),
+(8, 12, 1, 1),
+(8, 13, 0, 1),
+(9, 14, 1, 1),
+(9, 15, 0, 1),
+(10, 16, 1, 1),
+(10, 17, 0, 1),
+(11, 18, 1, 1),
+(11, 19, 0, 1),
+(12, 20, 1, 1),
+(12, 21, 0, 1),
+(13, 22, 1, 1),
+(13, 23, 0, 1),
+(14, 24, 1, 1),
+(14, 25, 0, 1),
+(15, 26, 1, 1),
+(15, 27, 0, 1),
+(16, 28, 1, 1),
+(16, 29, 1, 1),
+(17, 30, 1, 1),
+(17, 31, 0, 1),
+(18, 32, 1, 1),
+(18, 33, 0, 1),
+(19, 34, 1, 1),
+(19, 35, 0, 1),
+(20, 36, 1, 1),
+(20, 37, 0, 1),
+(21, 38, 1, 1),
+(22, 39, 1, 1),
+(22, 40, 0, 1),
+(23, 41, 1, 1),
+(23, 42, 0, 1),
+(24, 43, 1, 1),
+(24, 44, 0, 1),
+(25, 45, 1, 1),
+(25, 46, 1, 1)
 go
 -- [address]
 INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
@@ -42,6 +87,7 @@ INSERT INTO [address](recieved_name, detail_address, district, city_id, isDelete
 ('Chinh Bach', '18 Trần Hưng Đạo', 'quận Hoàn Kiếm', 1, 1),
 ('Chinh Bach', '33 Hàng Bông', 'quận Hoàn Kiếm', 1, 1),
 ('Thanh Mai', '5B Lý Tự Trọng', 'quận Ninh Kiều', 57, 1),
+('Le Chau', '5B Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
 ('Nhan Tran', '20C Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
 ('Nhan Tran', '30B3E Trần Hưng Đạo', 'quận Ninh Kiều', 57, 1),
 ('Hung Pham', '10B Lê Lợi', 'quận 1', 49, 1),
@@ -72,8 +118,15 @@ INSERT INTO [address](recieved_name, detail_address, district, city_id, isDelete
 ('Vu Quang', '149D Lê Văn Duyệt', 'xã An Phú', 61, 1),
 ('Anh Nguyen', '87C Nguyễn Văn Linh', 'xã Bình Tân', 58, 1),
 ('Anh Nguyen', '19B Lê Lợi', 'xã Đức Hòa', 58, 1),
-
-
+('Thuy Truong', '87B Phạm Văn Đồng', 'huyện Mậu Đức', 33, 1),
+('Tram Vo', '600 Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
+('Tram Vo', '84D Mậu Thân', 'quận Ninh Kiều', 57, 1),
+('Thuan Nguyen', '10A Lê Lợi', 'huyện Bảo Lâm', 43, 1),
+('Thuan Nguyen', '178D Trần Hưng Đạo', 'huyện Di Linh', 43, 1),
+('Wei Ching', '65P Quang Trung', 'huyện Diên Khánh', 36, 1),
+('Wei Ching', '80T Trần Phú', 'huyện Vạn Ninh', 36, 1),
+('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
+('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1)
 go
 -- [city]
 insert into [city]([name]) values
@@ -139,12 +192,11 @@ insert into [city]([name]) values
 ('Tỉnh Bạc Liêu'),
 ('Tỉnh Cà Mau')
 go
--- 25 user, each user have 1 or 2 or 3 address
--- city in VietNam
--- NOTE: fill random create_date
+-- MK: TÊN + 123
+-- MK CUỐI: fullname + 123 (25)
 --============================================================================================================== 1ng (Bao)
 
-insert into [discount_category]() values
+INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
 ();
 go
 -- [discount]
