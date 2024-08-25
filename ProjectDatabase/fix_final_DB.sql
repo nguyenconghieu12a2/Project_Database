@@ -114,7 +114,8 @@ CREATE TABLE [order_status] (
 GO
 
 CREATE TABLE [user_review] (
-	[ordered_product_id] INT NOT NULL IDENTITY UNIQUE,
+	[id] INT NOT NULL IDENTITY UNIQUE,
+	[order_product_id] INT NOT NULL,
 	[user_id] INT NOT NULL,
 	[rating] INT,
 	[feedback] TEXT,
@@ -124,7 +125,7 @@ CREATE TABLE [user_review] (
 	[approved_date] DATETIME,
 	[isHide] INT,
 	[isDeleted] INT NOT NULL,
-	PRIMARY KEY([ordered_product_id])
+	PRIMARY KEY([id])
 );
 GO
 
@@ -387,11 +388,11 @@ ALTER TABLE [address]
 ADD FOREIGN KEY([city_id]) REFERENCES [city]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
-ALTER TABLE [user_review]
-ADD FOREIGN KEY([ordered_product_id]) REFERENCES [order_line]([id])
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-GO
 ALTER TABLE [product_item]
 ADD FOREIGN KEY([pro_id]) REFERENCES [product]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [user_review]
+ADD FOREIGN KEY([order_product_id]) REFERENCES [order_line]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
