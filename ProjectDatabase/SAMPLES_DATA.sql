@@ -101,6 +101,11 @@ insert into [user_payment_method]() values
 go
 -- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
 --============================================================================================================== 1ng duy nhat (Hieu)
+insert into [user_review_status]([status]) values --pending, accepted, rejected
+('accepted'),
+('pending'),
+('rejected');
+go
 -- [user_review]
 insert into [user_review]([user_id], [ordered_product_id], [rating], [feedback], [status_id], [comment_date] , [approved_date], [isHide], [isDeleted]) values
 (01, 01, 5, 'This taste is like the heaven in my mouth. I love it. I will order another in future.', 1, '2024-09-04 02:13:39', '2024-09-04 04:13:39' , -1, 1),
