@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿﻿use PROJECT;
-=======
-﻿use PROJECT;
->>>>>>> baone
 go
 -- [user_site]
 INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image], email, phone, [password], isDeleted, account_create_date) VALUES
@@ -32,11 +28,7 @@ INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image]
 ('Wei', 'Ching', 'weichinhgg', 'Male', '2004-05-18', 'male.jpg', 'chingweiiii@gmail.com', '0902345678', 'ab5fdb10433f4b54d255cc6fce12efb5', 1, '2023-10-11 17:25:33'),
 ('Bao', 'Nguyen', 'baonguyen', 'Male', '1992-12-04', 'male.jpg', 'baonguyen92@gmail.com', '0862345678', '0edd0c86edd86a4264c2190a5375c862', 1, '2024-02-01 09:45:00') /*baonguyen123*/
 go
-<<<<<<< HEAD
-select * from user_site
 
-=======
->>>>>>> 482a03f90b2825cf36a89fdcbb833bb440858302
 -- [user_address]
 INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
 (1, 1, 1, 1),
@@ -86,6 +78,7 @@ INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
 (25, 45, 1, 1),
 (25, 46, 0, 1)
 go
+
 -- [address]
 INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
 ('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
@@ -135,6 +128,7 @@ INSERT INTO [address](recieved_name, detail_address, district, city_id, isDelete
 ('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
 ('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1)
 go
+
 -- [city]
 insert into [city]([name]) values
 ('Thành phố Hà Nội'),
@@ -264,8 +258,8 @@ insert into [coupons](code, [name], quantity, price_discount, [start_date], end_
 ('LOYALTY20K', 'Loyalty Customers - Get 20.000 VND Discount', 350, 20000, '2024-10-01', '2024-12-31', 0);
 go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
+
 -- [shipping_method]
-<<<<<<< HEAD
 insert into [shipping_method]([name], price, isDeleted) values
 ('Express Shipping', 50000, 1),
 ('Economy Shipping', 20000, 1),
@@ -274,19 +268,8 @@ insert into [shipping_method]([name], price, isDeleted) values
 ('Next Day Shipping', 60000, 1)
 go
 
-=======
-insert into [shipping_method]() values
-();
-go
->>>>>>> 482a03f90b2825cf36a89fdcbb833bb440858302
--- creative 5 shipping method Ex: giaohangtietkiem, giaohangsieutoc, etc.
-<<<<<<< HEAD
---============================================================================================================== 1ng (Bao)
-<<<<<<< HEAD
-=======
---============================================================================================================== 1ng (Bao)
->>>>>>> baone
-=======
+
+
 -- [order_status]
 insert into [order_status]([status], [isDeleted]) values
 ('Confirm', 1),
@@ -716,4 +699,3 @@ go
 
 
 --NOTE: review from old samples
->>>>>>> 482a03f90b2825cf36a89fdcbb833bb440858302
