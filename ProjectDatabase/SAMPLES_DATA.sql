@@ -260,7 +260,7 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (1, 'Classic Chocolate Truffle Cake', 'Satiate your taste a buds right away! Enrich with chocolate sponge & truffle cream. Topped with white chocolate garnish and cherry, it is sure to leave you omnomnom!', 'images/choco_truffle', 1),
 (1, 'Chocolate Vanilla Half & Half Cake', 'The perfect blend of tempting chocolate and irresistible vanilla flavours topped up with a cherry and some chocolate shavings.', 'images/hvanilla_hchoco', 1),
 (1, 'KitKat Chocolate Truffle Cake', 'Rich in melt-in-mouth chocolates, layered with Inside- Chocolate Truffle With Chopped Kitkat and chunks which make this cake an irresistible one.', 'images/kitkat_truffle', 1),
-(1, 'Chocolate Sensation Drip Cake', 'Experience a bite of our stunning Chocolate Cake, where velvety layers meet a cascade of rich chocolate ganache. Adorned with elegant swirls and delicate chocolate chips, it�s a feast for every palate.', 'images/chocolate_drip', 1),
+(1, 'Chocolate Sensation Drip Cake', 'Experience a bite of our stunning Chocolate Cake, where velvety layers meet a cascade of rich chocolate ganache. Adorned with elegant swirls and delicate chocolate chips, it"s a feast for every palate.', 'images/chocolate_drip', 1),
 (1, 'Chocolate Ferrero Rocher Almonds Cake', 'A soul pleasing treat to celebrate your occasion! Enriched and coated with exotic chocolates, this cake is embellished with crunchy Ferrero Rochers, hazelnut flavour, and chocolate syrup.', 'images/choco_ferrero_almond', 1),
 --Vanilla Cakes
 (2, 'Classic Vanilla Caramel Cake', 'Round shaped vanilla cake with whipped cream all over and icing between layers of soft and sweet sponge. It is embellished with streaks and caramel glaze on top, giving it an unmatched sweetness coupled with whipped cream and vanilla essence.', 'images/vani_caramel', 1),
@@ -312,10 +312,10 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (9, 'Blueberry Cheese Pastry', 'Cheese has found a quite popular place in the dessert menu of many people. To all the cheese lovers out there! We bring you a mouthwatering flavour of the cheese.', 'images/blueberry_cheese_pastry', 1),
 --Cookies
 (10, 'Wholesome Corn Cookies', 'Favorite among all agar group Corn cookies are bliss to your tastebuds.', 'images/wholesome_corn', 1),
-(10, 'Handmade Almond Cookies', 'Who doesn�t love crunchy and delicious cookies? The distinctive, delicious and uncommon taste of almond cookies will quickly your taste buds. ', 'images/handmade_almond', 1),
+(10, 'Handmade Almond Cookies', 'Who doesn"t love crunchy and delicious cookies? The distinctive, delicious and uncommon taste of almond cookies will quickly your taste buds. ', 'images/handmade_almond', 1),
 (10, 'Coconut Cookies', 'If coconut is on your baking list then you can not miss these freshly baked coconut cookies.', 'images/coconut_cookie', 1),
 (10, 'Choco Chip Cookies', 'A cookie made in heaven. If you are craving for something chocolaty then these melt-in-mouth cookies are your perfect pick.', 'images/chocochip', 1),
-(10, 'Multi Grain Cookies', 'Let�s go crackers for these multi-grain cookies! Packed with the goodness of assorted seeds and nuts, these crunchy treats are perfect for a wholesome snack. Enjoy the healthy, nutty crunch!', 'images/multi_grain', 1),
+(10, 'Multi Grain Cookies', 'Let"s go crackers for these multi-grain cookies! Packed with the goodness of assorted seeds and nuts, these crunchy treats are perfect for a wholesome snack. Enjoy the healthy, nutty crunch!', 'images/multi_grain', 1),
 --Year Anniversary Cakes
 (11, 'Number One Cream Cake', 'From your little one"s 1st birthday to 1st year of togetherness, every special day of your and your loved one"s life will be made memorable as you spread your greetings over his confetti cake.', 'images/number1_cream', 1),
 (11, 'Red Velvet Pinata Cake', 'This Red Velvet Pinata Cake is a delightful masterpiece adorned with charming red & white hearts on top.', 'images/red-velvet_pinata', 1),
@@ -336,7 +336,7 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (14, 'Peppermint Powder 50g', 'The taste and medicinal properties of peppermint powder are used in many areas of life. In cuisine, peppermint powder is used as a flavoring in some baked goods, or used to prepare meats, soups, sauces, salad dressings,...', 'images/mint_powder', 1),
 (14, 'Beetroot powder 10g', 'With its beautiful red color, beetroot powder has long been seen as a natural color therapy for food, not only the beautiful color is true, but also has a delicious taste for the dishes it incorporates.', 'images/beetroot_powder', 1),
 (14, 'Strawberry flour 50g', 'Super delicious 50g small package strawberry powder for ice cream dishes, ice cream powder, in bakery products, nougat candy, beverages...', 'images/strawberry_powder', 1),
-(14, 'Purple sweet potato flour 10g', 'Purple sweet potatoes contain many nutrients and especially the content of antoxans is relatively high, accounting for 51.5 � 174.7 mg/100 g of raw materials.', 'images/sweet-potato_flour', 1),
+(14, 'Purple sweet potato flour 10g', 'Purple sweet potatoes contain many nutrients and especially the content of antoxans is relatively high, accounting for 51.5 to 174.7 mg/100 g of raw materials.', 'images/sweet-potato_flour', 1),
 --Others(Traditional Ingredients)
 (15, 'Bronze gelatin leaf 1kg', 'Gelatin is extracted from the collagen itself found in bones, animal skin such as pig skin, or in the collagen of plants (red algae, fruits,..). This is a protein that is tasteless, odorless, transparent or produced with a yellowish color', 'images/bronze_gelatin', 1),
 (15, 'French Grape Sugar 100g', 'Used as a freezer in chow pho, spongy in yogurt or baking', 'images/grape_sugar', 1),
@@ -348,11 +348,11 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (16, 'Miwon Fried Dough 100g', 'Miwon 100g Fried Dough is a very convenient food processing fried dough that assists housewives in saving processing time. The fried dough product from the Miwon brand makes the dish more delicious and delicious.', 'images/miwon_fried-dough', 1),
 (16, 'Korean Fine Chili Powder Hae Cham 100g', 'In order for dishes to have attractive flavors and colors like Korean food, the indispensable spice is paprika. Paprika is the secret to creating an extremely eye-catching color that is not too spicy for many dishes such as rice cakes, kimchi, barbecue, ....', 'images/chili_powder', 1),
 --Others(Korea/Japan Ingredients)
-(17, 'Gochujang Taeyang Chili Sauce for Korea 200g', 'With excellent spicy taste, Gochujang Taeyangcho is used to prepare many common dishes such as: Tteokbokki � Spicy Rice Cake, Bibimbap � Mixed Rice, Bibimguksu � Noodles with soy sauce, mixed with Kimchi of all kinds,....', 'images/Gochujang_sauce', 1),
-(17, 'Fresh Udon Samlip Noodles 200g', 'Udon noodles are considered the national noodle dish of the cuisine of the land of cherry blossoms. Udon originated in Kagawa � Northeast Japan.', 'images/udon', 1),
+(17, 'Gochujang Taeyang Chili Sauce for Korea 200g', 'With excellent spicy taste, Gochujang Taeyangcho is used to prepare many common dishes such as: Spicy Rice Cake, Mixed Rice, Noodles with soy sauce, mixed with Kimchi of all kinds,....', 'images/Gochujang_sauce', 1),
+(17, 'Fresh Udon Samlip Noodles 200g', 'Udon noodles are considered the national noodle dish of the cuisine of the land of cherry blossoms. Udon originated in Kagawa (Northeast Japan).', 'images/udon', 1),
 (17, 'Flat green bamboo rice roll blinds', 'Currently, there are many people who are passionate about Japanese and Korean food. Of course, it is impossible not to mention rice rolls, to make Japanese shushi or Gimbap Korean rice rolls with fancy aromas, an indispensable tool is the flat green bamboo rice roll blinds.', 'images/bamboo_rice_roll', 1),
 (17, '100g crab bars', 'Crab sticks are an extremely popular dish for young people not only because of the delicious taste of crabs but also because of their low price, ease of use and preparation.', 'images/crab_bar', 1),
-(17, 'Dried seaweed Badanhaecho 25g', 'Daesang Dried Seaweed � Seaweed is a wonderful food that the Japanese have called "precious water vegetables" or "the source of happiness of the sea" since ancient times.', 'images/dried_seaweed', 1),
+(17, 'Dried seaweed Badanhaecho 25g', 'Seaweed is a wonderful food that the Japanese have called "precious water vegetables" or "the source of happiness of the sea" since ancient times.', 'images/dried_seaweed', 1),
 --Jam, honey
 (18, 'Fine peanut butter 170g', 'The combination of Fine Peanut Butter with bread is the perfect way to start the day. This excellent breakfast will give you plenty of energy for the day.', 'images/peanut_butter', 1),
 (18, 'Honey 600ml', 'Honey is one of the familiar ingredients in life and is used as a folk remedy or as an ingredient for more attractive and eye-catching dishes.', 'images/honey', 1),
@@ -360,9 +360,9 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (18, 'Golden farm Raspberry Jam 210g', 'Jam is an indispensable product in modern life, rooted in its delicious taste and convenience. Golden farm Raspberry Jam 210g not only stops at the inherent use of jam, but it also goes beyond that.', 'images/rasberry_jam', 1),
 (18, 'Liquid kiwi jam 120g', 'To add flavor to cakes and drinks, fruit jams are a reasonable choice.', 'images/kiwi_jam', 1),
 --Cheese
-(19, 'Korean cheddar cheese powder 50g', 'Korean cheddar cheese powder � a unique and interesting product in cuisine.', 'images/chedda_korea', 1),
+(19, 'Korean cheddar cheese powder 50g', 'Korean cheddar cheese powder, a unique and interesting product in cuisine.', 'images/chedda_korea', 1),
 (19, 'Sweet Shake Cheese Powder 50g', 'Cheese powder is made from cheese when it is squeezed out of water and dried.', 'images/shake_cheese_powder', 1),
-(19, 'Mascarpone Cheese Powder 50g', 'Mascarpone Cheese Powder 50g � Discover the amazing taste of mascarpone cheese powder � a perfect choice for your favorite desserts and dishes!', 'images/mascarpone_cheese', 1),
+(19, 'Mascarpone Cheese Powder 50g', 'Discover the amazing taste of mascarpone cheese powder, a perfect choice for your favorite desserts and dishes!', 'images/mascarpone_cheese', 1),
 (19, 'Mozzarella cheese (100g unit, pack about 200g)', 'Cheese is an important source of calcium in the diet for children and adults. Most cheeses are good for an excellent source of calcium to meet daily calcium needs.', 'images/mozzarella', 1),
 --Basic Tools
 (20, '30cm glass turntable', 'When you finish making a gato cake or pastry, you can put the base on it and use decorations to make the cake more beautiful... With a high-quality turntable, it can make it easy for you to place cakes and decorate in the simplest and most convenient way.', 'images/turntable', 1),
