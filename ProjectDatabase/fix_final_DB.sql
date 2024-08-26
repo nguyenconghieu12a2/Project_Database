@@ -12,7 +12,7 @@ CREATE TABLE [user_site] (
 	[birthday] DATE,
 	[image] TEXT,
 	[email] NVARCHAR(255) NOT NULL,
-	[phone] INT,
+	[phone] NVARCHAR(11),
 	[password] NVARCHAR(32),
 	[isDeleted] INT NOT NULL,
 	[account_create_date] DATETIME NOT NULL,
@@ -60,13 +60,12 @@ CREATE TABLE [product] (
 GO
 
 CREATE TABLE [product_item] (
-	[id] INT NOT NULL IDENTITY UNIQUE,
-	[product_id] INT NOT NULL,
-	[qty_in_stock] INT NOT NULL,
+	[pro_id] INT NOT NULL IDENTITY UNIQUE,
+	[qty_in_stock] BIGINT NOT NULL,
 	[product_image] TEXT NOT NULL,
 	[price] BIGINT NOT NULL,
-	[isDeleted] INT,
-	PRIMARY KEY([id])
+	[isDeleted] INT NOT NULL,
+	PRIMARY KEY([pro_id])
 );
 GO
 
@@ -116,14 +115,14 @@ GO
 
 CREATE TABLE [user_review] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
+	[order_product_id] INT NOT NULL,
 	[user_id] INT NOT NULL,
-	[ordered_product_id] INT NOT NULL,
-	[rating] INT NOT NULL,
+	[rating] INT,
 	[feedback] TEXT,
 	[review_image] TEXT,
 	[status_id] INT NOT NULL,
-	[comment_date] DATETIME NOT NULL,
-	[approved_date] DATETIME NOT NULL,
+	[comment_date] DATETIME,
+	[approved_date] DATETIME,
 	[isHide] INT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -232,7 +231,7 @@ GO
 CREATE TABLE [shipping_method] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
-	[price] INT NOT NULL,
+	[price] BIGINT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -251,7 +250,7 @@ CREATE TABLE [user_payment_method] (
 	[user_id] INT NOT NULL,
 	[payment_type_id] INT NOT NULL,
 	[provider] NVARCHAR(255),
-	[account_number] INT,
+	[account_number] NVARCHAR(255),
 	[expiry_date] NVARCHAR(5),
 	[is_default] INT NOT NULL,
 	PRIMARY KEY([id])
@@ -293,10 +292,6 @@ ALTER TABLE [user_address]
 ADD FOREIGN KEY([address_id]) REFERENCES [address]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [product_item]
-ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
-ON UPDATE CASCADE ON DELETE CASCADE;
-GO
 ALTER TABLE [shopping_cart_item]
 ADD FOREIGN KEY([cart_id]) REFERENCES [shopping_cart]([id])
 ON UPDATE NO ACTION ON DELETE CASCADE;
@@ -314,19 +309,15 @@ ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
 ALTER TABLE [order_line]
-ADD FOREIGN KEY([product_item_id]) REFERENCES [product_item]([id])
+ADD FOREIGN KEY([product_item_id]) REFERENCES [product_item]([pro_id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
 ALTER TABLE [order_line]
 ADD FOREIGN KEY([order_id]) REFERENCES [shop_order]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
-ALTER TABLE [user_review]
-ADD FOREIGN KEY([ordered_product_id]) REFERENCES [order_line]([id])
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-GO
 ALTER TABLE [shopping_cart_item]
-ADD FOREIGN KEY([product_item_id]) REFERENCES [product_item]([id])
+ADD FOREIGN KEY([product_item_id]) REFERENCES [product_item]([pro_id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
 ALTER TABLE [shop_order]
@@ -395,5 +386,13 @@ ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [address]
 ADD FOREIGN KEY([city_id]) REFERENCES [city]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [product_item]
+ADD FOREIGN KEY([pro_id]) REFERENCES [product]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [user_review]
+ADD FOREIGN KEY([order_product_id]) REFERENCES [order_line]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
