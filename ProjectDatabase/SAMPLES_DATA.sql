@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿﻿use PROJECT;
+=======
+﻿use PROJECT;
+>>>>>>> baone
 go
 -- [user_site]
 INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image], email, phone, [password], isDeleted, account_create_date) VALUES
@@ -267,4 +271,8 @@ insert into [shipping_method]([name], price, isDeleted) values
 go
 
 -- creative 5 shipping method Ex: giaohangtietkiem, giaohangsieutoc, etc.
+<<<<<<< HEAD
 --============================================================================================================== 1ng (Bao)
+=======
+--============================================================================================================== 1ng (Bao)
+>>>>>>> baone
