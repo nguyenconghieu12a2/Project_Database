@@ -555,7 +555,8 @@ INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
 (19, 5, 1),
 (20, 1, 1),
 (21, 11, 1),
-(22, 11, 1)
+(22, 11, 1),
+(23, 6, 1)
 go
 -- [discount]
 insert into [discount]([name], [description], discount_rate, [start_date], end_date, isDeleted) values
