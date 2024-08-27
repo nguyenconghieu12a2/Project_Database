@@ -43,12 +43,46 @@ insert into [product_item]() values
 ();
 go
 -- [productDesTitle]
-insert into [productDesTitle]() values
-();
+insert into [productDesTitle]([desTitleName], [isDeleted]) values
+('Weight'),
+('Ingredients'),
+('Storage'),
+('Origin'),
+('Usage'),
+('Packaging'),
+('Material'),
+('Size'),
+('Cake type'),
+('Flavor');
 go
 -- [productDesInfo]
-insert into [productDesInfo]() values
-();
+insert into [productDesInfo]([desTitleID], [proID], [desInfo], [isDeleted]) values
+(, 76, , ),
+(, 77, , ),
+(, 78, , ),
+(, 79, , ),
+(, 80, , ),
+(, 81, , ),
+(, 82, , ),
+(, 83, , ),
+(, 84, , ),
+(, 85, , ),
+(, 86, , ),
+(, 87, , ),
+(, 88, , ),
+(, 89, , ),
+(, 90, , ),
+(, 91, , ),
+(, 92, , ),
+(, 93, , ),
+(, 94, , ),
+(, 95, , ),
+(, 96, , ),
+(, 97, , ),
+(, 98, , ),
+(, 99, , ),
+(, 100, , ),
+(, 101, , );
 go
 -- [product_wishlist]
 insert into [product_wishlist]() values
