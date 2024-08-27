@@ -509,8 +509,17 @@ insert into [product_item]([qty_in_stock], [product_image], [price], [isDeleted]
 (120, './', 27000, 1);
 go
 -- [productDesTitle]
-insert into [productDesTitle]() values
-();
+insert into [productDesTitle]([desTitleName], [isDeleted]) values
+('Weight'),
+('Ingredients'),
+('Storage'),
+('Origin'),
+('Usage'),
+('Packaging'),
+('Material'),
+('Size'),
+('Cake type'),
+('Flavor');
 go
 -- [productDesInfo]
 insert into [productDesInfo]() values
