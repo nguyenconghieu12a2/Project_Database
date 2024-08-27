@@ -514,7 +514,7 @@ insert into [productDesTitle]([desTitleName], [isDeleted]) values
 ('Ingredients'),
 ('Storage'),
 ('Origin'),
-('Usage'),
+('Expiry'),
 ('Packaging'),
 ('Material'),
 ('Size'),
