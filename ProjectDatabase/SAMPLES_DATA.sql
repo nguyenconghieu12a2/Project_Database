@@ -44,17 +44,17 @@ insert into [product_item]() values
 go
 -- [productDesTitle]
 insert into [productDesTitle]([desTitleName], [isDeleted]) values
-('Weight'),		--1
-('Ingredients'),--2
-('Storage'),	--3
-('Origin'),		--4
-('Expiry'),		--5
-('Packaging'),	--6
-('Material'),	--7
-('Size'),		--8
-('Cake type'),	--9
-('Flavor'),		--10
-('Usage');		--11
+('Weight'),
+('Ingredients'),
+('Storage'),
+('Origin'),
+('Expiry'),
+('Packaging'),
+('Material'),
+('Size'),
+('Cake type'),
+('Flavor'),
+('Usage');
 go
 -- [productDesInfo]
 insert into [productDesInfo]([desTitleID], [proID], [desInfo], [isDeleted]) values
