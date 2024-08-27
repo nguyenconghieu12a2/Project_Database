@@ -522,12 +522,21 @@ insert into [productDesTitle]([desTitleName], [isDeleted]) values
 ('Flavor');
 go
 -- [productDesInfo]
+<<<<<<< HEAD
 insert into [productDesInfo]() values
 ();
 go
 -- [product_wishlist]
 insert into [product_wishlist]() values
 ();
+=======
+insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
+()
+go
+-- [product_wishlist]
+insert into [product_wishlist]([user_id], product_id, isDeleted) values
+()
+>>>>>>> baone
 go
 -- with each sub-sub-category --> create 10 products --> each product must have 1 big description, 4-7 detail description
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
@@ -1027,7 +1036,11 @@ insert into [admin]([fullname], [username], [email], [password], [avatar_img], [
 ('Nguyen Cong Hieu','nchieu', 'hieunc@gmail.com', 'ee608a70e3a536f1af3726bbd8bd0b55', 'male.jpg', 1), --nchieu
 ('Tran Gia Bao','tgbao', 'baotg@gmail.com', 'e405faf13f35eb5807579887f2e44220', 'male.jpg', 1), --tgbao
 ('Bach Cong Chinh','bcchinh' 'chinhbc@gmail.com', 'b985d6107f576d8fce6bfc9c3ac7d57a', 'male.jpg', 1), --bcchinh
+<<<<<<< HEAD
 ('Mai Phuc Thanh','mpthanh' 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1); --mpthanh;
+=======
+('Mai Phuc Thanh','mpthanh' 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1) --mpthanh;
+>>>>>>> baone
 go
 -- banners have 5-7 image
 -- admin includes 4 of us
