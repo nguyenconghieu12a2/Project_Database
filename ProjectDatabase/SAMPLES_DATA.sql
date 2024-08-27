@@ -509,16 +509,25 @@ insert into [product_item]([qty_in_stock], [product_image], [price], [isDeleted]
 (120, './', 27000, 1);
 go
 -- [productDesTitle]
-insert into [productDesTitle]() values
-();
+insert into [productDesTitle]([desTitleName], [isDeleted]) values
+('Weight'),
+('Ingredients'),
+('Storage'),
+('Origin'),
+('Usage'),
+('Packaging'),
+('Material'),
+('Size'),
+('Cake type'),
+('Flavor');
 go
 -- [productDesInfo]
-insert into [productDesInfo]() values
-();
+insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
+()
 go
 -- [product_wishlist]
-insert into [product_wishlist]() values
-();
+insert into [product_wishlist]([user_id], product_id, isDeleted) values
+()
 go
 -- with each sub-sub-category --> create 10 products --> each product must have 1 big description, 4-7 detail description
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
@@ -546,7 +555,8 @@ INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
 (19, 5, 1),
 (20, 1, 1),
 (21, 11, 1),
-(22, 11, 1)
+(22, 11, 1),
+(23, 6, 1)
 go
 -- [discount]
 insert into [discount]([name], [description], discount_rate, [start_date], end_date, isDeleted) values
