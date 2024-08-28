@@ -514,29 +514,21 @@ insert into [productDesTitle]([desTitleName], [isDeleted]) values
 ('Ingredients'),
 ('Storage'),
 ('Origin'),
-('Expiry'),
+('Expiry Date'),
 ('Packaging'),
 ('Material'),
 ('Size'),
 ('Cake type'),
-('Flavor');
+('Flavor'),
+('Usage');
 go
 -- [productDesInfo]
-<<<<<<< HEAD
 insert into [productDesInfo]() values
 ();
 go
 -- [product_wishlist]
 insert into [product_wishlist]() values
 ();
-=======
-insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
-()
-go
--- [product_wishlist]
-insert into [product_wishlist]([user_id], product_id, isDeleted) values
-()
->>>>>>> baone
 go
 -- with each sub-sub-category --> create 10 products --> each product must have 1 big description, 4-7 detail description
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
