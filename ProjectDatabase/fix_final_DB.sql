@@ -1,4 +1,4 @@
-﻿﻿create database PROJECT
+﻿﻿﻿create database PROJECT
 go
 use PROJECT
 go
