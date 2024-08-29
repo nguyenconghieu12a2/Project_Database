@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-﻿﻿use PROJECT;
-=======
-﻿﻿﻿use PROJECT;
->>>>>>> thanh
+use PROJECT;
 go
 -- [user_site]
 INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image], email, phone, [password], isDeleted, account_create_date) VALUES
