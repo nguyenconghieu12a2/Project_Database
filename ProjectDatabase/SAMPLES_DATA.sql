@@ -603,6 +603,31 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (1, 73, '400 grams', 1),
 (1, 74, '500 grams', 1),
 (1, 75, '350 grams', 1),
+--hieu
+(1, 76, '200 grams', 1),
+(1, 77, '200 grams', 1),
+(1, 78, '94 grams', 1),
+(1, 79, '100 grams', 1),
+(1, 80, '25 grams', 1),
+(1, 81, '170 grams', 1),
+(1, 83, '200 grams', 1),
+(1, 84, '210 grams', 1),
+(1, 85, '120 grmas', 1),
+(1, 86, '50 grams', 1),
+(1, 87, '50 grams', 1),
+(1, 88, '50 grams', 1),
+(1, 89, '600 grams', 1),
+(1, 90, '2300 grams', 1),
+(1, 91, '368 grams', 1),
+(1, 92, '15 grams', 1),
+(1, 93, '61 grams', 1),
+(1, 94, '76 grams', 1),
+(1, 95, '143 grams', 1),
+(1, 96, '29 grams', 1),
+(1, 97, '178 grams', 1),
+(1, 98, '231 grams', 1),
+(1, 99, '75 grams', 1),
+(1, 101, '78 grams', 1),
 --Ingredients
 --Thanh
 (2, 1, 'Flour, eggs, sugar, chocolate, truffle.', 1),
@@ -682,6 +707,18 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (2, 73, 'Flours (wheat flour, rice flour), spices (salt, pepper), vegetable oil, leavening agents,..', 1),
 (2, 74, 'Flours (wheat flour, rice flour), spices (salt, pepper), vegetable oil, seasoning mix,..', 1),
 (2, 75, 'Chili powder, salt (optional), garlic powder (optional),..', 1),
+--hieu
+(2, 76, 'Corn syrup, chili spice, wheat flour, water, wheat, salt, chili powder, fermented grain mixture, soybeans', 1),
+(2, 77, 'Wheat flour, salt, flour treatment agent, water,�', 1),
+(2, 79, 'White fish meat, egg white, wheat starch, sugar, salt, flavor enhancer', 1),
+(2, 81, 'Peanuts (90%), sugar, vegetable oil, salt', 1),
+(2, 83, 'Crushed chestnuts, sugar, vegetable oil, cocoa, milk powder, soy bean extract, vanilla flavor', 1),
+(2, 84, 'Raspberries, cane sugar, maltose, water, acidulant, synthetic food flavoring', 1),
+(2, 85, 'Cherry, sugar, concentrated juice, adjuster, cherry flavor', 1),
+(2, 86, 'Cheese powder, sugar, salt, whey powder', 1),
+(2, 88, 'Sugar, cheese powder, milk powder, food coloring', 1),
+(2, 89, 'Mozzarella from milk, cows milk, salt, enzymes from microorganisms, other ingredients', 1),
+(2, 98, 'Kraft Paper', 1),
 --Storage
 --Thanh
 (3, 1, 'Store in the refrigerator upon receiving the cake', 1),
@@ -761,6 +798,29 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (3, 73, 'Store in the refrigerator upon receiving the cake', 1),
 (3, 74, 'Store in the refrigerator upon receiving the cake', 1),
 (3, 75, 'Store in the refrigerator upon receiving the cake', 1),
+--hieu
+(3, 76, 'Refrigerator (2-4 degrees C)', 1),
+(3, 77, 'Store in a cool, dry place, away from direct sunlight.', 1),
+(3, 79, 'Freezer (-18 degrees C)', 1),
+(3, 80, 'Store in a cool, dry place, away from direct sunlight.', 1),
+(3, 81, 'Store in a cool place, will be thick if the temperature is above 30 degrees Celsius. Keep refrigerated after opening.', 1),
+(3, 82, 'Store in a cool, dry place, cover tightly after use.', 1),
+(3, 83, 'Store in a cool, dry place', 1),
+(3, 84, 'Room temperature, cool place. Refrigerate after opening.', 1),
+(3, 85, 'Store in a cool, dry place, refrigerate after opening.', 1),
+(3, 86, 'Store in a cool, dry place, away from direct sunlight.', 1),
+(3, 87, 'Store in a cool, dry place, away from direct sunlight.', 1),
+(3, 88, 'Dry, cool, clean place', 1),
+(3, 89, 'Freezer 1- 18 degrees C', 1),
+(3, 100, 'Cool, dry place', 1),
+--Origin
+(4, 76, 'Korea', 1),
+(4, 77, 'Korea', 1),
+(4, 79, 'Korea', 1),
+(4, 80, 'Korea', 1),
+(4, 81, 'Golden farm Viet Nam', 1),
+(4, 88, 'Viet Nam', 1),
+(4, 89, 'Denmark', 1),
 --Epiry Date
 --Thanh
 (5, 1, 'Consume within 7 days after production', 1),
@@ -840,6 +900,27 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (5, 73, 'Consume within 7 days after production', 1),
 (5, 74, 'Consume within 7 days after production', 1),
 (5, 75, 'Consume within 7 days after production', 1),
+--hieu
+(5, 79, '10 months from date of manufacture', 1),
+(5, 81, '2 years from date of manufacture', 1),
+(5, 83, '1 years from date of manufacture', 1),
+(5, 84, '2 years from date of manufacture', 1),
+--6 
+(6, 77, 'Package', 1),
+(6, 80, 'Package', 1),
+(6, 98, '10 boxes', 1),
+--7
+(7, 78, 'Bamboo', 1),
+(7, 82, 'Natural honey', 1),
+(7, 90, 'Glass', 1),
+(7, 91, 'Plastic', 1),
+(7, 92, 'Plastic', 1),
+(7, 93, 'Inox', 1),
+(7, 94, 'Wood', 1),
+(7, 95, 'Cotton', 1),
+(7, 96, 'Plastic', 1),
+(7, 97, 'Silicon', 1),
+(7, 100, 'Ivory paper material, 350 gsm base tray and 300 gsm flap, 210 gsm bag', 1),
 --Size
 --Thanh
 (8, 1, '16x20', 1),
@@ -919,6 +1000,19 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (8, 73, '16x20', 1),
 (8, 74, '20x24', 1),
 (8, 75, '10x12', 1),
+--hieu
+(8, 78, '24x24 cm', 1),
+(8, 82, '600ml', 1),
+(8, 90, 'Surface width 30cm, height 9cm', 1),
+(8, 91, 'Height 7cm, diameter 27cm', 1),
+(8, 92, '120ml', 1),
+(8, 94, '28cm', 1),
+(8, 95, '28cm', 1),
+(8, 96, '14x6cm', 1),
+(8, 97, '50x40cm', 1),
+(8, 98, 'Bowl mouth is 15 cm wide - Bowl bottom is 13 cm wide - Height is 8 cm', 1),
+(8, 99, '23,5 x 15 x 9 cm', 1),
+(8, 100, '29cm x 21cm x 7cm', 1),
 --Cake Type
 --Thanh
 (9, 1, 'Chocolate Cakes', 1),
@@ -1050,7 +1144,7 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (10, 47, 'Flour', 1),
 (10, 48, 'Coconut', 1),
 (10, 49, 'Cacao', 1),
-(10, 50, 'Flour', 1);
+(10, 50, 'Flour', 1),
 --Bao
 (10, 51, 'Vanilla', 1),
 (10, 52, 'Red Velvet', 1),
@@ -1076,9 +1170,22 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (10, 72, 'Neutral', 1),
 (10, 73, 'Savory and Salty', 1),
 (10, 74, 'Savory', 1),
-(10, 75, 'Spicy and Slightly Sweet', 1);
-
-go
+(10, 75, 'Spicy and Slightly Sweet', 1),
+--11 Usage
+(11, 76, 'Used as a spice for cooking', 1),
+(11, 79, 'Defrost before use, use to prepare salads, hot pot, sushi', 1),
+(11, 82, 'Used in recipes or as a baking spread', 1),
+(11, 85, 'Used in baking, cooking, and beverage preparation', 1),
+(11, 86, 'Used as raw material in food processing', 1),
+(11, 87, 'Used for instant or other dishes', 1),
+(11, 88, 'Used to make Tiramisu cake', 1),
+(11, 89, 'Use directly or prepare dishes', 1),
+(11, 93, 'Used to measure ingredients accurately', 1),
+(11, 94, 'Used when making cookies, rolling out puff pastry, bread, fondant', 1),
+(11, 95, 'Protect your hands when lifting hot objects', 1),
+(11, 96, 'Used to separate egg whites easily, used for making cakes, cupcakes, and cream puffs', 1),
+(11, 97, 'Used for kneading dough, rolling cakes, etc.', 1),
+(11, 98, 'Store cakes, food, salads, etc.', 1);
 -- [product_wishlist]
 insert into [product_wishlist]() values
 ();
@@ -1158,8 +1265,6 @@ insert into [shipping_method]([name], price, isDeleted) values
 ('Standard Shipping', 30000, 1),
 ('Next Day Shipping', 60000, 1)
 go
-
-
 
 -- [order_status]
 insert into [order_status]([status], [isDeleted]) values
@@ -1490,9 +1595,6 @@ insert into [user_payment_method]([user_id], [payment_type_id], [provider], [acc
 (24, 2, 'BIDV', 5812323456, '09/25', 1);
 insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
 (25, 1, 1);
-
--- Cash on delivery | Odd User
-
 go
 -- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
 --============================================================================================================== 1ng duy nhat (Hieu)
@@ -1587,6 +1689,4 @@ go
 -- admin includes 4 of us
 -- postpone this section until the images is ready !!!!
 --============================================================================================================== 1ng (Chinh)
-
-
 --NOTE: review from old samples
