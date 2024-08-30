@@ -4,19 +4,22 @@ go
 insert into [user_site]() values
 ();
 go
-select * from user_site
--- [user_address]
-insert into [user_address]() values
-();
-go
--- [address]
-insert into [address]() values
-();
-go
+
 -- [city]
 insert into [city]() values
 ();
 go
+
+-- [address]
+insert into [address]() values
+();
+go
+
+-- [user_address]
+insert into [user_address]() values
+();
+go
+
 -- 25 user, each user have 1 or 2 or 3 address
 -- city in VietNam
 -- NOTE: fill random create_date
@@ -50,22 +53,24 @@ go
 -- [productDesInfo]
 insert into [productDesInfo]() values
 ();
-go
+--go
 -- [product_wishlist]
-insert into [product_wishlist]() values
-();
+--insert into [product_wishlist]() values
+--();
 go
 -- with each sub-sub-category --> create 10 products --> each product must have 1 big description, 4-7 detail description
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
 --============================================================================================================== 1ng duy nhat (Thanh)
--- [discount_category]
-insert into [discount_category]() values
-();
-go
 -- [discount]
 insert into [discount]() values
 ();
 go
+
+-- [discount_category]
+insert into [discount_category]() values
+();
+go
+
 -- [coupons]
 insert into [coupons]() values
 ();
@@ -80,6 +85,17 @@ insert into [shipping_method]() values
 insert into [order_status]() values
 ();
 go
+-- [payment_method]
+insert into [payment_method]() values
+();
+go
+-- [user_payment_method]
+insert into [user_payment_method]() values
+();
+go
+-- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
+--============================================================================================================== 1ng duy nhat (Hieu)
+
 -- [shop_order]
 insert into [shop_order]() values
 ();
@@ -90,16 +106,6 @@ insert into [order_line]() values
 go
 -- 1 user has 2 shop order --> each order has 3-5 products
 -- about date fields in shop_order just fill only order_date (fill random date)
---============================================================================================================== 1ng duy nhat (Hieu)
--- [payment_method]
-insert into [payment_method]() values
-();
-go
--- [user_payment_method]
-insert into [user_payment_method]() values
-();
-go
--- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
 --============================================================================================================== 1ng duy nhat (Hieu)
 -- [user_review_status]
 insert into [user_review_status]() values --pending, accepted, rejected
