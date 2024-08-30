@@ -1,4 +1,4 @@
-﻿﻿﻿create database PROJECT
+﻿create database PROJECT
 go
 use PROJECT
 go
@@ -94,7 +94,7 @@ CREATE TABLE [shop_order] (
 	[payment_method] INT NOT NULL,
 	[order_status_id] INT NOT NULL,
 	[order_total] BIGINT NOT NULL,
-	[order_date] DATE NOT NULL,
+	[order_date] DATETIME NOT NULL,
 	[approved_date] DATETIME,
 	[shipping_date] DATETIME,
 	[arrived_date] DATETIME,

@@ -29,106 +29,6 @@ INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image]
 ('Bao', 'Nguyen', 'baonguyen', 'Male', '1992-12-04', 'male.jpg', 'baonguyen92@gmail.com', '0862345678', '0edd0c86edd86a4264c2190a5375c862', 1, '2024-02-01 09:45:00') /*baonguyen123*/
 go
 
--- [user_address]
-INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
-(1, 1, 1, 1),
-(2, 2, 1, 1),
-(2, 3, 0, 1),
-(3, 4, 1, 1),
-(3, 5, 0, 1),
-(4, 6, 1, 1),
-(5, 7, 1, 1),
-(6, 8, 1, 1),
-(6, 9, 0, 1),
-(7, 10, 1, 1),
-(7, 11, 0, 1),
-(8, 12, 1, 1),
-(8, 13, 0, 1),
-(9, 14, 1, 1),
-(9, 15, 0, 1),
-(10, 16, 1, 1),
-(10, 17, 0, 1),
-(11, 18, 1, 1),
-(11, 19, 0, 1),
-(12, 20, 1, 1),
-(12, 21, 0, 1),
-(13, 22, 1, 1),
-(13, 23, 0, 1),
-(14, 24, 1, 1),
-(14, 25, 0, 1),
-(15, 26, 1, 1),
-(15, 27, 0, 1),
-(16, 28, 1, 1),
-(16, 29, 0, 1),
-(17, 30, 1, 1),
-(17, 31, 0, 1),
-(18, 32, 1, 1),
-(18, 33, 0, 1),
-(19, 34, 1, 1),
-(19, 35, 0, 1),
-(20, 36, 1, 1),
-(20, 37, 0, 1),
-(21, 38, 1, 1),
-(22, 39, 1, 1),
-(22, 40, 0, 1),
-(23, 41, 1, 1),
-(23, 42, 0, 1),
-(24, 43, 1, 1),
-(24, 44, 0, 1),
-(25, 45, 1, 1),
-(25, 46, 0, 1)
-go
-
--- [address]
-INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
-('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
-('Hieu Nguyen', '12 Lý Thái Tổ', 'quận Hoàn Kiếm', 1, 1),
-('Hieu Nguyen', '01 Hoàng Diệu', 'quận Ba Đình', 1, 1),
-('Chinh Bach', '18 Trần Hưng Đạo', 'quận Hoàn Kiếm', 1, 1),
-('Chinh Bach', '33 Hàng Bông', 'quận Hoàn Kiếm', 1, 1),
-('Thanh Mai', '5B Lý Tự Trọng', 'quận Ninh Kiều', 57, 1),
-('Le Chau', '5B Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
-('Nhan Tran', '20C Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
-('Nhan Tran', '30B3E Trần Hưng Đạo', 'quận Ninh Kiều', 57, 1),
-('Hung Pham', '10B Lê Lợi', 'quận 1', 49, 1),
-('Hung Pham', '50K Đồng Khời', 'quận 1', 49, 1),
-('Kim Pham', '35G Đống Đa', 'quận Hải Châu', 31, 1),
-('Kim Pham', 'Số 20D Lê Duẩn', 'quận Hải Châu', 31, 1),
-('Quynh Nguyen', '10B Hạ Long', 'quận 4', 48, 1),
-('Quynh Nguyen', '50K Trần Phú', 'quận 1', 48, 1),
-('Tuan Dang', '45M Phạm Văn Đồng', 'quận Hải An', 20, 1),
-('Tuan Dang', '30F Quang Trung', 'quận Dương Kinh', 20, 1),
-('Minh Vo', '22A Nguyễn Thị Minh Khai', 'quận 3', 49, 1),
-('Minh Vo', '7B Nguyễn Thái Bình', 'quận 1', 49, 1),
-('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
-('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
-('Khai Nguyen', '24C Trần Phú', 'thị trấn Hà Giang', 2, 1),
-('Khai Nguyen', '36D Nguyễn Thái Học', 'phường Minh Khai', 2, 1),
-('Binh Tran', '34E Bạch Dương', 'quận Hải Châu', 31, 1),
-('Binh Tran', '78F Lê Duẩn', 'quận Thanh Khê', 31, 1),
-('Ngoc Nguyen', '22B Hải Tân', 'huyện Ninh Giang', 19, 1),
-('Ngoc Nguyen', '23E Hải Sơn', 'huyện Gia Lộc', 19, 1),
-('Thu Hang', '15C Tân Cương', 'xã Tân Cương', 12, 1),
-('Thu Hang', '14E Quyết Thắng', 'xã Quyết Thắng', 12, 1),
-('Tien Le', '26D Hòa Phú', 'xã Hòa Phú', 29, 1),
-('Tien Le', '187T Bạch Dương', 'xã Cư Kurin', 29, 1),
-('Phat Tran', '10A Lê Lợi', 'xã Mỹ Thạnh', 52, 1),
-('Phat Tran', '145B Nguyễn Văn Cừ', 'xã Châu Phú', 52, 1),
-('Vu Quang', '10A Nguyễn Đình Chiểu', 'xã Long Đức', 61, 1),
-('Vu Quang', '149D Lê Văn Duyệt', 'xã An Phú', 61, 1),
-('Anh Nguyen', '87C Nguyễn Văn Linh', 'xã Bình Tân', 58, 1),
-('Anh Nguyen', '19B Lê Lợi', 'xã Đức Hòa', 58, 1),
-('Thuy Truong', '87B Phạm Văn Đồng', 'huyện Mậu Đức', 33, 1),
-('Tram Vo', '600 Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
-('Tram Vo', '84D Mậu Thân', 'quận Ninh Kiều', 57, 1),
-('Thuan Nguyen', '10A Lê Lợi', 'huyện Bảo Lâm', 43, 1),
-('Thuan Nguyen', '178D Trần Hưng Đạo', 'huyện Di Linh', 43, 1),
-('Wei Ching', '65P Quang Trung', 'huyện Diên Khánh', 36, 1),
-('Wei Ching', '80T Trần Phú', 'huyện Vạn Ninh', 36, 1),
-('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
-('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1)
-go
-
 -- [city]
 insert into [city]([name]) values
 ('Thành phố Hà Nội'),
@@ -193,6 +93,107 @@ insert into [city]([name]) values
 ('Tỉnh Bạc Liêu'),
 ('Tỉnh Cà Mau')
 go
+
+-- [address]
+INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
+('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
+('Hieu Nguyen', '12 Lý Thái Tổ', 'quận Hoàn Kiếm', 1, 1),
+('Hieu Nguyen', '01 Hoàng Diệu', 'quận Ba Đình', 1, 1),
+('Chinh Bach', '18 Trần Hưng Đạo', 'quận Hoàn Kiếm', 1, 1),
+('Chinh Bach', '33 Hàng Bông', 'quận Hoàn Kiếm', 1, 1),
+('Thanh Mai', '5B Lý Tự Trọng', 'quận Ninh Kiều', 57, 1),
+('Le Chau', '5B Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
+('Nhan Tran', '20C Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
+('Nhan Tran', '30B3E Trần Hưng Đạo', 'quận Ninh Kiều', 57, 1),
+('Hung Pham', '10B Lê Lợi', 'quận 1', 49, 1),
+('Hung Pham', '50K Đồng Khời', 'quận 1', 49, 1),
+('Kim Pham', '35G Đống Đa', 'quận Hải Châu', 31, 1),
+('Kim Pham', 'Số 20D Lê Duẩn', 'quận Hải Châu', 31, 1),
+('Quynh Nguyen', '10B Hạ Long', 'quận 4', 48, 1),
+('Quynh Nguyen', '50K Trần Phú', 'quận 1', 48, 1),
+('Tuan Dang', '45M Phạm Văn Đồng', 'quận Hải An', 20, 1),
+('Tuan Dang', '30F Quang Trung', 'quận Dương Kinh', 20, 1),
+('Minh Vo', '22A Nguyễn Thị Minh Khai', 'quận 3', 49, 1),
+('Minh Vo', '7B Nguyễn Thái Bình', 'quận 1', 49, 1),
+('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
+('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
+('Khai Nguyen', '24C Trần Phú', 'thị trấn Hà Giang', 2, 1),
+('Khai Nguyen', '36D Nguyễn Thái Học', 'phường Minh Khai', 2, 1),
+('Binh Tran', '34E Bạch Dương', 'quận Hải Châu', 31, 1),
+('Binh Tran', '78F Lê Duẩn', 'quận Thanh Khê', 31, 1),
+('Ngoc Nguyen', '22B Hải Tân', 'huyện Ninh Giang', 19, 1),
+('Ngoc Nguyen', '23E Hải Sơn', 'huyện Gia Lộc', 19, 1),
+('Thu Hang', '15C Tân Cương', 'xã Tân Cương', 12, 1),
+('Thu Hang', '14E Quyết Thắng', 'xã Quyết Thắng', 12, 1),
+('Tien Le', '26D Hòa Phú', 'xã Hòa Phú', 29, 1),
+('Tien Le', '187T Bạch Dương', 'xã Cư Kurin', 29, 1),
+('Phat Tran', '10A Lê Lợi', 'xã Mỹ Thạnh', 52, 1),
+('Phat Tran', '145B Nguyễn Văn Cừ', 'xã Châu Phú', 52, 1),
+('Vu Quang', '10A Nguyễn Đình Chiểu', 'xã Long Đức', 61, 1),
+('Vu Quang', '149D Lê Văn Duyệt', 'xã An Phú', 61, 1),
+('Anh Nguyen', '87C Nguyễn Văn Linh', 'xã Bình Tân', 58, 1),
+('Anh Nguyen', '19B Lê Lợi', 'xã Đức Hòa', 58, 1),
+('Thuy Truong', '87B Phạm Văn Đồng', 'huyện Mậu Đức', 33, 1),
+('Tram Vo', '600 Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
+('Tram Vo', '84D Mậu Thân', 'quận Ninh Kiều', 57, 1),
+('Thuan Nguyen', '10A Lê Lợi', 'huyện Bảo Lâm', 43, 1),
+('Thuan Nguyen', '178D Trần Hưng Đạo', 'huyện Di Linh', 43, 1),
+('Wei Ching', '65P Quang Trung', 'huyện Diên Khánh', 36, 1),
+('Wei Ching', '80T Trần Phú', 'huyện Vạn Ninh', 36, 1),
+('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
+('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1)
+go
+
+-- [user_address]
+INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
+(1, 1, 1, 1),
+(2, 2, 1, 1),
+(2, 3, 0, 1),
+(3, 4, 1, 1),
+(3, 5, 0, 1),
+(4, 6, 1, 1),
+(5, 7, 1, 1),
+(6, 8, 1, 1),
+(6, 9, 0, 1),
+(7, 10, 1, 1),
+(7, 11, 0, 1),
+(8, 12, 1, 1),
+(8, 13, 0, 1),
+(9, 14, 1, 1),
+(9, 15, 0, 1),
+(10, 16, 1, 1),
+(10, 17, 0, 1),
+(11, 18, 1, 1),
+(11, 19, 0, 1),
+(12, 20, 1, 1),
+(12, 21, 0, 1),
+(13, 22, 1, 1),
+(13, 23, 0, 1),
+(14, 24, 1, 1),
+(14, 25, 0, 1),
+(15, 26, 1, 1),
+(15, 27, 0, 1),
+(16, 28, 1, 1),
+(16, 29, 0, 1),
+(17, 30, 1, 1),
+(17, 31, 0, 1),
+(18, 32, 1, 1),
+(18, 33, 0, 1),
+(19, 34, 1, 1),
+(19, 35, 0, 1),
+(20, 36, 1, 1),
+(20, 37, 0, 1),
+(21, 38, 1, 1),
+(22, 39, 1, 1),
+(22, 40, 0, 1),
+(23, 41, 1, 1),
+(23, 42, 0, 1),
+(24, 43, 1, 1),
+(24, 44, 0, 1),
+(25, 45, 1, 1),
+(25, 46, 0, 1)
+go
+
 -- MK: TÊN + 123
 -- MK CUỐI: fullname + 123 (25)
 --============================================================================================================== 1ng (Bao)
@@ -510,17 +511,17 @@ insert into [product_item]([qty_in_stock], [product_image], [price], [isDeleted]
 go
 -- [productDesTitle]
 insert into [productDesTitle]([desTitleName], [isDeleted]) values
-('Weight'),
-('Ingredients'),
-('Storage'),
-('Origin'),
-('Expiry Date'),
-('Packaging'),
-('Material'),
-('Size'),
-('Cake type'),
-('Flavor'),
-('Usage');
+('Weight', 1),
+('Ingredients', 1),
+('Storage', 1),
+('Origin', 1),
+('Expiry Date', 1),
+('Packaging', 1),
+('Material', 1),
+('Size', 1),
+('Cake type', 1),
+('Flavor', 1),
+('Usage', 1);
 go
 -- [productDesInfo]
 insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
@@ -1187,14 +1188,34 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (11, 97, 'Used for kneading dough, rolling cakes, etc.', 1),
 (11, 98, 'Store cakes, food, salads, etc.', 1);
 -- [product_wishlist]
-insert into [product_wishlist]() values
-();
+--insert into [product_wishlist]() values
+--();
 go
 -- with each sub-sub-category --> create 10 products --> each product must have 1 big description, 4-7 detail description
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
 --============================================================================================================== 1ng duy nhat (Thanh)
+-- [discount]
+insert into [discount]([name], [description], [discount_rate], [start_date], end_date, isDeleted) values
+('Summer Sale 2024', 'Discount for summer reason', 20, '2024-06-01', '2024-09-30', 1),
+('New Year Offer 2025', 'Special discount for New Year', 30, '2025-01-01', '2025-03-31', 1),
+('Welcome Discount', 'Discount for a new customer', 10, '2024-01-01', '2025-01-01', 1),
+('Fall Sale 2024', 'Discount for fall reason', 20, '2024-09-01', '2025-11-01', 1),
+('Back to School', 'Discount for back-to-school season', 15, '2024-08-01', '2024-08-31', 1),
+('Flash Sale 10%', '10% discount for flash sale', 10, '2025-01-01', '2025-05-31', 1),
+('Flash Sale 20%', '20% discount for flash sale', 20, '2025-06-01', '2025-12-31', 1),
+('End of Day Sale 10%', '10% discount for purchases made before closing', 10, '2024-01-01', '2024-12-31', 1),
+('End of Day Sale 20%', '20% discount for purchases made before closing', 20, '2024-01-01', '2024-12-31', 1),
+('End of Day Sale 30%', '30% discount for purchases made before closing', 30, '2024-01-01', '2024-12-31', 1),
+('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 1),
+('Holiday Sale 25%', '25% discount during major holidays', 25, '2024-12-24', '2024-12-31', 1),
+('Valentine Day', 'Special offer for Valentine Day', 18, '2025-02-01', '2025-02-14', 1),
+('Anniversary Sale', 'Annual anniversary discount', 50, '2024-12-01', '2024-12-31', 1),
+('Product Launch', 'Discount for new product launch', 20, '2024-10-01', '2025-10-31', 1),
+('Christmas Eve Special', '30% off on Christmas Eve', 30, '2024-12-24', '2024-12-24', 1);
+go
+
 -- [discount_category]
-INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
+INSERT INTO [discount_category]([category_id], [discount_id], [isDeleted]) values
 (1, 6, 1),
 (2, 6, 1),
 (3, 6, 1),
@@ -1217,27 +1238,9 @@ INSERT INTO [discount_category](category_id, discount_id, isDeleted) values
 (20, 1, 1),
 (21, 11, 1),
 (22, 11, 1),
-(23, 6, 1)
+(23, 6, 1);
 go
--- [discount]
-insert into [discount]([name], [description], discount_rate, [start_date], end_date, isDeleted) values
-('Summer Sale 2024', 'Discount for summer reason', 20, '2024-06-01', '2024-09-30', 1),
-('New Year Offer 2025', 'Special discount for New Year', 30, '2025-01-01', '2025-03-31', 1),
-('Welcome Discount', 'Discount for a new customer', 10, '2024-01-01', '2025-01-01', 1),
-('Fall Sale 2024', 'Discount for fall reason', 20, '2024-09-01', '2025-11-01', 1),
-('Back to School', 'Discount for back-to-school season', 15, '2024-08-01', '2024-08-31', 1),
-('Flash Sale 10%', '10% discount for flash sale', 10, '2025-01-01', '2025-05-31', 1),
-('Flash Sale 20%', '20% discount for flash sale', 20, '2025-06-01', '2025-12-31', 1),
-('End of Day Sale 10%', '10% discount for purchases made before closing', 10, '2024-01-01', '2024-12-31', 1),
-('End of Day Sale 20%', '20% discount for purchases made before closing', 20, '2024-01-01', '2024-12-31', 1),
-('End of Day Sale 30%', '30% discount for purchases made before closing', 30, '2024-01-01', '2024-12-31', 1),
-('Buy One Get One Free', 'Buy one item and get another one free', 100, '2024-01-01', '2024-12-31', 1),
-('Holiday Sale 25%', '25% discount during major holidays', 25, '2024-12-24', '2024-12-31', 1),
-('Valentine Day', 'Special offer for Valentine Day', 18, '2025-02-01', '2025-02-14', 1),
-('Anniversary Sale', 'Annual anniversary discount', 50, '2024-12-01', '2024-12-31', 1),
-('Product Launch', 'Discount for new product launch', 20, '2024-10-01', '2025-10-31', 1),
-('Christmas Eve Special', '30% off on Christmas Eve', 30, '2024-12-24', '2024-12-24', 1);
-go
+
 -- [coupons]
 insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, isDeleted) values
 ('XMAS2024', 'Christmas Discount', 100, 20000, '2024-12-20', '2024-12-25', 1),
@@ -1263,7 +1266,7 @@ insert into [shipping_method]([name], price, isDeleted) values
 ('Economy Shipping', 20000, 1),
 ('Same Day Shipping', 80000, 1),
 ('Standard Shipping', 30000, 1),
-('Next Day Shipping', 60000, 1)
+('Next Day Shipping', 60000, 1);
 go
 
 -- [order_status]
@@ -1275,58 +1278,124 @@ insert into [order_status]([status], [isDeleted]) values
 ('Cancel', 1);
 go
 
+-- [payment_method]
+insert into [payment_method]([name], [isDeleted]) values
+('COD (Cash on delivery)', 1),
+('Credit Card', 1);
+go
+-- [user_payment_method]
+-- Credit Card Payment | Even User
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(1, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(2, 2, 'BIDV', 5817643793, '11/27', 1),
+(2, 2, 'Vietcombank', 0494638843, '03/25', 0);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(3, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(4, 2, 'TPBank', 0205887543, '04/25', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(5, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(6, 2, 'BIDV', 5817448593, '07/27', 0),
+(6, 2, 'Sacombank', 0602009655, '02/26', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(7, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(8, 2, 'MB Bank', 0050885746, '01/27', 1),
+(8, 2, 'Vietcombank', 0493366748, '09/25', 0);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(9, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(10, 2, 'VIB', 0258855776, '07/25', 0),
+(10, 2, 'VPBank', 8788576499, '08/27', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(11, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(12, 2, 'VIB', 0258574677, '09/26', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(13, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(14, 2, 'Agribank', 3409948574, '04/26', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(15, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(16, 2, 'Vietcombank', 0495674883, '12/27', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(17, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(18, 2, 'VIB', 0250098667, '09/26', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(19, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(20, 2, 'TPBank', 0202274463, '03/26', 1),
+(20, 2, 'Sacombank', 0602444465, '03/27', 0);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(21, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(22, 2, 'VIB', 0251112827, '01/26', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(23, 1, 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
+(24, 2, 'BIDV', 5812323456, '09/25', 1);
+insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
+(25, 1, 1);
+go
+-- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
+--============================================================================================================== 1ng duy nhat (Hieu)
+
 -- [shop_order]
 insert into [shop_order]([user_id], [shipping_method_id], [shipping_address_id], [payment_method], [order_status_id], [order_total], [order_date], [approved_date], [shipping_date], [arrived_date], [canceled_date], [canceled_reason], [isDeleted]) values
-(1, 1, 1, 1, 1, 1, 1338000, '2024-09-01 01:13:39', '2024-09-01 13:13:39', '2024-09-02 12:13:39', '2024-09-04 01:13:39', '', '', 1),
-(2, 1, 2, 1, 1, 1, 1098000, '2024-05-26 19:49:27', '2024-05-27 07:49:27', '2024-05-28 05:49:27', '2024-05-30 19:49:27', '', '', 1),
-(3, 2, 3, 2, 2, 1, 2254000, '2024-06-12 12:59:50', '2024-06-13 00:59:50', '2024-06-13 20:59:50', '2024-06-16 12:59:50', '', '', 1),
-(4, 2, 4, 2, 3, 1, 3281000, '2024-02-15 22:38:19', '2024-02-16 10:38:19', '2024-02-17 07:38:19', '2024-02-19 22:38:19', '', '', 1),
-(5, 3, 5, 4, 4, 1, 4941000, '2024-04-22 13:23:05', '2024-04-23 01:23:05', '2024-04-23 23:23:05', '2024-04-26 13:23:05', '', '', 1),
-(6, 3, 1, 4, 4, 1, 354000, '2024-09-29 15:00:37', '2024-09-30 03:00:37', '2024-10-01 02:00:37', '2024-10-02 15:00:37', '', '', 1),
-(7, 4, 2, 6, 5, 1, 603000, '2024-09-29 16:55:47', '2024-09-30 04:55:47', '2024-10-01 03:55:47', '2024-10-03 16:55:47', '', '', 1),
-(8, 4, 3, 6, 5, 1, 1552000, '2024-07-04 19:17:56', '2024-07-05 07:17:56', '2024-07-06 03:17:56', '2024-07-07 19:17:56', '', '', 1),
-(9, 5, 4, 7, 6, 1, 1536000, '2024-04-20 16:21:30', '2024-04-21 04:21:30', '2024-04-22 02:21:30', '2024-04-24 16:21:30', '', '', 1),
-(10, 5, 5, 7, 6, 1, 1203000, '2024-09-10 10:48:34', '2024-09-10 22:48:34', '2024-09-11 21:48:34', '2024-09-13 10:48:34', '', '', 1),
-(11, 6, 1, 8, 7, 1, 1812000, '2024-01-04 04:01:43', '2024-01-04 16:01:43', '2024-01-05 13:01:43', '2024-01-07 04:01:43', '', '', 1),
-(12, 6, 2, 8, 8, 1, 1008000, '2024-02-23 07:38:35', '2024-02-23 19:38:35', '2024-02-24 15:38:35', '2024-02-26 07:38:35', '', '', 1),
-(13, 7, 3, 10, 9, 1, 1416000, '2024-04-29 09:45:22', '2024-04-29 21:45:22', '2024-04-30 17:45:22', '2024-05-03 09:45:22', '', '', 1),
-(14, 7, 4, 10, 9, 1, 3075000, '2024-10-08 01:16:19', '2024-10-08 13:16:19', '2024-10-09 11:16:19', '2024-10-12 01:16:19', '', '', 1),
-(15, 8, 5, 12, 10, 1, 2706000, '2024-07-22 23:18:36', '2024-07-23 11:18:36', '2024-07-24 08:18:36', '2024-07-25 23:18:36', '', '', 1),
-(16, 8, 1, 12, 11, 1, 772000, '2024-08-24 00:05:05', '2024-08-24 12:05:05', '2024-08-25 11:05:05', '2024-08-28 00:05:05', '', '', 1),
-(17, 9, 2, 14, 12, 1, 393000, '2024-09-10 02:39:48', '2024-09-10 14:39:48', '2024-09-11 13:39:48', '2024-09-13 02:39:48', '', '', 1),
-(18, 9, 3, 14, 12, 1, 2380000, '2024-10-23 02:13:17', '2024-10-23 14:13:17', '2024-10-24 13:13:17', '2024-10-26 02:13:17', '', '', 1),
-(19, 10, 4, 16, 13, 1, 1769000, '2024-09-21 09:42:03', '2024-09-21 21:42:03', '2024-09-22 17:42:03', '2024-09-24 09:42:03', '', '', 1),
-(20, 10, 5, 16, 14, 1, 1857000, '2024-09-01 15:52:01', '2024-09-02 03:52:01', '2024-09-03 02:52:01', '2024-09-05 15:52:01', '', '', 1),
-(21, 11, 1, 18, 15, 1, 2693000, '2024-09-18 14:38:18', '2024-09-19 02:38:18', '2024-09-20 01:38:18', '2024-09-21 14:38:18', '', '', 1),
-(22, 11, 2, 18, 15, 1, 5194000, '2024-11-05 07:46:04', '2024-11-05 19:46:04', '2024-11-06 18:46:04', '2024-11-09 07:46:04', '', '', 1),
-(23, 12, 3, 20, 16, 1, 2943000, '2024-03-16 21:30:47', '2024-03-17 09:30:47', '2024-03-18 06:30:47', '2024-03-19 21:30:47', '', '', 1),
-(24, 12, 4, 20, 16, 1, 671000, '2024-04-21 00:21:57', '2024-04-21 12:21:57', '2024-04-22 11:21:57', '2024-04-25 00:21:57', '', '', 1),
-(25, 13, 5, 22, 17, 1, 2174000, '2024-05-27 18:34:04', '2024-05-28 06:34:04', '2024-05-29 03:34:04', '2024-05-31 18:34:04', '', '', 1),
-(26, 13, 1, 22, 17, 1, 2049000, '2024-05-07 04:09:23', '2024-05-07 16:09:23', '2024-05-08 13:09:23', '2024-05-11 04:09:23', '', '', 1),
-(27, 14, 2, 24, 18, 1, 1960000, '2024-09-30 20:12:11', '2024-10-01 08:12:11', '2024-10-02 04:12:11', '2024-10-03 20:12:11', '', '', 1),
-(28, 14, 3, 24, 18, 1, 1568000, '2024-03-18 04:27:09', '2024-03-18 16:27:09', '2024-03-19 13:27:09', '2024-03-21 04:27:09', '', '', 1),
-(29, 15, 4, 26, 19, 1, 3783000, '2024-01-07 08:02:39', '2024-01-07 20:02:39', '2024-01-08 18:02:39', '2024-01-10 08:02:39', '', '', 1),
-(30, 15, 5, 27, 19, 1, 2750000, '2024-07-14 05:40:40', '2024-07-14 17:40:40', '2024-07-15 15:40:40', '2024-07-17 05:40:40', '', '', 1),
-(31, 16, 1, 28, 20, 1, 953000, '2024-05-21 05:07:30', '2024-05-21 17:07:30', '2024-05-22 16:07:30', '2024-05-25 05:07:30', '', '', 1),
-(32, 16, 2, 29, 20, 1, 1491000, '2024-06-09 04:48:31', '2024-06-09 16:48:31', '2024-06-10 14:48:31', '2024-06-12 04:48:31', '', '', 1),
-(33, 17, 3, 30, 21, 1, 2410000, '2024-06-18 11:40:16', '2024-06-18 23:40:16', '2024-06-19 19:40:16', '2024-06-22 11:40:16', '', '', 1),
-(34, 17, 4, 30, 21, 1, 1784000, '2024-09-06 19:15:22', '2024-09-07 07:15:22', '2024-09-08 06:15:22', '2024-09-10 19:15:22', '', '', 1),
-(35, 18, 5, 32, 22, 1, 3182000, '2024-01-24 10:02:34', '2024-01-24 22:02:34', '2024-01-25 21:02:34', '2024-01-28 10:02:34', '', '', 1),
-(36, 18, 1, 32, 22, 1, 7783000, '2024-07-29 18:32:36', '2024-07-30 06:32:36', '2024-07-31 02:32:36', '2024-08-01 18:32:36', '', '', 1),
-(37, 19, 2, 34, 23, 1, 789000, '2024-01-19 07:54:33', '2024-01-19 19:54:33', '2024-01-20 17:54:33', '2024-01-23 07:54:33', '', '', 1),
-(38, 19, 3, 34, 23, 1, 1950000, '2024-03-30 18:27:31', '2024-03-31 06:27:31', '2024-04-01 02:27:31', '2024-04-02 18:27:31', '', '', 1),
-(39, 20, 4, 36, 24, 1, 2509000, '2024-10-02 18:13:13', '2024-10-03 06:13:13', '2024-10-04 05:13:13', '2024-10-06 18:13:13', '', '', 1),
-(40, 20, 5, 36, 25, 1, 2286000, '2024-09-13 21:14:13', '2024-09-14 09:14:13', '2024-09-15 06:14:13', '2024-09-16 21:14:13', '', '', 1),
-(41, 21, 1, 38, 26, 1, 2903000, '2024-08-08 07:06:10', '2024-08-08 19:06:10', '2024-08-09 18:06:10', '2024-08-11 07:06:10', '', '', 1),
-(42, 21, 2, 38, 26, 1, 4828000, '2024-12-29 21:00:49', '2024-12-30 09:00:49', '2024-12-31 05:00:49', '2025-01-01 21:00:49', '', '', 1),
-(43, 22, 3, 39, 27, 1, 997000, '2024-01-20 00:11:19', '2024-01-20 12:11:19', '2024-01-21 10:11:19', '2024-01-23 00:11:19', '', '', 1),
-(44, 22, 4, 39, 27, 1, 2548000, '2024-10-31 23:35:21', '2024-11-01 11:35:21', '2024-11-02 10:35:21', '2024-11-03 23:35:21', '', '', 1),
-(45, 23, 5, 41, 28, 1, 2528000, '2024-04-01 17:38:10', '2024-04-02 05:38:10', '2024-04-03 04:38:10', '2024-04-05 17:38:10', '', '', 1),
-(46, 23, 1, 41, 28, 1, 2035000, '2024-07-15 15:08:06', '2024-07-16 03:08:06', '2024-07-16 23:08:06', '2024-07-19 15:08:06', '', '', 1),
-(47, 24, 2, 43, 29, 1, 5998000, '2024-06-14 16:29:23', '2024-06-15 04:29:23', '2024-06-16 00:29:23', '2024-06-18 16:29:23', '', '', 1),
-(48, 24, 3, 43, 29, 1, 3895000, '2024-11-18 18:27:10', '2024-11-19 06:27:10', '2024-11-20 05:27:10', '2024-11-21 18:27:10', '', '', 1),
-(49, 25, 4, 45, 30, 1, 817000, '2024-12-26 10:48:16', '2024-12-26 22:48:16', '2024-12-27 18:48:16', '2024-12-30 10:48:16', '', '', 1),
-(50, 25, 5, 45, 30, 1, 3112000, '2024-06-29 10:47:26', '2024-06-29 22:47:26', '2024-06-30 19:47:26', '2024-07-03 10:47:26', '', '', 1);
+(1, 1, 1, 1, 5, 1338000, '2024-09-01 01:13:39', '2024-09-01 13:13:39', '2024-09-02 12:13:39', '2024-09-04 01:13:39', null, null, 1),
+(1, 2, 1, 1, 5, 1098000, '2024-05-26 19:49:27', '2024-05-27 07:49:27', '2024-05-28 05:49:27', '2024-05-30 19:49:27', null, null, 1),
+(2, 3, 2, 2, 5, 2254000, '2024-06-12 12:59:50', '2024-06-13 00:59:50', '2024-06-13 20:59:50', '2024-06-16 12:59:50', null, null, 1),
+(2, 4, 2, 3, 5, 3281000, '2024-02-15 22:38:19', '2024-02-16 10:38:19', '2024-02-17 07:38:19', '2024-02-19 22:38:19', null, null, 1),
+(3, 5, 4, 4, 5, 4941000, '2024-04-22 13:23:05', '2024-04-23 01:23:05', '2024-04-23 23:23:05', '2024-04-26 13:23:05', null, null, 1),
+(3, 1, 4, 4, 5, 354000, '2024-09-29 15:00:37', '2024-09-30 03:00:37', '2024-10-01 02:00:37', '2024-10-02 15:00:37', null, null, 1),
+(4, 2, 6, 5, 5, 603000, '2024-09-29 16:55:47', '2024-09-30 04:55:47', '2024-10-01 03:55:47', '2024-10-03 16:55:47', null, null, 1),
+(4, 3, 6, 5, 5, 1552000, '2024-07-04 19:17:56', '2024-07-05 07:17:56', '2024-07-06 03:17:56', '2024-07-07 19:17:56', null, null, 1),
+(5, 4, 7, 6, 5, 1536000, '2024-04-20 16:21:30', '2024-04-21 04:21:30', '2024-04-22 02:21:30', '2024-04-24 16:21:30', null, null, 1),
+(5, 5, 7, 6, 5, 1203000, '2024-09-10 10:48:34', '2024-09-10 22:48:34', '2024-09-11 21:48:34', '2024-09-13 10:48:34', null, null, 1),
+(6, 1, 8, 7, 5, 1812000, '2024-01-04 04:01:43', '2024-01-04 16:01:43', '2024-01-05 13:01:43', '2024-01-07 04:01:43', null, null, 1),
+(6, 2, 8, 8, 5, 1008000, '2024-02-23 07:38:35', '2024-02-23 19:38:35', '2024-02-24 15:38:35', '2024-02-26 07:38:35', null, null, 1),
+(7, 3, 10, 9, 5, 1416000, '2024-04-29 09:45:22', '2024-04-29 21:45:22', '2024-04-30 17:45:22', '2024-05-03 09:45:22', null, null, 1),
+(7, 4, 10, 9, 5, 3075000, '2024-10-08 01:16:19', '2024-10-08 13:16:19', '2024-10-09 11:16:19', '2024-10-12 01:16:19', null, null, 1),
+(8, 5, 12, 10, 5, 2706000, '2024-07-22 23:18:36', '2024-07-23 11:18:36', '2024-07-24 08:18:36', '2024-07-25 23:18:36', null, null, 1),
+(8, 1, 12, 11, 5, 772000, '2024-08-24 00:05:05', '2024-08-24 12:05:05', '2024-08-25 11:05:05', '2024-08-28 00:05:05', null, null, 1),
+(9, 2, 14, 12, 5, 393000, '2024-09-10 02:39:48', '2024-09-10 14:39:48', '2024-09-11 13:39:48', '2024-09-13 02:39:48', null, null, 1),
+(9, 3, 14, 12, 5, 2380000, '2024-10-23 02:13:17', '2024-10-23 14:13:17', '2024-10-24 13:13:17', '2024-10-26 02:13:17', null, null, 1),
+(10, 4, 16, 13, 5, 1769000, '2024-09-21 09:42:03', '2024-09-21 21:42:03', '2024-09-22 17:42:03', '2024-09-24 09:42:03', null, null, 1),
+(10, 5, 16, 14, 5, 1857000, '2024-09-01 15:52:01', '2024-09-02 03:52:01', '2024-09-03 02:52:01', '2024-09-05 15:52:01', null, null, 1),
+(11, 1, 18, 15, 5, 2693000, '2024-09-18 14:38:18', '2024-09-19 02:38:18', '2024-09-20 01:38:18', '2024-09-21 14:38:18', null, null, 1),
+(11, 2, 18, 15, 5, 5194000, '2024-11-05 07:46:04', '2024-11-05 19:46:04', '2024-11-06 18:46:04', '2024-11-09 07:46:04', null, null, 1),
+(12, 3, 20, 16, 5, 2943000, '2024-03-16 21:30:47', '2024-03-17 09:30:47', '2024-03-18 06:30:47', '2024-03-19 21:30:47', null, null, 1),
+(12, 4, 20, 16, 5, 671000, '2024-04-21 00:21:57', '2024-04-21 12:21:57', '2024-04-22 11:21:57', '2024-04-25 00:21:57', null, null, 1),
+(13, 5, 22, 17, 5, 2174000, '2024-05-27 18:34:04', '2024-05-28 06:34:04', '2024-05-29 03:34:04', '2024-05-31 18:34:04', null, null, 1),
+(13, 1, 22, 17, 5, 2049000, '2024-05-07 04:09:23', '2024-05-07 16:09:23', '2024-05-08 13:09:23', '2024-05-11 04:09:23', null, null, 1),
+(14, 2, 24, 18, 5, 1960000, '2024-09-30 20:12:11', '2024-10-01 08:12:11', '2024-10-02 04:12:11', '2024-10-03 20:12:11', null, null, 1),
+(14, 3, 24, 18, 5, 1568000, '2024-03-18 04:27:09', '2024-03-18 16:27:09', '2024-03-19 13:27:09', '2024-03-21 04:27:09', null, null, 1),
+(15, 4, 26, 19, 5, 3783000, '2024-01-07 08:02:39', '2024-01-07 20:02:39', '2024-01-08 18:02:39', '2024-01-10 08:02:39', null, null, 1),
+(15, 5, 27, 19, 5, 2750000, '2024-07-14 05:40:40', '2024-07-14 17:40:40', '2024-07-15 15:40:40', '2024-07-17 05:40:40', null, null, 1),
+(16, 1, 28, 20, 5, 953000, '2024-05-21 05:07:30', '2024-05-21 17:07:30', '2024-05-22 16:07:30', '2024-05-25 05:07:30', null, null, 1),
+(16, 2, 29, 20, 5, 1491000, '2024-06-09 04:48:31', '2024-06-09 16:48:31', '2024-06-10 14:48:31', '2024-06-12 04:48:31', null, null, 1),
+(17, 3, 30, 21, 5, 2410000, '2024-06-18 11:40:16', '2024-06-18 23:40:16', '2024-06-19 19:40:16', '2024-06-22 11:40:16', null, null, 1),
+(17, 4, 30, 21, 5, 1784000, '2024-09-06 19:15:22', '2024-09-07 07:15:22', '2024-09-08 06:15:22', '2024-09-10 19:15:22', null, null, 1),
+(18, 5, 32, 22, 5, 3182000, '2024-01-24 10:02:34', '2024-01-24 22:02:34', '2024-01-25 21:02:34', '2024-01-28 10:02:34', null, null, 1),
+(18, 1, 32, 22, 5, 7783000, '2024-07-29 18:32:36', '2024-07-30 06:32:36', '2024-07-31 02:32:36', '2024-08-01 18:32:36', null, null, 1),
+(19, 2, 34, 23, 5, 789000, '2024-01-19 07:54:33', '2024-01-19 19:54:33', '2024-01-20 17:54:33', '2024-01-23 07:54:33', null, null, 1),
+(19, 3, 34, 23, 5, 1950000, '2024-03-30 18:27:31', '2024-03-31 06:27:31', '2024-04-01 02:27:31', '2024-04-02 18:27:31', null, null, 1),
+(20, 4, 36, 24, 5, 2509000, '2024-10-02 18:13:13', '2024-10-03 06:13:13', '2024-10-04 05:13:13', '2024-10-06 18:13:13', null, null, 1),
+(20, 5, 36, 25, 5, 2286000, '2024-09-13 21:14:13', '2024-09-14 09:14:13', '2024-09-15 06:14:13', '2024-09-16 21:14:13', null, null, 1),
+(21, 1, 38, 26, 5, 2903000, '2024-08-08 07:06:10', '2024-08-08 19:06:10', '2024-08-09 18:06:10', '2024-08-11 07:06:10', null, null, 1),
+(21, 2, 38, 26, 5, 4828000, '2024-12-29 21:00:49', '2024-12-30 09:00:49', '2024-12-31 05:00:49', '2025-01-01 21:00:49', null, null, 1),
+(22, 3, 39, 27, 5, 997000, '2024-01-20 00:11:19', '2024-01-20 12:11:19', '2024-01-21 10:11:19', '2024-01-23 00:11:19', null, null, 1),
+(22, 4, 39, 27, 5, 2548000, '2024-10-31 23:35:21', '2024-11-01 11:35:21', '2024-11-02 10:35:21', '2024-11-03 23:35:21', null, null, 1),
+(23, 5, 41, 28, 5, 2528000, '2024-04-01 17:38:10', '2024-04-02 05:38:10', '2024-04-03 04:38:10', '2024-04-05 17:38:10', null, null, 1),
+(23, 1, 41, 28, 5, 2035000, '2024-07-15 15:08:06', '2024-07-16 03:08:06', '2024-07-16 23:08:06', '2024-07-19 15:08:06', null, null, 1),
+(24, 2, 43, 29, 5, 5998000, '2024-06-14 16:29:23', '2024-06-15 04:29:23', '2024-06-16 00:29:23', '2024-06-18 16:29:23', null, null, 1),
+(24, 3, 43, 29, 5, 3895000, '2024-11-18 18:27:10', '2024-11-19 06:27:10', '2024-11-20 05:27:10', '2024-11-21 18:27:10', null, null, 1),
+(25, 4, 45, 30, 5, 817000, '2024-12-26 10:48:16', '2024-12-26 22:48:16', '2024-12-27 18:48:16', '2024-12-30 10:48:16', null, null, 1),
+(25, 5, 45, 30, 5, 3112000, '2024-06-29 10:47:26', '2024-06-29 22:47:26', '2024-06-30 19:47:26', '2024-07-03 10:47:26', null, null, 1);
 go
 -- [order_line]
 insert into [order_line]([product_item_id], [order_id], [qty], [price], [note], [isDeleted]) values
@@ -1533,88 +1602,23 @@ go
 -- 1 user has 2 shop order --> each order has 3-5 products
 -- about date fields in shop_order just fill only order_date (fill random date)
 --============================================================================================================== 1ng duy nhat (Hieu)
--- [payment_method]
-insert into [payment_method]([name], [isDeleted]) values
-('COD (Cash on delivery)', 1),
-('Credit Card', 1);
-go
--- [user_payment_method]
--- Credit Card Payment | Even User
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(1, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(2, 2, 'BIDV', 5817643793, '11/27', 1),
-(2, 2, 'Vietcombank', 0494638843, '03/25', 0);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(3, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(4, 2, 'TPBank', 0205887543, '04/25', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(5, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(6, 2, 'BIDV', 5817448593, '07/27', 0),
-(6, 2, 'Sacombank', 0602009655, '02/26', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(7, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(8, 2, 'MB Bank', 0050885746, '01/27', 1),
-(8, 2, 'Vietcombank', 0493366748, '09/25', 0);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(9, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(10, 2, 'VIB', 0258855776, '07/25', 0),
-(10, 2, 'VPBank', 8788576499, '08/27', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(11, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(12, 2, 'VIB', 0258574677, '09/26', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(13, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(14, 2, 'Agribank', 3409948574, '04/26', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(15, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(16, 2, 'Vietcombank', 0495674883, '12/27', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(17, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(18, 2, 'VIB', 0250098667, '09/26', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(19, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(20, 2, 'TPBank', 0202274463, '03/26', 1),
-(20, 2, 'Sacombank', 0602444465, '03/27', 0);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(21, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(22, 2, 'VIB', 0251112827, '01/26', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(23, 1, 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [provider], [account_number], [expiry_date], [is_default]) values
-(24, 2, 'BIDV', 5812323456, '09/25', 1);
-insert into [user_payment_method]([user_id], [payment_type_id], [is_default]) values
-(25, 1, 1);
-go
--- 2 main payment method: COD (cash on delivery), card --> NOTE: payment into must fit with order
---============================================================================================================== 1ng duy nhat (Hieu)
 insert into [user_review_status]([status]) values --pending, accepted, rejected
 ('accepted'),
 ('pending'),
 ('rejected');
 go
 -- [user_review]
-insert into [user_review]([user_id], [ordered_product_id], [rating], [feedback], [status_id], [comment_date] , [approved_date], [isHide], [isDeleted]) values
+insert into [user_review]([user_id], [order_product_id], [rating], [feedback], [status_id], [comment_date] , [approved_date], [isHide], [isDeleted]) values
 (01, 01, 5, 'This taste is like the heaven in my mouth. I love it. I will order another in future.', 1, '2024-09-04 02:13:39', '2024-09-04 04:13:39' , -1, 1),
 (01, 02, 4, 'The flavor is melting on my tongue.', 1, '2024-09-04 02:15:39', '2024-09-04 04:13:39', -1, 1),
 (01, 03, 3, 'The flavor is normal but I still like it.' , 1, '2024-09-04 02:17:39', '2024-09-04 04:13:39', -1, 1),
 (02, 07, 2, 'Not like my imagine.' , 1, '2024-06-16 13:59:50', '2024-06-16 16:59:50', -1, 1),
 (02, 08, 5, 'This is very good!' , 1, '2024-06-16 14:59:50', '2024-06-16 16:59:50', -1, 1),
 (02, 09, 5, 'How they can make it! I love it!' , 1, '2024-06-16 15:59:50', '2024-06-16 16:59:50', -1, 1),
-(03, 13, 5, 'Amazing taste I never seen.' , 1, '2024-04-26 16:23:05', '2024-04-26 18:23:05' -1, 1),
-(03, 14, 4, 'That OK!' , 1, '2024-04-26 17:23:05', '2024-04-26 18:23:05' -1, 1),
-(03, 15, 5, 'This thing is extremely good!' , 1, '2024-04-26 14:23:05', '2024-04-26 18:23:05' -1, 1),
-(04, 19, 5, 'Sweety!' , 1, '2024-10-03 17:55:47', '2024-10-03 20:55:47', -1, 1),
+(03, 13, 5, 'Amazing taste I never seen.', 1, '2024-04-26 16:23:05', '2024-04-26 18:23:05', -1, 1),
+(03, 14, 4, 'That OK!', 1, '2024-04-26 17:23:05', '2024-04-26 18:23:05', -1, 1),
+(03, 15, 5, 'This thing is extremely good!', 1, '2024-04-26 14:23:05', '2024-04-26 18:23:05', -1, 1),
+(04, 19, 5, 'Sweety!', 1, '2024-10-03 17:55:47', '2024-10-03 20:55:47', -1, 1),
 (04, 20, 2, 'More sweet than I needed!' , 1, '2024-10-03 18:55:47', '2024-10-03 20:55:47', -1, 1),
 (04, 21, 4, 'I love sweet! ' , 1, '2024-10-03 19:55:47', '2024-10-03 20:55:47', -1, 1),
 (05, 25, 5, 'The cake was absolutely amazing! It tasted better than any other cake I''ve had.' , 1, '2024-04-24 16:21:30', '2024-04-24 19:21:30', -1, 1),
@@ -1682,8 +1686,8 @@ go
 insert into [admin]([fullname], [username], [email], [password], [avatar_img], [isDeleted] ) values
 ('Nguyen Cong Hieu','nchieu', 'hieunc@gmail.com', 'ee608a70e3a536f1af3726bbd8bd0b55', 'male.jpg', 1), --nchieu
 ('Tran Gia Bao','tgbao', 'baotg@gmail.com', 'e405faf13f35eb5807579887f2e44220', 'male.jpg', 1), --tgbao
-('Bach Cong Chinh','bcchinh' 'chinhbc@gmail.com', 'b985d6107f576d8fce6bfc9c3ac7d57a', 'male.jpg', 1), --bcchinh
-('Mai Phuc Thanh','mpthanh' 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1); --mpthanh;
+('Bach Cong Chinh','bcchinh', 'chinhbc@gmail.com', 'b985d6107f576d8fce6bfc9c3ac7d57a', 'male.jpg', 1), --bcchinh
+('Mai Phuc Thanh','mpthanh', 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1); --mpthanh;
 go
 -- banners have 5-7 image
 -- admin includes 4 of us
