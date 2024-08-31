@@ -26,7 +26,7 @@ INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image]
 ('Tram', 'Vo', 'tramvoo1999', 'Female', '1992-08-27', 'female.jpg', 'tramvoo1999@gmail.com', '0954653090', '4022be356ea2fce7806392244a7512c2', 1, '2023-08-10 22:41:14'),
 ('Thuan', 'Nguyen', 'truongthuan78', 'Male', '2004-10-09', 'male.jpg', 'truongthuan78@gmail.com', '0767856588', 'f448fe4f8c3078b023fd85913d3e6d5f', 1, '2023-09-29 12:58:46'),
 ('Wei', 'Ching', 'weichinhgg', 'Male', '2004-05-18', 'male.jpg', 'chingweiiii@gmail.com', '0902345678', 'ab5fdb10433f4b54d255cc6fce12efb5', 1, '2023-10-11 17:25:33'),
-('Bao', 'Nguyen', 'baonguyen', 'Male', '1992-12-04', 'male.jpg', 'baonguyen92@gmail.com', '0862345678', '0edd0c86edd86a4264c2190a5375c862', 1, '2024-02-01 09:45:00') /*baonguyen123*/
+('Bao', 'Nguyen', 'baonguyen', 'Male', '1992-12-04', 'male.jpg', 'baonguyen92@gmail.com', '0862345678', '0edd0c86edd86a4264c2190a5375c862', 1, '2024-02-01 09:45:00'); /*baonguyen123*/
 go
 
 -- [city]
@@ -91,7 +91,7 @@ insert into [city]([name]) values
 ('Tỉnh Hậu Giang'),
 ('Tỉnh Sóc Trăng'),
 ('Tỉnh Bạc Liêu'),
-('Tỉnh Cà Mau')
+('Tỉnh Cà Mau');
 go
 
 -- [address]
@@ -141,7 +141,7 @@ INSERT INTO [address](recieved_name, detail_address, district, city_id, isDelete
 ('Wei Ching', '65P Quang Trung', 'huyện Diên Khánh', 36, 1),
 ('Wei Ching', '80T Trần Phú', 'huyện Vạn Ninh', 36, 1),
 ('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
-('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1)
+('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1);
 go
 
 -- [user_address]
@@ -191,12 +191,12 @@ INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
 (24, 43, 1, 1),
 (24, 44, 0, 1),
 (25, 45, 1, 1),
-(25, 46, 0, 1)
+(25, 46, 0, 1);
 go
 
 -- MK: TÊN + 123
 -- MK CUỐI: fullname + 123 (25)
---============================================================================================================== 1ng (Bao)
+-- ============================================================================================================== 1ng (Bao)
 -- [product_category]
 insert into [product_category]([category_name], [desciption], [isDeleted]) values
 ('Cakes', 'A custom-designed cake that creatively reflects a specific theme or concept, making it the perfect centerpiece for themed events and celebrations.', 1),
@@ -205,134 +205,134 @@ insert into [product_category]([category_name], [desciption], [isDeleted]) value
 go
 -- [sub_Category]
 insert into [sub_Category]([cateID], [sub_cateName], [isDeleted]) values
---Cakes
+-- Cakes
 (1, 'Flavour Cakes', 1),
 (1, 'Theme Cakes', 1),
 (1, 'Desserts', 1),
 (1, 'Anniversary', 1),
---Ingredients
+-- Ingredients
 (2, 'Traditional Ingredients', 1),
 (2, 'Korea/Japan Ingredients', 1),
 (2, 'Others', 1),
---Tools
+-- Tools
 (3, 'Cake Tools', 1),
 (3, 'Others', 1);
 go
 -- [sub_sub_Category]
 insert into [sub_sub_Category]([sub_CateID], [CateID], [sub_sub_CateName], [isDeleted]) values
---Flavour Cakes
+-- Flavour Cakes
 (1, 1, 'Chocolate Cakes', 1),
 (1, 1, 'Vanilla Cakes', 1),
 (1, 1, 'Pineapple Cakes', 1),
 (1, 1, 'Fruit Cakes', 1),
---Theme Cakes
+-- Theme Cakes
 (2, 1, 'Cartoon Cakes', 1),
 (2, 1, 'Cakes For Boys', 1),
 (2, 1, 'Cakes For Girls', 1),
---Desserts
+-- Desserts
 (3, 1, 'Jar Cakes', 1),
 (3, 1, 'Cheese Cakes', 1),
 (3, 1, 'Cookies', 1),
---Anniversary
+-- Anniversary
 (4, 1, 'Year Anniversary Cakes', 1),
 (4, 1, 'Anniversary Cakes For Parents', 1),
 (4, 1, 'Anniversary Photo Cakes', 1),
---Traditional Ingredients
+-- Traditional Ingredients
 (5, 2, 'Flours', 1),
 (5, 2, 'Others', 1),
---Korea/Japan Ingredients
+-- Korea/Japan Ingredients
 (6, 2, 'Flours', 1),
 (6, 2, 'Others', 1),
---Others
+-- Others
 (7, 2, 'Jam, honey', 1),
 (7, 2, 'Cheese', 1),
---Cake Tools
+-- Cake Tools
 (8, 3, 'Basic Tools', 1),
 (8, 3, 'Other Tools', 1),
---Others
+-- Others
 (9, 3, 'Boxs', 1),
 (9, 3, 'Bags', 1);
 go
 -- 3 main category (CAKE, INGREDIENTS, materials), each main category seperate relevant sub category, with subcategory divide out more detail category
---============================================================================================================== 1ng duy nhat (Thanh)
+-- ============================================================================================================== 1ng duy nhat (Thanh)
 -- [product]
 insert into [product]([sub_sub_CategoryID], [name], [description], [product_image], [isDeleted]) values
---Chocolate Cakes
+-- Chocolate Cakes
 (1, 'Classic Chocolate Truffle Cake', 'Satiate your taste a buds right away! Enrich with chocolate sponge & truffle cream. Topped with white chocolate garnish and cherry, it is sure to leave you omnomnom!', 'images/choco_truffle', 1),
 (1, 'Chocolate Vanilla Half & Half Cake', 'The perfect blend of tempting chocolate and irresistible vanilla flavours topped up with a cherry and some chocolate shavings.', 'images/hvanilla_hchoco', 1),
 (1, 'KitKat Chocolate Truffle Cake', 'Rich in melt-in-mouth chocolates, layered with Inside- Chocolate Truffle With Chopped Kitkat and chunks which make this cake an irresistible one.', 'images/kitkat_truffle', 1),
 (1, 'Chocolate Sensation Drip Cake', 'Experience a bite of our stunning Chocolate Cake, where velvety layers meet a cascade of rich chocolate ganache. Adorned with elegant swirls and delicate chocolate chips, it"s a feast for every palate.', 'images/chocolate_drip', 1),
 (1, 'Chocolate Ferrero Rocher Almonds Cake', 'A soul pleasing treat to celebrate your occasion! Enriched and coated with exotic chocolates, this cake is embellished with crunchy Ferrero Rochers, hazelnut flavour, and chocolate syrup.', 'images/choco_ferrero_almond', 1),
---Vanilla Cakes
+-- Vanilla Cakes
 (2, 'Classic Vanilla Caramel Cake', 'Round shaped vanilla cake with whipped cream all over and icing between layers of soft and sweet sponge. It is embellished with streaks and caramel glaze on top, giving it an unmatched sweetness coupled with whipped cream and vanilla essence.', 'images/vani_caramel', 1),
 (2, 'Fruits & Sprinkles Vanilla Cake', 'Fruitful vanilla is your healthy snack for the day! Baked with layers of sponge cake, Inside- Custard Cream With Chopped Fruits and buttercream frosting, each bite is blissful and heavenly!', 'images/fruit_sprinkle_vani', 1),
 (2, 'Roses Topped Vanilla Cream Cake', 'Indulge in the pure joy of our creamy vanilla dream, a perfect circle of delight, blanketed in a fluffy cloud of whipped perfection. The cake comes topped with real flowers for a glamorous appeal.', 'images/rose_top_vani', 1),
 (2, 'Fresh Fruits & Roasted Almonds Cake', 'With farm-fresh fruits inside the cream layers and topped over a vanilla cake with almond shavings, your tastebuds will do the sweet-tango dance.', 'images/fruit_roast-almond', 1),
 (2, 'Vanilla Cream Cake', 'Our vanilla cake comes with whipped cream frosting, vibrant sprinkles, & irresistible chocolate shards on top.', 'images/vani_cream', 1),
---Pineapple Cakes
+-- Pineapple Cakes
 (3, 'Whipped Cream Pineapple Cake', 'A pineapple flavoured cake with whipped cream, pineapple jelly, white chocolate shards adorned with a cherry on top.', 'images/whip-cream_pine', 1),
 (3, 'Tropical Pineapple Cake', 'Fresh pineapple cake with a tender base adorned with juicy fruit slices, delicate piping, and a chic chocolate drizzle for a tropical treat.', 'images/tropical_pine', 1),
 (3, 'Floral Pineapple Cream Cake', 'A fresh & soothing pineapple cake, full of fresh, juicy chunks of your favourite fruit along with a smooth creamy layer,', 'images/floral_pine', 1),
 (3, 'Blue Cream Pineapple Cake', 'With fluffy layers of cake & charming white flowers made of whipped cream along with chunks of pineapple, this cake is a delight.', 'images/blue-cream_pine', 1),
 (3, 'Zesty Pineapple Cake', 'Zesty pineapple cake with a blush of pink, a flavor explosion that will have you craving for more. The cake comes topped with real flowers for a glamorous appeal.', 'images/zesty_pine', 1),
---Fruit Cakes
+-- Fruit Cakes
 (4, 'Fresh Fruits Topped Red Velvet Cake', 'Fruity delicious! The sinful velvet cake loaded with Inside- Custard Cream With Chopped Fruits like kiwis, cherries, apples, dragon fruits and black grapes. Your healthy treat is on its way!', 'images/fruit_top-red-velvet', 1),
 (4, 'Fruit Medley Cake', 'Get lost in a burst of freshness with our summer-perfect Fruit Cake, adorned with an array of luscious, colourful fruits atop moist, tender layers. An irresistible treat for every celebration!', 'images/fruit_medly', 1),
 (4, 'Heart Shape Fruits & Nuts Cake', 'Garnished with fresh assortment of tropical fruits, this vanilla cake is coated with handfolded cream & crushed almonds.', 'images/heart_fruit_nuts', 1),
 (4, 'Fruit Pastries', 'For the times when your celebration needs a refreshing kick-start, this fruit pastries is here to load your occasion with bliss. The freshly baked pastries topped with juicy fruits like pineapple, cherries, kiwi, orange and grapes would give a healthy twist to your celebrations.', 'images/fruit_pastries', 1),
 (4, 'Fresh Fruits Topped Almonds Cake', 'Made of three layers of vanilla cake base, topped with fresh tropical fruits, whipped white cream & roasted crushed almonds.', 'images/fresh-fruit_top-almond', 1),
---Cartoon Cakes
+-- Cartoon Cakes
 (5, 'Pretty Peppa Pig Cake', 'Jump into muddy puddles with our delightful baby blue Peppa Pig Cake! Perfect for Peppa fans, this charming cake brings joy and excitement to every celebration. A treat as fun and sweet as Peppa herself!', 'images/peppa', 1),
 (5, 'Doraemon Cream Cake', 'Doraemon has been the most loved animation character for each kid for quite a while now. So think about their reaction when they see their most loved animation character on their birthday cake. They will start jumping with excitement. So just order this delicious cake and surprise them on their special day.', 'images/doraemon', 1),
 (5, 'Rawr Dino Theme Cake', 'Rawr Goes the Dinosaur! Make birthdays roar with this extra adorable Jungle Cake. Pink, delightful and full of adventure, topped with some green grass and a cute dinosaur for themed party fun!', 'images/dino', 1),
 (5, 'Charming Brown Bear Theme Cake', 'Adorable bear-faced cake will transform any celebration into a magical wonderland! Delight your loved ones with this heartwarming masterpiece that symbolizes love, warmth, and affection.', 'images/brown_bear', 1),
 (5, 'Swirly Minnie Mouse Cake', 'Sprinkle some magic with this Minnie Mouse Cake! Adorned with pink cream swirls, dripping cream, and silver sprinkles, it"s the perfect centrepiece for your little one"s birthday celebration!', 'images/minie_mouse', 1),
---Cakes For Boys
+-- Cakes For Boys
 (6, 'Jungle Joy Lion Cake', 'Roar into fun with our jungle-themed cake! Adorned with a cute lion figurine, lush leaves, and vibrant decorations, it"s a visual and flavorful delight in multiple delicious flavors!', 'images/jungle_lion', 1),
 (6, 'Jungle Safari Fondant Cake', 'Step into a whimsical world with this jungle theme fondant cake! This delightful creation features a delectable cake base, customizable to your preferred flavor.', 'images/jungle_safari', 1),
 (6, 'Cricket Field Fondant Cake', 'Score big with this cricket-themed fondant cake, featuring a vibrant green field cake base and a meticulously crafted cricket ball.', 'images/cricket_field', 1),
 (6, 'Quirky Gadget Cream Cake', 'Introducing this gorgeous and delicious theme Cake, an enchanting creation that tantalizes both the eyes and the taste buds.', 'images/gadget', 1),
 (6, 'Rocket Fondant Cake', 'Is your child curious about rocket science? If yes, then this incredible cake would be the best birthday gift for him. ', 'images/rocket', 1),
---Cakes For Girls
+-- Cakes For Girls
 (7, 'Beautiful Butterfly Theme Cake', 'Mutli Flavour Cake in Cream with sugar sheet butterfly artwork', 'images/butterfly', 1),
 (7, 'Happy Girl Fondant n Cream Half Cake', 'Indulge in pure delight with this enchanting half cake creation - a masterpiece made like a cutie cartoon character.', 'images/happy_girl', 1),
 (7, 'Rose N Butterfly Designer Cake', 'Behold this stunning cake, available in various flavours and adorned with delicate cream roses and edible butterfly artwork.', 'images/rose_butterfly', 1),
 (7, 'Adorable Pink Its A Girl Fondant Cake', 'Celebrate the arrival of your baby girl and welcome her to your home with this saccharine delight.', 'images/pink_fondant', 1),
 (7, 'The Princess Crown Cake', 'The perfect gift choice, this confectionary delight promises to mesmerize and delight the recipient, creating unforgettable memories.', 'images/crown', 1),
---Jar Cakes
+-- Jar Cakes
 (8, 'Red Velvet Single Jar Cake', 'Nothing matches to the goodness of a delectable red velvet jar cake and when it comes as a jar cake, it is sure to spread happiness and other good feelings to your loved ones. ', 'images/red-velvet_jar', 1),
 (8, 'Butterscotch Single Jar Cake', 'Crunchy butterscotch and smooth, creamy butterscotch flavoured bread confined into a cute little glass jar - This jar cake is a perfect charmer for a sweet luxury.', 'images/butterscotch_jar', 1),
 (8, 'Banoffee Jar Cake Set', 'Get your hands on this scrumptious jar cake that comes in the flavor of your favorite banoffee pie.', 'images/banoffee_jar', 1),
 (8, 'Oreo Single Jar Cake', 'Who doesn"t Love Oreo cookies? Who doesn"t Love Cake? So, with our "The Oreo Cutiepie", oreo jar cake, you can meet both the loves at the same time in the most lip-smacking way.', 'images/oreo_jar', 1),
 (8, 'Blueberry Single Jar Cake', 'Our "Cute Blueberry Delight" is nothing less than a heaven of desserts.', 'images/blueberry_jar', 1),
---Cheese Cakes
+-- Cheese Cakes
 (9, 'Classic Blueberry Cheesecake', 'Indulge in a velvety smooth cheesecake topped with a luscious, glossy blueberry glaze, its vibrant hue hinting at the rich and tangy flavor.', 'images/blueberry_cheese', 1),
 (9, 'Lotus Biscoff Baked Cheesecake', 'Gourmet Lotus Biscoff Baked Cheesecake with a base of crumbly crust topped with velvety cheese cream, covered in rich Biscoff spread, and garnished with a signature Lotus biscuit.', 'images/lotus_cheese', 1),
 (9, 'Crunch Topped Cheesecake Pastry', 'Dial up the fun filled celebrations with this dreamy and crumbly delicious sweet cheesecake today, add the mystique of enchantment in an instant!', 'images/cheese_pastry', 1),
 (9, 'Candied Caramel Mousse', 'Surround and satisfy yourself with deliciousness in this decadent caramel cheese mousse.', 'images/candy_mousse', 1),
 (9, 'Blueberry Cheese Pastry', 'Cheese has found a quite popular place in the dessert menu of many people. To all the cheese lovers out there! We bring you a mouthwatering flavour of the cheese.', 'images/blueberry_cheese_pastry', 1),
---Cookies
+-- Cookies
 (10, 'Wholesome Corn Cookies', 'Favorite among all agar group Corn cookies are bliss to your tastebuds.', 'images/wholesome_corn', 1),
 (10, 'Handmade Almond Cookies', 'Who doesn"t love crunchy and delicious cookies? The distinctive, delicious and uncommon taste of almond cookies will quickly your taste buds. ', 'images/handmade_almond', 1),
 (10, 'Coconut Cookies', 'If coconut is on your baking list then you can not miss these freshly baked coconut cookies.', 'images/coconut_cookie', 1),
 (10, 'Choco Chip Cookies', 'A cookie made in heaven. If you are craving for something chocolaty then these melt-in-mouth cookies are your perfect pick.', 'images/chocochip', 1),
 (10, 'Multi Grain Cookies', 'Let"s go crackers for these multi-grain cookies! Packed with the goodness of assorted seeds and nuts, these crunchy treats are perfect for a wholesome snack. Enjoy the healthy, nutty crunch!', 'images/multi_grain', 1),
---Year Anniversary Cakes
+-- Year Anniversary Cakes
 (11, 'Number One Cream Cake', 'From your little one"s 1st birthday to 1st year of togetherness, every special day of your and your loved one"s life will be made memorable as you spread your greetings over his confetti cake.', 'images/number1_cream', 1),
 (11, 'Red Velvet Pinata Cake', 'This Red Velvet Pinata Cake is a delightful masterpiece adorned with charming red & white hearts on top.', 'images/red-velvet_pinata', 1),
 (11, 'Square Shaped Anniversary Cake', 'The successful first year of togetherness - This day is very important in every married couple"s life, this day is the day when they got lucky and got married to the person who was going to be by their side for the rest of their life.', 'images/number1_square', 1),
 (11, 'Round-Shaped 25th Anniversary Poster Cake', 'You both have sailed through many ups and downs of life together, and it"s been twenty-five years now.', 'images/25th_poster', 1),
 (11, 'Yummy Square Shaped Twenty Fifth Anniversary Cake', 'Celebrate the twenty five years of togetherness with this heavenly delicious photo cake.', 'images/25th_square', 1),
---Anniversary Cakes For Parents
+-- Anniversary Cakes For Parents
 (12, 'Square Poster Mom & Dad Anniversary Cake', 'Give your mom and dad a pleasant surprise by sending our freshly baked cake on their anniversary.', 'images/parent_poster', 1),
 (12, 'Wrapped Gift Fondant Cake', 'This amazing cake is dedicated to the lovebirds who are celebrating their happy anniversary. ', 'images/wrap_gift', 1),
---Anniversary Photo Cakes
+-- Anniversary Photo Cakes
 (13, 'Round Red Velvet Photo Cake', 'A classic red velvet flavoured cake with a dash of personalization is the perfect combination to surprise your loved ones.', 'images/red-velvet_photo', 1),
 (13, 'Anniversary Photo Cake 1 Round Shape', 'Is your anniversary soon approaching? Then, treat your honey over this delectable photo cake to say cheers to our togetherness.', 'images/1round_photo', 1),
 (13, 'Anniversary Photo Cake 6 Square Shape', 'Present this delightful cake to your significant other and show your love to them and also let them know how lucky you feel to have them in your life.', 'images/6square_photo', 1),
 (13, 'Anniversary Photo Cake 3 Round Shape', 'This photo cake is a true bliss brimming with love. Because some celebrations need to be extra special, just like your anniversary.', 'images/3round_photo', 1),
 (13, 'Anniversary Photo Cake 7 Square Shape', '"We meant to be together." Forever Mine", "You belong to me." Yes, it"s your wedding day, and you are trying to impress your loving husband or wife.', 'images/7square_photo', 1),
---Flours(Traditional Ingredients)
+-- Flours(Traditional Ingredients)
 (14, 'Grand Place Pure Cocoa Powder 50g', 'Cocoa powder is a basic and important ingredient, indispensable in cakes, tiramisu, nama...', 'images/cocoa_powder', 1),
 (14, 'Peppermint Powder 50g', 'The taste and medicinal properties of peppermint powder are used in many areas of life. In cuisine, peppermint powder is used as a flavoring in some baked goods, or used to prepare meats, soups, sauces, salad dressings,...', 'images/mint_powder', 1),
 (14, 'Beetroot powder 10g', 'With its beautiful red color, beetroot powder has long been seen as a natural color therapy for food, not only the beautiful color is true, but also has a delicious taste for the dishes it incorporates.', 'images/beetroot_powder', 1),
@@ -344,7 +344,7 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (15, 'Rovin Hoang Yen Short-Fiber Fishing Vegetables 20g', 'Rovin Hoang Yen Short-Fiber Vegetables 20g is a fiber-rich product produced from golden thread seaweed, helping housewives save time in preparing delicious and beautiful salads and salads.', 'images/rovin_short-fiber', 1),
 (15, 'Japanese Algae Sugar 150g', 'Algae sugar, also known as trehalose, has been popular since 2000, when a Japanese company found a way to produce sugar to improve human health. Many people also consider trehalose as a miraculous alternative sweetener.', 'images/agale_suger', 1),
 (15, 'Dai Long Dolphin Fishing Vegetable Jelly 2.35kg', 'The strong attraction for drinks is thanks to the contribution of dolphin fishing jelly with a funny, fancy shape, and very eye-catching color. Crispy and flexible dolphin jelly delights in harmony with a variety of drinks.', 'images/dolphin_jelly', 1),
---Flours(Korea/Japan Ingredients)
+-- Flours(Korea/Japan Ingredients)
 (16, 'Miwon Crispy Fried Dough 100g', 'Miwon crispy fried dough is a combination of flours and spices to form a multi-purpose fried dough with high nutritional quality, crunchy, soft foam, safe, convenient, vegetarian and salty.', 'images/miwon_crispy', 1),
 (16, 'Miwon Fried Dough 100g', 'Miwon 100g Fried Dough is a very convenient food processing fried dough that assists housewives in saving processing time. The fried dough product from the Miwon brand makes the dish more delicious and delicious.', 'images/miwon_fried-dough', 1),
 (16, 'Korean Fine Chili Powder Hae Cham 100g', 'In order for dishes to have attractive flavors and colors like Korean food, the indispensable spice is paprika. Paprika is the secret to creating an extremely eye-catching color that is not too spicy for many dishes such as rice cakes, kimchi, barbecue, ....', 'images/chili_powder', 1),
@@ -1687,7 +1687,7 @@ insert into [admin]([fullname], [username], [email], [password], [avatar_img], [
 ('Nguyen Cong Hieu','nchieu', 'hieunc@gmail.com', 'ee608a70e3a536f1af3726bbd8bd0b55', 'male.jpg', 1), --nchieu
 ('Tran Gia Bao','tgbao', 'baotg@gmail.com', 'e405faf13f35eb5807579887f2e44220', 'male.jpg', 1), --tgbao
 ('Bach Cong Chinh','bcchinh', 'chinhbc@gmail.com', 'b985d6107f576d8fce6bfc9c3ac7d57a', 'male.jpg', 1), --bcchinh
-('Mai Phuc Thanh','mpthanh', 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1); --mpthanh;
+('Mai Phuc Thanh','mpthanh', 'thanhmp@gmail.com', 'e8dd6c0a56a63469dad05603a24531ee', 'male.jpg', 1); --mpthanh
 go
 -- banners have 5-7 image
 -- admin includes 4 of us
