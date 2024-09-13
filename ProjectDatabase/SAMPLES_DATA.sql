@@ -358,156 +358,71 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (18, 'Fine peanut butter 170g', 'The combination of Fine Peanut Butter with bread is the perfect way to start the day. This excellent breakfast will give you plenty of energy for the day.', 'images/peanut_butter', 1),
 (18, 'Honey 600ml', 'Honey is one of the familiar ingredients in life and is used as a folk remedy or as an ingredient for more attractive and eye-catching dishes.', 'images/honey', 1),
 (18, 'Nutella Nutella Jam 200g', 'Nutella Nutella 200g (also known as Hazelnut Jam) is a fairly old product, on the market since 1964.', 'images/nutella', 1),
-(18, 'Golden farm Raspberry Jam 210g', 'Jam is an indispensable product in modern life, rooted in its delicious taste and convenience. Golden farm Raspberry Jam 210g not only stops at the inherent use of jam, but it also goes beyond that.', 'images/rasberry_jam', 1),
-(18, 'Liquid kiwi jam 120g', 'To add flavor to cakes and drinks, fruit jams are a reasonable choice.', 'images/kiwi_jam', 1),
---Cheese
-(19, 'Korean cheddar cheese powder 50g', 'Korean cheddar cheese powder, a unique and interesting product in cuisine.', 'images/chedda_korea', 1),
-(19, 'Sweet Shake Cheese Powder 50g', 'Cheese powder is made from cheese when it is squeezed out of water and dried.', 'images/shake_cheese_powder', 1),
-(19, 'Mascarpone Cheese Powder 50g', 'Discover the amazing taste of mascarpone cheese powder, a perfect choice for your favorite desserts and dishes!', 'images/mascarpone_cheese', 1),
-(19, 'Mozzarella cheese (100g unit, pack about 200g)', 'Cheese is an important source of calcium in the diet for children and adults. Most cheeses are good for an excellent source of calcium to meet daily calcium needs.', 'images/mozzarella', 1),
---Basic Tools
-(20, '30cm glass turntable', 'When you finish making a gato cake or pastry, you can put the base on it and use decorations to make the cake more beautiful... With a high-quality turntable, it can make it easy for you to place cakes and decorate in the simplest and most convenient way.', 'images/turntable', 1),
-(20, '28cm plastic turntable', 'When you finish making a gato cake or pastry, you can put the base on it and use decorations to make the cake more beautiful... With a high-quality turntable, it can make it easy for you to place cakes and decorate in the simplest and most convenient way.', 'images/plastic_turntable', 1),
-(20, 'Opaque white 120ml mist spray bottle', 'In fact, during the baking process, there are many types of cakes that need to be moistened before being baked.', 'images/spray_bottle', 1),
-(20, 'Stainless steel measuring spoon set 5 pcs (tsp,ml unit)', 'The measuring spoon set is among the basic baking tools that every person who wants to make a cake must have.', 'images/measuring_spoon', 1),
-(20, '28cm Wood Pulp Roller Rolling', 'Rolling dough is used a lot when making cookies, rolling out thousand-layer dough, bread, fondant... The size of 28cm fits the handle with sturdy wood.', 'images/roller', 1),
---Other Tools
-(21, '28cm checkered coarse fabric heat resistant gloves (90g)', 'A good pair of heat-resistant gloves will help protect your hands when taking hot food, especially from the oven or microwave.', 'images/heat-resistant_gloves', 1),
-(21, 'Egg White Separator', 'The egg white separator is a basic baking tool that any baking lover needs to have in their kitchen.', 'images/egg_seperator', 1),
-(21, 'Molded silicone brushes', 'Silicone brushes are the basic tool of bakers. Tools are used to evenly sweep butter, spread cream on the surface of cakes, or fruit jam syrups to make the cake base softer and moister...', 'images/brushes', 1),
---Boxs
-(22, '1000ml PET lid kraft paper bowl (10 pcs)', 'When buying takeaway food at restaurants, we often see food put in plastic boxes, styrofoam boxes, which are both harmful to human health and adversely affect the environment.', 'images/paper_bowl', 1),
-(22, 'Cupcake Box with 6 Cells Cement Paper Strap', 'The 6-cell cement paper strap cupcake box is designed with cardboard paper with embossed lines that make it easier to fold the box. The sturdy paper helps the box stand and hold the weight of the cupcake, and the box also has a clear plastic part so that we can see the cake inside.', 'images/cupcake_box', 1),
---Bags
-(23, 'Red God Cat Pineapple Cake Bag and Box Set', 'Taiwanese pineapple cake is a famous and popular dish in this most populous country in the world.', 'images/pineapple_cake_bag', 1),
-(23, 'Brown roll bag with bold text 5x11cm (100 pcs)', '', 'images/roll_bag', 1);
-go
--- [product_item]
-insert into [product_item]([pro_id],[size],[qty_in_stock], [product_image], [price], [isDeleted]) values
---Chocolate Cakes
-(1, '12x12cm', 10, './', 163000, 1),
-(1, '12x12cm', 5, './', 163000, 1),
-(1, '14x14cm', 20, './', 208000, 1),
-(1, '16x16cm', 13, './', 238000, 1),
-(1, '18x18cm', 7, './', 253000, 1),
---Vanilla Cakes
-(2, '10x10cm', 4, './', 118000, 1),
-(2, '16x16cm', 3, './', 193000, 1),
-(2, '24x24cm', 11, './', 446000, 1),
-(2, '20x20cm', 18, './', 208000, 1),
-(2, '12x12cm', 22, './', 148000, 1),
---Pineapple Cakes
-(3, '12x12cm', 5, './', 163000, 1),
-(3, '12x12cm', 7, './', 163000, 1),
-(3, '16x16cm', 1, './', 193000, 1),
-(3, '14x14cm', 18, './', 178000, 1),
-(3, '24x24cm', 21, './', 372000, 1),
---Fruit Cakes
-(4, '14x14cm', 2, './', 236000, 1),
-(4, '24x24cm', 3, './', 439000, 1),
-(4, '14x14cm', 5, './', 236000, 1),
-(4, '24x24cm', 7, './', 439000, 1),
-(4, '14x14cm', 9, './', 236000, 1),
---Cartoon Cakes
-(5, '14x14cm', 1, './', 236000, 1),
-(5, '24x24cm', 2, './', 439000, 1),
-(5, '14x14cm', 5, './', 236000, 1),
-(5, '24x24cm', 1, './', 439000, 1),
-(5, '14x14cm', 2, './', 236000, 1),
---Cakes For Boys
-(6, '14x14cm', 6, './', 416000, 1),
-(6, '20x20cm', 2, './', 953000, 1),
-(6, '18x18cm', 6, './', 670000, 1),
-(6, '14x14cm', 1, './', 416000, 1),
-(6, '24x24cm', 9, './', 1400000, 1),
---Cakes For Girls
-(7, '14x14cm', 7, './', 430000, 1),
-(7, '16x16cm', 8, './', 476000, 1),
-(7, '14x14cm', 3, './', 430000, 1),
-(7, '20x20cm', 5, './', 863000, 1),
-(7, '24x24cm', 2, './', 1072000, 1),
---Jar Cakes
-(8, '10x10cm', 4, './', 44000, 1),
-(8, '10x10cm', 7, './', 44000, 1),
-(8, '12x12cm', 4, './', 89000, 1),
-(8, '10x10cm', 9, './', 44000, 1),
-(8, '10x10cm', 3, './', 44000, 1),
---Cheese Cakes
-(9, '20x20cm', 7, './', 253000, 1),
-(9, '24x24cm', 5, './', 317000, 1),
-(9, '14x14cm', 9, './', 74000, 1),
-(9, '12x12cm', 9, './', 59000, 1),
-(9, '10x10cm', 3, './', 47000, 1),
---Cookies
-(10, '', 13, './', 56000, 1),
-(10, '', 4, './', 89000, 1),
-(10, '', 7, './', 68000, 1),
-(10, '', 12, './', 56000, 1),
-(10, '', 3, './', 73000, 1),
---Year Anniversary Cakes
-(11, '12x12cm', 1, './', 178000, 1),
-(11, '24x24cm', 2, './', 446000, 1),
-(11, '14x14cm', 2, './', 223000, 1),
-(11, '16x16cm', 2, './', 230000, 1),
-(11, '18x18cm', 3, './', 233000, 1),
---Anniversary Cakes For Parents
-(12, '12x12cm', 1, './', 230000, 1),
-(12, '24x24cm', 1, './', 1057000, 1),
---Anniversary Photo Cakes
-(13, '14x14cm', 1, './', 282000, 1),
-(13, '12x12cm', 2, './', 238000, 1),
-(13, '12x12cm', 2, './', 238000, 1),
-(13, '12x12cm', 2, './', 238000, 1),
-(13, '12x12cm', 3, './', 238000, 1),
---Flours(Traditional Ingredients)
-(14, '', 100, './', 29000, 1),
-(14, '', 100, './', 15000, 1),
-(14, '', 92, './', 8000, 1),
-(14, '', 82, './', 15000, 1),
-(14, '', 35, './', 7000, 1),
---Others(Traditional Ingredients)
-(15, '', 102, './', 740000, 1),
-(15, '', 100, './', 19000, 1),
-(15, '', 95, './', 15000, 1),
-(15, '', 82, './', 29000, 1),
-(15, '', 55, './', 65000, 1),
---Flours(Korea/Japan Ingredients)
-(16, '', 70, './', 9000, 1),
-(16, '', 10, './', 15000, 1),
-(16, '', 55, './', 22000, 1),
---Others(Korea/Japan Ingredients)
-(17, '', 80, './', 37000, 1),
-(17, '', 100, './', 18000, 1),
-(17, '', 92, './', 20000, 1),
-(17, '', 80, './', 25000, 1),
-(17, '', 23, './', 25000, 1),
---Jam, honey
-(18, '', 40, './', 37000, 1),
-(18, '', 10, './', 40000, 1),
-(18, '', 25, './', 79000, 1),
-(18, '', 13, './', 35000, 1),
-(18, '', 23, './', 19000, 1),
---Cheese
-(19, '', 35, './', 22000, 1),
-(19, '', 11, './', 15000, 1),
-(19, '', 27, './', 19000, 1),
-(19, '', 31, './', 20000, 1),
---Basic Tools
-(20, '', 20, './', 250000, 1),
-(20, '', 42, './', 79000, 1),
-(20, '', 22, './', 17000, 1),
-(20, '', 38, './', 35000, 1),
-(20, '', 14, './', 19000, 1),
---Other Tools
-(21, '', 22, './', 30000, 1),
-(21, '', 40, './', 9000, 1),
-(21, '', 35, './', 22000, 1),
---Boxs
-(22, '25x25cm', 100, './', 27000, 1),
-(22, '15x15cm', 150, './', 12000, 1),
---Bags
-(23, '15x15cm', 100, './', 25000, 1),
-(23, '25x25cm', 120, './', 27000, 1);
+(18, 'Golden farm Raspberry Jam 210g', 'Jam is an indispensable product in modern life, rooted in its delicious taste and convenience. Golden farm Raspberry Jam 210g not only stops at the i580000, 1),
+
+
+(67, '10x20cm', 10, './', 240000, 1),
+(67, '20x30cm', 10, './', 300000, 1),
+(67, '30x40cm', 10, './', 560000, 1),
+
+(68, '10x20cm', 10, './', 250000, 1),
+(68, '20x30cm', 10, './', 310000, 1),
+(68, '30x40cm', 10, './', 570000, 1),
+  
+(69, '10x20cm', 10, './', 260000, 1),
+(69, '20x30cm', 10, './', 320000, 1),
+(69, '30x40cm', 10, './', 580000, 1),
+
+(70, '10x20cm', 10, './', 270000, 1),
+(70, '20x30cm', 10, './', 330000, 1),
+(70, '30x40cm', 10, './', 580000, 1),
+
+(71, '10x20cm', 10, './', 280000, 1),
+(71, '20x30cm', 10, './', 340000, 1),
+(71, '30x40cm', 10, './', 590000, 1),
+
+(72, '10x20cm', 10, './', 290000, 1),
+(72, '20x30cm', 10, './', 350000, 1),
+(72, '30x40cm', 10, './', 600000, 1),
+
+(73, '10x20cm', 10, './', 210000, 1),
+(73, '20x30cm', 10, './', 360000, 1),
+(73, '30x40cm', 10, './', 610000, 1),
+
+(74, '10x20cm', 10, './', 220000, 1),
+(74, '20x30cm', 10, './', 370000, 1),
+(74, '30x40cm', 10, './', 620000, 1),
+
+(75, '10x20cm', 10, './', 230000, 1),
+(75, '20x30cm', 10, './', 380000, 1),
+(75, '30x40cm', 10, './', 630000, 1), 
+  
+(76, '', 10, './', 20000, 1), 
+(77, '', 10, './', 40000, 1),
+(78, '', 10, './', 60000, 1),
+(79, '', 10, './', 80000, 1),
+(80, '', 10, './', 100000, 1),
+(81, '', 10, './', 120000, 1),
+(82, '', 10, './', 140000, 1),
+(83, '', 10, './', 160000, 1),
+(84, '', 10, './', 180000, 1),
+(85, '', 10, './', 200000, 1),
+(86, '', 10, './', 10000, 1),
+(87, '', 10, './', 30000, 1),
+(88, '', 10, './', 50000, 1),
+(89, '', 10, './', 70000, 1),
+(90, '', 10, './', 90000, 1),
+(91, '', 10, './', 110000, 1),
+(92, '', 10, './', 130000, 1),
+(93, '', 10, './', 150000, 1),
+(94, '', 10, './', 170000, 1),
+(95, '', 10, './', 190000, 1),
+(96, '', 10, './', 15000, 1),
+(97, '', 10, './', 25000, 1),
+(98, '', 10, './', 35000, 1),
+(99, '', 10, './', 45000, 1),
+(100, '', 10, './', 55000, 1),
+
 go
 -- [productDesTitle]
 insert into [productDesTitle]([desTitleName], [isDeleted]) values
