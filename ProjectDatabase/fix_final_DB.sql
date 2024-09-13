@@ -61,6 +61,7 @@ GO
 
 CREATE TABLE [product_item] (
 	[pro_id] INT NOT NULL IDENTITY UNIQUE,
+	[size] NVARCHAR NOT NULL,
 	[qty_in_stock] BIGINT NOT NULL,
 	[product_image] TEXT NOT NULL,
 	[price] BIGINT NOT NULL,
