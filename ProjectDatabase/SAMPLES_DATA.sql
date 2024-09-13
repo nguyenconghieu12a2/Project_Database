@@ -197,62 +197,59 @@ go
 -- MK CUỐI: fullname + 123 (25)
 --============================================================================================================== 1ng (Bao)
 -- [product_category]
-insert into [product_category]([category_name], [desciption], [isDeleted]) values
-('Cakes', 'A custom-designed cake that creatively reflects a specific theme or concept, making it the perfect centerpiece for themed events and celebrations.', 1),
-('Ingredients', 'The key components grouped together for specific recipes or culinary purposes, including everything from basic staples to specialty items, ensuring consistency and quality in cooking or baking.', 1),
-('Cooking Tools', 'Essential kitchen utensils and equipment, such as knives, pans, mixers, and measuring cups, designed to aid in the preparation, cooking, and presentation of food with precision and efficiency.', 1);
+insert into [category]([cateName], [parent_id], [isDeleted]) values
+('Cakes', null, 1),
+('Ingredients', null, 1),
+('Cooking Tools', null, 1),
+-- Cakes
+('Flavour Cakes', 1, 1),
+('Theme Cakes', 1, 1),
+('Desserts', 1, 1),
+('Anniversary', -1, 1),
+-- Ingredients
+('Traditional Ingredients', 2, 1),
+('Theme Cakes', 2, 1),
+('Desserts', 2, 1),
+-- Tools
+('Cake Tools', 3, 1),
+('Others', 3, 1),
+-- Flavour Cakes
+('Chocolate Cakes', 4, 1),
+('Vanilla Cakes', 4, 1),
+('Pineapple Cakes', 4, 1),
+('Fruit Cakes', 4, 1),
+-- Theme Cakes
+('Cartoon Cakes', 5, 1),
+('Cakes For Boys', 5, 1),
+('Cakes For Girls', 5, 1),
+-- Desserts
+('Jar Cakes', 6, 1),
+('Cheese Cakes', 6, 1),
+('Cookies', 6, 1),
+-- Anniversary
+('Year Anniversary Cakes', 7, 1),
+('Anniversary Cakes For Parents', 7, 1),
+('Anniversary Photo Cakes', 7, 1),
+-- Anniversary
+('Year Anniversary Cakes', 7, 1),
+('Anniversary Cakes For Parents', 7, 1),
+-- Traditional Ingredients
+('Flours', 8, 1),
+('Others', 8, 1),
+-- Korea/Japan Ingredients
+('Flours', 9, 1),
+('Others', 9, 1),
+-- Others
+('Jam, honey', 10, 1),
+('Cheese', 10, 1),
+-- Cake Tools
+('Basic Tools', 11, 1),
+('Other Tools', 11, 1),
+-- Others
+('Boxs', 12, 1),
+('Bags', 12, 1);
 go
--- [sub_Category]
-insert into [sub_Category]([cateID], [sub_cateName], [isDeleted]) values
---Cakes
-(1, 'Flavour Cakes', 1),
-(1, 'Theme Cakes', 1),
-(1, 'Desserts', 1),
-(1, 'Anniversary', 1),
---Ingredients
-(2, 'Traditional Ingredients', 1),
-(2, 'Korea/Japan Ingredients', 1),
-(2, 'Others', 1),
---Tools
-(3, 'Cake Tools', 1),
-(3, 'Others', 1);
-go
--- [sub_sub_Category]
-insert into [sub_sub_Category]([sub_CateID], [CateID], [sub_sub_CateName], [isDeleted]) values
---Flavour Cakes
-(1, 1, 'Chocolate Cakes', 1),
-(1, 1, 'Vanilla Cakes', 1),
-(1, 1, 'Pineapple Cakes', 1),
-(1, 1, 'Fruit Cakes', 1),
---Theme Cakes
-(2, 1, 'Cartoon Cakes', 1),
-(2, 1, 'Cakes For Boys', 1),
-(2, 1, 'Cakes For Girls', 1),
---Desserts
-(3, 1, 'Jar Cakes', 1),
-(3, 1, 'Cheese Cakes', 1),
-(3, 1, 'Cookies', 1),
---Anniversary
-(4, 1, 'Year Anniversary Cakes', 1),
-(4, 1, 'Anniversary Cakes For Parents', 1),
-(4, 1, 'Anniversary Photo Cakes', 1),
---Traditional Ingredients
-(5, 2, 'Flours', 1),
-(5, 2, 'Others', 1),
---Korea/Japan Ingredients
-(6, 2, 'Flours', 1),
-(6, 2, 'Others', 1),
---Others
-(7, 2, 'Jam, honey', 1),
-(7, 2, 'Cheese', 1),
---Cake Tools
-(8, 3, 'Basic Tools', 1),
-(8, 3, 'Other Tools', 1),
---Others
-(9, 3, 'Boxs', 1),
-(9, 3, 'Bags', 1);
-go
--- 3 main category (CAKE, INGREDIENTS, materials), each main category seperate relevant sub category, with subcategory divide out more detail category
+
 --============================================================================================================== 1ng duy nhat (Thanh)
 -- [product]
 insert into [product]([sub_sub_CategoryID], [name], [description], [product_image], [isDeleted]) values
