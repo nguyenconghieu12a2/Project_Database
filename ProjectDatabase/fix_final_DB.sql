@@ -65,6 +65,7 @@ CREATE TABLE [product_item] (
 	[qty_in_stock] INT NOT NULL,
 	[product_image] TEXT NOT NULL,
 	[price] BIGINT NOT NULL,
+	[size] NVARCHAR(255) NOT NULL,
 	[isDeleted] INT,
 	PRIMARY KEY([id])
 );
