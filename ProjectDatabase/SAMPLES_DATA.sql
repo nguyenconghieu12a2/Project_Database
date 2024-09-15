@@ -453,7 +453,7 @@ insert into [product_item]([product_id], [size], [qty_in_stock], [product_image]
 (98, '', 5, './', 260000, 1),
 (99, '', 4, './', 275000, 1),
 
-(100, '', 6, './', 236000, 1),
+(100, '', 6, './', 236000, 1)
 go
 -- [productDesTitle]
 insert into [productDesTitle]([desTitleName], [isDeleted]) values
