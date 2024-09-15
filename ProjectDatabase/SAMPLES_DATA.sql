@@ -382,7 +382,7 @@ insert into [product]([sub_sub_CategoryID], [name], [description], [product_imag
 (23, 'Brown roll bag with bold text 5x11cm (100 pcs)', '', 'images/roll_bag', 1);
 go
 -- [product_item]
-insert into [product_item]([product_id], [size], [qty_in_stock], [product_image], [price], [isDeleted]) values
+insert into [product_item]([pro_id], [size], [qty_in_stock], [product_image], [price], [isDeleted]) values
 -- Chocolate Cakes
 (67, '', 10, './', 163000, 1),
 (68, '', 6, './', 173000, 1),
