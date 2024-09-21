@@ -29,119 +29,536 @@ INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image]
 ('Bao', 'Nguyen', 'baonguyen', 'Male', '1992-12-04', 'male.jpg', 'baonguyen92@gmail.com', '0862345678', '0edd0c86edd86a4264c2190a5375c862', 1, '2024-02-01 09:45:00'); /*baonguyen123*/
 go
 
--- [city]
-insert into [city]([name]) values
-('Thành phố Hà Nội'),
-('Tỉnh Hà Giang'),
-('Tỉnh Cao Bằng'),
-('Tỉnh Bắc Cạn'),
-('Tỉnh Tuyên Quang'),
-('Tỉnh Lào Cai'),
-('Tỉnh Điện Biên'),
-('Tỉnh Lai Châu'),
-('Tỉnh Sơn La'),
-('Tỉnh Yên Bái'),
-('Tỉnh Hòa Bình'),
-('Tỉnh Thái Nguyên'),
-('Tỉnh Lạng Sơn'),
-('Tỉnh Quảng Ninh'),
-('Tỉnh Bắc Giang'),
-('Tỉnh Phú Thọ'),
-('Tỉnh Vĩnh Phúc'),
-('Tỉnh Bắc Ninh'),
-('Tỉnh Hải Dương'),
-('Thành phố Hải Phòng'),
-('Tỉnh Hưng Yên'),
-('Tỉnh Thái Bình'),
-('Tỉnh Hà Nam'),
-('Tỉnh Nam Định'),
-('Tỉnh Ninh Bình'),
-('Tỉnh Nghệ An'),
-('Tỉnh Hà Tĩnh'),
-('Tỉnh Quảng Bình'),
-('Tỉnh Quảng Trị'),
-('Tỉnh Thừa Thiên Huế'),
-('Thành phố Đà Nẵng'),
-('Tỉnh Quảng Nam'),
-('Tỉnh Quảng Ngãi'),
-('Tỉnh Bình Định'),
-('Tỉnh Phú Yên'),
-('Tỉnh Khánh Hòa'),
-('Tỉnh Ninh Thuận'),
-('Tỉnh Bình Thuận'),
-('Tỉnh Kon Tum'),
-('Tỉnh Gia Lai'),
-('Tỉnh Đắk Lắk'),
-('Tỉnh Đắk Nông'),
-('Tỉnh Lâm Đồng'),
-('Tỉnh Bình Phước'),
-('Tỉnh Tây Ninh'),
-('Tỉnh Bình Dương'),
-('Tỉnh Đồng Nai'),
-('Tỉnh Bà Rịa - Vũng Tàu'),
-('Thành phố Hồ Chí Minh'),
-('Tỉnh Long An'),
-('Tỉnh Tiền Giang'),
-('Tỉnh Bến Tre'),
-('Tỉnh Trà Vinh'),
-('Tỉnh Vĩnh Long'),
-('Tỉnh An Giang'),
-('Tỉnh Kiên Giang'),
-('Thành phố Cần Thơ'),
-('Tỉnh Hậu Giang'),
-('Tỉnh Sóc Trăng'),
-('Tỉnh Bạc Liêu'),
-('Tỉnh Cà Mau');
-go
+INSERT [dbo].[administrative_regions] ([id], [name], [name_en], [code_name], [code_name_en]) VALUES (8, N'Đồng bằng sông Cửu Long', N'Mekong River Delta', N'dong_bang_song_cuu_long', N'southwest')
+GO
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (1, N'Thành phố trực thuộc trung ương', N'Municipality', N'Thành phố', N'City', N'thanh_pho_truc_thuoc_trung_uong', N'municipality')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (2, N'Tỉnh', N'Province', N'Tỉnh', N'Province', N'tinh', N'province')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (3, N'Thành phố thuộc thành phố trực thuộc trung ương', N'Municipal city', N'Thành phố', N'City', N'thanh_pho_thuoc_thanh_pho_truc_thuoc_trung_uong', N'municipal_city')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (4, N'Thành phố thuộc tỉnh', N'Provincial city', N'Thành phố', N'City', N'thanh_pho_thuoc_tinh', N'provincial_city')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (5, N'Quận', N'Urban district', N'Quận', N'District', N'quan', N'urban_district')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (6, N'Thị xã', N'District-level town', N'Thị xã', N'Town', N'thi_xa', N'district_level_town')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (7, N'Huyện', N'District', N'Huyện', N'District', N'huyen', N'district')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (8, N'Phường', N'Ward', N'Phường', N'Ward', N'phuong', N'ward')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (9, N'Thị trấn', N'Commune-level town', N'Thị trấn', N'Township', N'thi_tran', N'commune_level_town')
+INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (10, N'Xã', N'Commune', N'Xã', N'Commune', N'xa', N'commune')
+GO
+INSERT [dbo].[provinces] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [administrative_unit_id], [administrative_region_id]) VALUES (N'86', N'Vĩnh Long', N'Vinh Long', N'Tỉnh Vĩnh Long', N'Vinh Long Province', N'vinh_long', 2, 8)
+INSERT [dbo].[provinces] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [administrative_unit_id], [administrative_region_id]) VALUES (N'89', N'An Giang', N'An Giang', N'Tỉnh An Giang', N'An Giang Province', N'an_giang', 2, 8)
+INSERT [dbo].[provinces] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [administrative_unit_id], [administrative_region_id]) VALUES (N'92', N'Cần Thơ', N'Can Tho', N'Thành phố Cần Thơ', N'Can Tho City', N'can_tho', 1, 8)
+INSERT [dbo].[provinces] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [administrative_unit_id], [administrative_region_id]) VALUES (N'93', N'Hậu Giang', N'Hau Giang', N'Tỉnh Hậu Giang', N'Hau Giang Province', N'hau_giang', 2, 8)
+GO
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'855', N'Vĩnh Long', N'Vinh Long', N'Thành phố Vĩnh Long', N'Vinh Long City', N'vinh_long', N'86', 4)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'857', N'Long Hồ', N'Long Ho', N'Huyện Long Hồ', N'Long Ho District', N'long_ho', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'858', N'Mang Thít', N'Mang Thit', N'Huyện Mang Thít', N'Mang Thit District', N'mang_thit', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'859', N'Vũng Liêm', N'Vung Liem', N'Huyện Vũng Liêm', N'Vung Liem District', N'vung_liem', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'860', N'Tam Bình', N'Tam Binh', N'Huyện Tam Bình', N'Tam Binh District', N'tam_binh', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'861', N'Bình Minh', N'Binh Minh', N'Thị xã Bình Minh', N'Binh Minh Town', N'binh_minh', N'86', 6)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'862', N'Trà Ôn', N'Tra On', N'Huyện Trà Ôn', N'Tra On District', N'tra_on', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'863', N'Bình Tân', N'Binh Tan', N'Huyện Bình Tân', N'Binh Tan District', N'binh_tan', N'86', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'883', N'Long Xuyên', N'Long Xuyen', N'Thành phố Long Xuyên', N'Long Xuyen City', N'long_xuyen', N'89', 4)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'884', N'Châu Đốc', N'Chau Doc', N'Thành phố Châu Đốc', N'Chau Doc City', N'chau_doc', N'89', 4)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'886', N'An Phú', N'An Phu', N'Huyện An Phú', N'An Phu District', N'an_phu', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'887', N'Tân Châu', N'Tan Chau', N'Thị xã Tân Châu', N'Tan Chau Town', N'tan_chau', N'89', 6)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'888', N'Phú Tân', N'Phu Tan', N'Huyện Phú Tân', N'Phu Tan District', N'phu_tan', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'889', N'Châu Phú', N'Chau Phu', N'Huyện Châu Phú', N'Chau Phu District', N'chau_phu', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'890', N'Tịnh Biên', N'Tinh Bien', N'Thị xã Tịnh Biên', N'Tinh Bien Town', N'tinh_bien', N'89', 6)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'891', N'Tri Tôn', N'Tri Ton', N'Huyện Tri Tôn', N'Tri Ton District', N'tri_ton', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'892', N'Châu Thành', N'Chau Thanh', N'Huyện Châu Thành', N'Chau Thanh District', N'chau_thanh', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'893', N'Chợ Mới', N'Cho Moi', N'Huyện Chợ Mới', N'Cho Moi District', N'cho_moi', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'894', N'Thoại Sơn', N'Thoai Son', N'Huyện Thoại Sơn', N'Thoai Son District', N'thoai_son', N'89', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'916', N'Ninh Kiều', N'Ninh Kieu', N'Quận Ninh Kiều', N'Ninh Kieu District', N'ninh_kieu', N'92', 5)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'917', N'Ô Môn', N'O Mon', N'Quận Ô Môn', N'O Mon District', N'o_mon', N'92', 5)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'918', N'Bình Thuỷ', N'Binh Thuy', N'Quận Bình Thuỷ', N'Binh Thuy District', N'binh_thuy', N'92', 5)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'919', N'Cái Răng', N'Cai Rang', N'Quận Cái Răng', N'Cai Rang District', N'cai_rang', N'92', 5)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'923', N'Thốt Nốt', N'Thot Not', N'Quận Thốt Nốt', N'Thot Not District', N'thot_not', N'92', 5)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'924', N'Vĩnh Thạnh', N'Vinh Thanh', N'Huyện Vĩnh Thạnh', N'Vinh Thanh District', N'vinh_thanh', N'92', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'925', N'Cờ Đỏ', N'Co Do', N'Huyện Cờ Đỏ', N'Co Do District', N'co_do', N'92', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'926', N'Phong Điền', N'Phong Dien', N'Huyện Phong Điền', N'Phong Dien District', N'phong_dien', N'92', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'927', N'Thới Lai', N'Thoi Lai', N'Huyện Thới Lai', N'Thoi Lai District', N'thoi_lai', N'92', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'930', N'Vị Thanh', N'Vi Thanh', N'Thành phố Vị Thanh', N'Vi Thanh City', N'vi_thanh', N'93', 4)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'931', N'Ngã Bảy', N'Nga Bay', N'Thành phố Ngã Bảy', N'Nga Bay City', N'nga_bay', N'93', 4)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'932', N'Châu Thành A', N'Chau Thanh A', N'Huyện Châu Thành A', N'Chau Thanh A District', N'chau_thanh_a', N'93', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'933', N'Châu Thành', N'Chau Thanh', N'Huyện Châu Thành', N'Chau Thanh District', N'chau_thanh', N'93', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'934', N'Phụng Hiệp', N'Phung Hiep', N'Huyện Phụng Hiệp', N'Phung Hiep District', N'phung_hiep', N'93', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'935', N'Vị Thuỷ', N'Vi Thuy', N'Huyện Vị Thuỷ', N'Vi Thuy District', N'vi_thuy', N'93', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'936', N'Long Mỹ', N'Long My', N'Huyện Long Mỹ', N'Long My District', N'long_my', N'93', 7)
+INSERT [dbo].[districts] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [province_code], [administrative_unit_id]) VALUES (N'937', N'Long Mỹ', N'Long My', N'Thị xã Long Mỹ', N'Long My Town', N'long_my', N'93', 6)
+GO
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29542', N'9', N'9', N'Phường 9', N'Ward 9', N'9', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29545', N'5', N'5', N'Phường 5', N'Ward 5', N'5', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29548', N'1', N'1', N'Phường 1', N'Ward 1', N'1', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29551', N'2', N'2', N'Phường 2', N'Ward 2', N'2', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29554', N'4', N'4', N'Phường 4', N'Ward 4', N'4', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29557', N'3', N'3', N'Phường 3', N'Ward 3', N'3', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29560', N'8', N'8', N'Phường 8', N'Ward 8', N'8', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29563', N'Tân Ngãi', N'Tan Ngai', N'Phường Tân Ngãi', N'Tan Ngai Ward', N'tan_ngai', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29566', N'Tân Hòa', N'Tan Hoa', N'Phường Tân Hòa', N'Tan Hoa Ward', N'tan_hoa', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29569', N'Tân Hội', N'Tan Hoi', N'Phường Tân Hội', N'Tan Hoi Ward', N'tan_hoi', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29572', N'Trường An', N'Truong An', N'Phường Trường An', N'Truong An Ward', N'truong_an', N'855', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29575', N'Long Hồ', N'Long Ho', N'Thị trấn Long Hồ', N'Long Ho Township', N'long_ho', N'857', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29578', N'Đồng Phú', N'Dong Phu', N'Xã Đồng Phú', N'Dong Phu Commune', N'dong_phu', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29581', N'Bình Hòa Phước', N'Binh Hoa Phuoc', N'Xã Bình Hòa Phước', N'Binh Hoa Phuoc Commune', N'binh_hoa_phuoc', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29584', N'Hòa Ninh', N'Hoa Ninh', N'Xã Hòa Ninh', N'Hoa Ninh Commune', N'hoa_ninh', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29587', N'An Bình', N'An Binh', N'Xã An Bình', N'An Binh Commune', N'an_binh', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29590', N'Thanh Đức', N'Thanh Duc', N'Xã Thanh Đức', N'Thanh Duc Commune', N'thanh_duc', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29593', N'Tân Hạnh', N'Tan Hanh', N'Xã Tân Hạnh', N'Tan Hanh Commune', N'tan_hanh', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29596', N'Phước Hậu', N'Phuoc Hau', N'Xã Phước Hậu', N'Phuoc Hau Commune', N'phuoc_hau', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29599', N'Long Phước', N'Long Phuoc', N'Xã Long Phước', N'Long Phuoc Commune', N'long_phuoc', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29602', N'Phú Đức', N'Phu Duc', N'Xã Phú Đức', N'Phu Duc Commune', N'phu_duc', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29605', N'Lộc Hòa', N'Loc Hoa', N'Xã Lộc Hòa', N'Loc Hoa Commune', N'loc_hoa', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29608', N'Long An', N'Long An', N'Xã Long An', N'Long An Commune', N'long_an', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29611', N'Phú Quới', N'Phu Quoi', N'Xã Phú Quới', N'Phu Quoi Commune', N'phu_quoi', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29614', N'Thạnh Quới', N'Thanh Quoi', N'Xã Thạnh Quới', N'Thanh Quoi Commune', N'thanh_quoi', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29617', N'Hòa Phú', N'Hoa Phu', N'Xã Hòa Phú', N'Hoa Phu Commune', N'hoa_phu', N'857', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29623', N'Mỹ An', N'My An', N'Xã Mỹ An', N'My An Commune', N'my_an', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29626', N'Mỹ Phước', N'My Phuoc', N'Xã Mỹ Phước', N'My Phuoc Commune', N'my_phuoc', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29629', N'An Phước', N'An Phuoc', N'Xã An Phước', N'An Phuoc Commune', N'an_phuoc', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29632', N'Nhơn Phú', N'Nhon Phu', N'Xã Nhơn Phú', N'Nhon Phu Commune', N'nhon_phu', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29635', N'Long Mỹ', N'Long My', N'Xã Long Mỹ', N'Long My Commune', N'long_my', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29638', N'Hòa Tịnh', N'Hoa Tinh', N'Xã Hòa Tịnh', N'Hoa Tinh Commune', N'hoa_tinh', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29641', N'Cái Nhum', N'Cai Nhum', N'Thị trấn Cái Nhum', N'Cai Nhum Township', N'cai_nhum', N'858', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29644', N'Bình Phước', N'Binh Phuoc', N'Xã Bình Phước', N'Binh Phuoc Commune', N'binh_phuoc', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29647', N'Chánh An', N'Chanh An', N'Xã Chánh An', N'Chanh An Commune', N'chanh_an', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29650', N'Tân An Hội', N'Tan An Hoi', N'Xã Tân An Hội', N'Tan An Hoi Commune', N'tan_an_hoi', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29653', N'Tân Long', N'Tan Long', N'Xã Tân Long', N'Tan Long Commune', N'tan_long', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29656', N'Tân Long Hội', N'Tan Long Hoi', N'Xã Tân Long Hội', N'Tan Long Hoi Commune', N'tan_long_hoi', N'858', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29659', N'Vũng Liêm', N'Vung Liem', N'Thị trấn Vũng Liêm', N'Vung Liem Township', N'vung_liem', N'859', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29662', N'Tân Quới Trung', N'Tan Quoi Trung', N'Xã Tân Quới Trung', N'Tan Quoi Trung Commune', N'tan_quoi_trung', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29665', N'Quới Thiện', N'Quoi Thien', N'Xã Quới Thiện', N'Quoi Thien Commune', N'quoi_thien', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29668', N'Quới An', N'Quoi An', N'Xã Quới An', N'Quoi An Commune', N'quoi_an', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29671', N'Trung Chánh', N'Trung Chanh', N'Xã Trung Chánh', N'Trung Chanh Commune', N'trung_chanh', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29674', N'Tân An Luông', N'Tan An Luong', N'Xã Tân An Luông', N'Tan An Luong Commune', N'tan_an_luong', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29677', N'Thanh Bình', N'Thanh Binh', N'Xã Thanh Bình', N'Thanh Binh Commune', N'thanh_binh', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29680', N'Trung Thành Tây', N'Trung Thanh Tay', N'Xã Trung Thành Tây', N'Trung Thanh Tay Commune', N'trung_thanh_tay', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29683', N'Trung Hiệp', N'Trung Hiep', N'Xã Trung Hiệp', N'Trung Hiep Commune', N'trung_hiep', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29686', N'Hiếu Phụng', N'Hieu Phung', N'Xã Hiếu Phụng', N'Hieu Phung Commune', N'hieu_phung', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29689', N'Trung Thành Đông', N'Trung Thanh Dong', N'Xã Trung Thành Đông', N'Trung Thanh Dong Commune', N'trung_thanh_dong', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29692', N'Trung Thành', N'Trung Thanh', N'Xã Trung Thành', N'Trung Thanh Commune', N'trung_thanh', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29695', N'Trung Hiếu', N'Trung Hieu', N'Xã Trung Hiếu', N'Trung Hieu Commune', N'trung_hieu', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29698', N'Trung Ngãi', N'Trung Ngai', N'Xã Trung Ngãi', N'Trung Ngai Commune', N'trung_ngai', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29701', N'Hiếu Thuận', N'Hieu Thuan', N'Xã Hiếu Thuận', N'Hieu Thuan Commune', N'hieu_thuan', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29704', N'Trung Nghĩa', N'Trung Nghia', N'Xã Trung Nghĩa', N'Trung Nghia Commune', N'trung_nghia', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29707', N'Trung An', N'Trung An', N'Xã Trung An', N'Trung An Commune', N'trung_an', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29710', N'Hiếu Nhơn', N'Hieu Nhon', N'Xã Hiếu Nhơn', N'Hieu Nhon Commune', N'hieu_nhon', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29713', N'Hiếu Thành', N'Hieu Thanh', N'Xã Hiếu Thành', N'Hieu Thanh Commune', N'hieu_thanh', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29716', N'Hiếu Nghĩa', N'Hieu Nghia', N'Xã Hiếu Nghĩa', N'Hieu Nghia Commune', N'hieu_nghia', N'859', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29719', N'Tam Bình', N'Tam Binh', N'Thị trấn Tam Bình', N'Tam Binh Township', N'tam_binh', N'860', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29722', N'Tân Lộc', N'Tan Loc', N'Xã Tân Lộc', N'Tan Loc Commune', N'tan_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29725', N'Phú Thịnh', N'Phu Thinh', N'Xã Phú Thịnh', N'Phu Thinh Commune', N'phu_thinh', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29728', N'Hậu Lộc', N'Hau Loc', N'Xã Hậu Lộc', N'Hau Loc Commune', N'hau_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29731', N'Hòa Thạnh', N'Hoa Thanh', N'Xã Hòa Thạnh', N'Hoa Thanh Commune', N'hoa_thanh', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29734', N'Hoà Lộc', N'Hoa Loc', N'Xã Hoà Lộc', N'Hoa Loc Commune', N'hoa_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29737', N'Phú Lộc', N'Phu Loc', N'Xã Phú Lộc', N'Phu Loc Commune', N'phu_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29740', N'Song Phú', N'Song Phu', N'Xã Song Phú', N'Song Phu Commune', N'song_phu', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29743', N'Hòa Hiệp', N'Hoa Hiep', N'Xã Hòa Hiệp', N'Hoa Hiep Commune', N'hoa_hiep', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29746', N'Mỹ Lộc', N'My Loc', N'Xã Mỹ Lộc', N'My Loc Commune', N'my_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29749', N'Tân Phú', N'Tan Phu', N'Xã Tân Phú', N'Tan Phu Commune', N'tan_phu', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29752', N'Long Phú', N'Long Phu', N'Xã Long Phú', N'Long Phu Commune', N'long_phu', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29755', N'Mỹ Thạnh Trung', N'My Thanh Trung', N'Xã Mỹ Thạnh Trung', N'My Thanh Trung Commune', N'my_thanh_trung', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29758', N'Tường Lộc', N'Tuong Loc', N'Xã Tường Lộc', N'Tuong Loc Commune', N'tuong_loc', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29761', N'Loan Mỹ', N'Loan My', N'Xã Loan Mỹ', N'Loan My Commune', N'loan_my', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29764', N'Ngãi Tứ', N'Ngai Tu', N'Xã Ngãi Tứ', N'Ngai Tu Commune', N'ngai_tu', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29767', N'Bình Ninh', N'Binh Ninh', N'Xã Bình Ninh', N'Binh Ninh Commune', N'binh_ninh', N'860', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29770', N'Cái Vồn', N'Cai Von', N'Phường Cái Vồn', N'Cai Von Ward', N'cai_von', N'861', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29771', N'Thành Phước', N'Thanh Phuoc', N'Phường Thành Phước', N'Thanh Phuoc Ward', N'thanh_phuoc', N'861', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29773', N'Tân Hưng', N'Tan Hung', N'Xã Tân Hưng', N'Tan Hung Commune', N'tan_hung', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29776', N'Tân Thành', N'Tan Thanh', N'Xã Tân Thành', N'Tan Thanh Commune', N'tan_thanh', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29779', N'Thành Trung', N'Thanh Trung', N'Xã Thành Trung', N'Thanh Trung Commune', N'thanh_trung', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29782', N'Tân An Thạnh', N'Tan An Thanh', N'Xã Tân An Thạnh', N'Tan An Thanh Commune', N'tan_an_thanh', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29785', N'Tân Lược', N'Tan Luoc', N'Xã Tân Lược', N'Tan Luoc Commune', N'tan_luoc', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29788', N'Nguyễn Văn Thảnh', N'Nguyen Van Thanh', N'Xã Nguyễn Văn Thảnh', N'Nguyen Van Thanh Commune', N'nguyen_van_thanh', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29791', N'Thành Lợi', N'Thanh Loi', N'Xã Thành Lợi', N'Thanh Loi Commune', N'thanh_loi', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29794', N'Mỹ Thuận', N'My Thuan', N'Xã Mỹ Thuận', N'My Thuan Commune', N'my_thuan', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29797', N'Tân Bình', N'Tan Binh', N'Xã Tân Bình', N'Tan Binh Commune', N'tan_binh', N'863', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29800', N'Tân Quới', N'Tan Quoi', N'Thị trấn Tân Quới', N'Tan Quoi Township', N'tan_quoi', N'863', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29806', N'Thuận An', N'Thuan An', N'Xã Thuận An', N'Thuan An Commune', N'thuan_an', N'861', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29809', N'Đông Thạnh', N'Dong Thanh', N'Xã Đông Thạnh', N'Dong Thanh Commune', N'dong_thanh', N'861', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29812', N'Đông Bình', N'Dong Binh', N'Xã Đông Bình', N'Dong Binh Commune', N'dong_binh', N'861', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29813', N'Đông Thuận', N'Dong Thuan', N'Phường Đông Thuận', N'Dong Thuan Ward', N'dong_thuan', N'861', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29815', N'Mỹ Hòa', N'My Hoa', N'Xã Mỹ Hòa', N'My Hoa Commune', N'my_hoa', N'861', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29818', N'Đông Thành', N'Dong Thanh', N'Xã Đông Thành', N'Dong Thanh Commune', N'dong_thanh', N'861', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29821', N'Trà Ôn', N'Tra On', N'Thị trấn Trà Ôn', N'Tra On Township', N'tra_on', N'862', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29824', N'Xuân Hiệp', N'Xuan Hiep', N'Xã Xuân Hiệp', N'Xuan Hiep Commune', N'xuan_hiep', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29827', N'Nhơn Bình', N'Nhon Binh', N'Xã Nhơn Bình', N'Nhon Binh Commune', N'nhon_binh', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29830', N'Hòa Bình', N'Hoa Binh', N'Xã Hòa Bình', N'Hoa Binh Commune', N'hoa_binh', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29833', N'Thới Hòa', N'Thoi Hoa', N'Xã Thới Hòa', N'Thoi Hoa Commune', N'thoi_hoa', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29836', N'Trà Côn', N'Tra Con', N'Xã Trà Côn', N'Tra Con Commune', N'tra_con', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29839', N'Tân Mỹ', N'Tan My', N'Xã Tân Mỹ', N'Tan My Commune', N'tan_my', N'862', 10)
+GO
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29842', N'Hựu Thành', N'Huu Thanh', N'Xã Hựu Thành', N'Huu Thanh Commune', N'huu_thanh', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29845', N'Vĩnh Xuân', N'Vinh Xuan', N'Xã Vĩnh Xuân', N'Vinh Xuan Commune', N'vinh_xuan', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29848', N'Thuận Thới', N'Thuan Thoi', N'Xã Thuận Thới', N'Thuan Thoi Commune', N'thuan_thoi', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29851', N'Phú Thành', N'Phu Thanh', N'Xã Phú Thành', N'Phu Thanh Commune', N'phu_thanh', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29854', N'Thiện Mỹ', N'Thien My', N'Xã Thiện Mỹ', N'Thien My Commune', N'thien_my', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29857', N'Lục Sỹ Thành', N'Luc Sy Thanh', N'Xã Lục Sỹ Thành', N'Luc Sy Thanh Commune', N'luc_sy_thanh', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'29860', N'Tích Thiện', N'Tich Thien', N'Xã Tích Thiện', N'Tich Thien Commune', N'tich_thien', N'862', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30280', N'Mỹ Bình', N'My Binh', N'Phường Mỹ Bình', N'My Binh Ward', N'my_binh', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30283', N'Mỹ Long', N'My Long', N'Phường Mỹ Long', N'My Long Ward', N'my_long', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30285', N'Đông Xuyên', N'Dong Xuyen', N'Phường Đông Xuyên', N'Dong Xuyen Ward', N'dong_xuyen', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30286', N'Mỹ Xuyên', N'My Xuyen', N'Phường Mỹ Xuyên', N'My Xuyen Ward', N'my_xuyen', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30289', N'Bình Đức', N'Binh Duc', N'Phường Bình Đức', N'Binh Duc Ward', N'binh_duc', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30292', N'Bình Khánh', N'Binh Khanh', N'Phường Bình Khánh', N'Binh Khanh Ward', N'binh_khanh', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30295', N'Mỹ Phước', N'My Phuoc', N'Phường Mỹ Phước', N'My Phuoc Ward', N'my_phuoc', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30298', N'Mỹ Quý', N'My Quy', N'Phường Mỹ Quý', N'My Quy Ward', N'my_quy', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30301', N'Mỹ Thới', N'My Thoi', N'Phường Mỹ Thới', N'My Thoi Ward', N'my_thoi', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30304', N'Mỹ Thạnh', N'My Thanh', N'Phường Mỹ Thạnh', N'My Thanh Ward', N'my_thanh', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30307', N'Mỹ Hòa', N'My Hoa', N'Phường Mỹ Hòa', N'My Hoa Ward', N'my_hoa', N'883', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30310', N'Mỹ Khánh', N'My Khanh', N'Xã Mỹ Khánh', N'My Khanh Commune', N'my_khanh', N'883', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30313', N'Mỹ Hoà Hưng', N'My Hoa Hung', N'Xã Mỹ Hoà Hưng', N'My Hoa Hung Commune', N'my_hoa_hung', N'883', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30316', N'Châu Phú B', N'Chau Phu B', N'Phường Châu Phú B', N'Chau Phu B Ward', N'chau_phu_b', N'884', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30319', N'Châu Phú A', N'Chau Phu A', N'Phường Châu Phú A', N'Chau Phu A Ward', N'chau_phu_a', N'884', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30322', N'Vĩnh Mỹ', N'Vinh My', N'Phường Vĩnh Mỹ', N'Vinh My Ward', N'vinh_my', N'884', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30325', N'Núi Sam', N'Nui Sam', N'Phường Núi Sam', N'Nui Sam Ward', N'nui_sam', N'884', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30328', N'Vĩnh Ngươn', N'Vinh Nguon', N'Phường Vĩnh Ngươn', N'Vinh Nguon Ward', N'vinh_nguon', N'884', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30331', N'Vĩnh Tế', N'Vinh Te', N'Xã Vĩnh Tế', N'Vinh Te Commune', N'vinh_te', N'884', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30334', N'Vĩnh Châu', N'Vinh Chau', N'Xã Vĩnh Châu', N'Vinh Chau Commune', N'vinh_chau', N'884', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30337', N'An Phú', N'An Phu', N'Thị trấn An Phú', N'An Phu Township', N'an_phu', N'886', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30340', N'Khánh An', N'Khanh An', N'Xã Khánh An', N'Khanh An Commune', N'khanh_an', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30341', N'Long Bình', N'Long Binh', N'Thị trấn Long Bình', N'Long Binh Township', N'long_binh', N'886', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30343', N'Khánh Bình', N'Khanh Binh', N'Xã Khánh Bình', N'Khanh Binh Commune', N'khanh_binh', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30346', N'Quốc Thái', N'Quoc Thai', N'Xã Quốc Thái', N'Quoc Thai Commune', N'quoc_thai', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30349', N'Nhơn Hội', N'Nhon Hoi', N'Xã Nhơn Hội', N'Nhon Hoi Commune', N'nhon_hoi', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30352', N'Phú Hữu', N'Phu Huu', N'Xã Phú Hữu', N'Phu Huu Commune', N'phu_huu', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30355', N'Phú Hội', N'Phu Hoi', N'Xã Phú Hội', N'Phu Hoi Commune', N'phu_hoi', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30358', N'Phước Hưng', N'Phuoc Hung', N'Xã Phước Hưng', N'Phuoc Hung Commune', N'phuoc_hung', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30361', N'Vĩnh Lộc', N'Vinh Loc', N'Xã Vĩnh Lộc', N'Vinh Loc Commune', N'vinh_loc', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30364', N'Vĩnh Hậu', N'Vinh Hau', N'Xã Vĩnh Hậu', N'Vinh Hau Commune', N'vinh_hau', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30367', N'Vĩnh Trường', N'Vinh Truong', N'Xã Vĩnh Trường', N'Vinh Truong Commune', N'vinh_truong', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30370', N'Vĩnh Hội Đông', N'Vinh Hoi Dong', N'Xã Vĩnh Hội Đông', N'Vinh Hoi Dong Commune', N'vinh_hoi_dong', N'886', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30373', N'Đa Phước', N'Da Phuoc', N'Thị trấn Đa Phước', N'Da Phuoc Township', N'da_phuoc', N'886', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30376', N'Long Thạnh', N'Long Thanh', N'Phường Long Thạnh', N'Long Thanh Ward', N'long_thanh', N'887', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30377', N'Long Hưng', N'Long Hung', N'Phường Long Hưng', N'Long Hung Ward', N'long_hung', N'887', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30378', N'Long Châu', N'Long Chau', N'Phường Long Châu', N'Long Chau Ward', N'long_chau', N'887', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30379', N'Phú Lộc', N'Phu Loc', N'Xã Phú Lộc', N'Phu Loc Commune', N'phu_loc', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30382', N'Vĩnh Xương', N'Vinh Xuong', N'Xã Vĩnh Xương', N'Vinh Xuong Commune', N'vinh_xuong', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30385', N'Vĩnh Hòa', N'Vinh Hoa', N'Xã Vĩnh Hòa', N'Vinh Hoa Commune', N'vinh_hoa', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30387', N'Tân Thạnh', N'Tan Thanh', N'Xã Tân Thạnh', N'Tan Thanh Commune', N'tan_thanh', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30388', N'Tân An', N'Tan An', N'Xã Tân An', N'Tan An Commune', N'tan_an', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30391', N'Long An', N'Long An', N'Xã Long An', N'Long An Commune', N'long_an', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30394', N'Long Phú', N'Long Phu', N'Phường Long Phú', N'Long Phu Ward', N'long_phu', N'887', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30397', N'Châu Phong', N'Chau Phong', N'Xã Châu Phong', N'Chau Phong Commune', N'chau_phong', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30400', N'Phú Vĩnh', N'Phu Vinh', N'Xã Phú Vĩnh', N'Phu Vinh Commune', N'phu_vinh', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30403', N'Lê Chánh', N'Le Chanh', N'Xã Lê Chánh', N'Le Chanh Commune', N'le_chanh', N'887', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30406', N'Phú Mỹ', N'Phu My', N'Thị trấn Phú Mỹ', N'Phu My Township', N'phu_my', N'888', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30409', N'Chợ Vàm', N'Cho Vam', N'Thị trấn Chợ Vàm', N'Cho Vam Township', N'cho_vam', N'888', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30412', N'Long Sơn', N'Long Son', N'Phường Long Sơn', N'Long Son Ward', N'long_son', N'887', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30415', N'Long Hoà', N'Long Hoa', N'Xã Long Hoà', N'Long Hoa Commune', N'long_hoa', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30418', N'Phú Long', N'Phu Long', N'Xã Phú Long', N'Phu Long Commune', N'phu_long', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30421', N'Phú Lâm', N'Phu Lam', N'Xã Phú Lâm', N'Phu Lam Commune', N'phu_lam', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30424', N'Phú Hiệp', N'Phu Hiep', N'Xã Phú Hiệp', N'Phu Hiep Commune', N'phu_hiep', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30427', N'Phú Thạnh', N'Phu Thanh', N'Xã Phú Thạnh', N'Phu Thanh Commune', N'phu_thanh', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30430', N'Hoà Lạc', N'Hoa Lac', N'Xã Hoà Lạc', N'Hoa Lac Commune', N'hoa_lac', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30433', N'Phú Thành', N'Phu Thanh', N'Xã Phú Thành', N'Phu Thanh Commune', N'phu_thanh', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30436', N'Phú An', N'Phu An', N'Xã Phú An', N'Phu An Commune', N'phu_an', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30439', N'Phú Xuân', N'Phu Xuan', N'Xã Phú Xuân', N'Phu Xuan Commune', N'phu_xuan', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30442', N'Hiệp Xương', N'Hiep Xuong', N'Xã Hiệp Xương', N'Hiep Xuong Commune', N'hiep_xuong', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30445', N'Phú Bình', N'Phu Binh', N'Xã Phú Bình', N'Phu Binh Commune', N'phu_binh', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30448', N'Phú Thọ', N'Phu Tho', N'Xã Phú Thọ', N'Phu Tho Commune', N'phu_tho', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30451', N'Phú Hưng', N'Phu Hung', N'Xã Phú Hưng', N'Phu Hung Commune', N'phu_hung', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30454', N'Bình Thạnh Đông', N'Binh Thanh Dong', N'Xã Bình Thạnh Đông', N'Binh Thanh Dong Commune', N'binh_thanh_dong', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30457', N'Tân Hòa', N'Tan Hoa', N'Xã Tân Hòa', N'Tan Hoa Commune', N'tan_hoa', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30460', N'Tân Trung', N'Tan Trung', N'Xã Tân Trung', N'Tan Trung Commune', N'tan_trung', N'888', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30463', N'Cái Dầu', N'Cai Dau', N'Thị trấn Cái Dầu', N'Cai Dau Township', N'cai_dau', N'889', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30466', N'Khánh Hòa', N'Khanh Hoa', N'Xã Khánh Hòa', N'Khanh Hoa Commune', N'khanh_hoa', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30469', N'Mỹ Đức', N'My Duc', N'Xã Mỹ Đức', N'My Duc Commune', N'my_duc', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30472', N'Mỹ Phú', N'My Phu', N'Xã Mỹ Phú', N'My Phu Commune', N'my_phu', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30475', N'Ô Long Vỹ', N'O Long Vy', N'Xã Ô Long Vỹ', N'O Long Vy Commune', N'o_long_vy', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30478', N'Vĩnh Thạnh Trung', N'Vinh Thanh Trung', N'Thị trấn Vĩnh Thạnh Trung', N'Vinh Thanh Trung Township', N'vinh_thanh_trung', N'889', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30481', N'Thạnh Mỹ Tây', N'Thanh My Tay', N'Xã Thạnh Mỹ Tây', N'Thanh My Tay Commune', N'thanh_my_tay', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30484', N'Bình Long', N'Binh Long', N'Xã Bình Long', N'Binh Long Commune', N'binh_long', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30487', N'Bình Mỹ', N'Binh My', N'Xã Bình Mỹ', N'Binh My Commune', N'binh_my', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30490', N'Bình Thủy', N'Binh Thuy', N'Xã Bình Thủy', N'Binh Thuy Commune', N'binh_thuy', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30493', N'Đào Hữu Cảnh', N'Dao Huu Canh', N'Xã Đào Hữu Cảnh', N'Dao Huu Canh Commune', N'dao_huu_canh', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30496', N'Bình Phú', N'Binh Phu', N'Xã Bình Phú', N'Binh Phu Commune', N'binh_phu', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30499', N'Bình Chánh', N'Binh Chanh', N'Xã Bình Chánh', N'Binh Chanh Commune', N'binh_chanh', N'889', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30502', N'Nhà Bàng', N'Nha Bang', N'Phường Nhà Bàng', N'Nha Bang Ward', N'nha_bang', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30505', N'Chi Lăng', N'Chi Lang', N'Phường Chi Lăng', N'Chi Lang Ward', N'chi_lang', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30508', N'Núi Voi', N'Nui Voi', N'Phường Núi Voi', N'Nui Voi Ward', N'nui_voi', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30511', N'Nhơn Hưng', N'Nhon Hung', N'Phường Nhơn Hưng', N'Nhon Hung Ward', N'nhon_hung', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30514', N'An Phú', N'An Phu', N'Phường An Phú', N'An Phu Ward', N'an_phu', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30517', N'Thới Sơn', N'Thoi Son', N'Phường Thới Sơn', N'Thoi Son Ward', N'thoi_son', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30520', N'Tịnh Biên', N'Tinh Bien', N'Phường Tịnh Biên', N'Tinh Bien Ward', N'tinh_bien', N'890', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30523', N'Văn Giáo', N'Van Giao', N'Xã Văn Giáo', N'Van Giao Commune', N'van_giao', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30526', N'An Cư', N'An Cu', N'Xã An Cư', N'An Cu Commune', N'an_cu', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30529', N'An Nông', N'An Nong', N'Xã An Nông', N'An Nong Commune', N'an_nong', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30532', N'Vĩnh Trung', N'Vinh Trung', N'Xã Vĩnh Trung', N'Vinh Trung Commune', N'vinh_trung', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30535', N'Tân Lợi', N'Tan Loi', N'Xã Tân Lợi', N'Tan Loi Commune', N'tan_loi', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30538', N'An Hảo', N'An Hao', N'Xã An Hảo', N'An Hao Commune', N'an_hao', N'890', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30541', N'Tân Lập', N'Tan Lap', N'Xã Tân Lập', N'Tan Lap Commune', N'tan_lap', N'890', 10)
+GO
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30544', N'Tri Tôn', N'Tri Ton', N'Thị trấn Tri Tôn', N'Tri Ton Township', N'tri_ton', N'891', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30547', N'Ba Chúc', N'Ba Chuc', N'Thị trấn Ba Chúc', N'Ba Chuc Township', N'ba_chuc', N'891', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30550', N'Lạc Quới', N'Lac Quoi', N'Xã Lạc Quới', N'Lac Quoi Commune', N'lac_quoi', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30553', N'Lê Trì', N'Le Tri', N'Xã Lê Trì', N'Le Tri Commune', N'le_tri', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30556', N'Vĩnh Gia', N'Vinh Gia', N'Xã Vĩnh Gia', N'Vinh Gia Commune', N'vinh_gia', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30559', N'Vĩnh Phước', N'Vinh Phuoc', N'Xã Vĩnh Phước', N'Vinh Phuoc Commune', N'vinh_phuoc', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30562', N'Châu Lăng', N'Chau Lang', N'Xã Châu Lăng', N'Chau Lang Commune', N'chau_lang', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30565', N'Lương Phi', N'Luong Phi', N'Xã Lương Phi', N'Luong Phi Commune', N'luong_phi', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30568', N'Lương An Trà', N'Luong An Tra', N'Xã Lương An Trà', N'Luong An Tra Commune', N'luong_an_tra', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30571', N'Tà Đảnh', N'Ta Danh', N'Xã Tà Đảnh', N'Ta Danh Commune', N'ta_danh', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30574', N'Núi Tô', N'Nui To', N'Xã Núi Tô', N'Nui To Commune', N'nui_to', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30577', N'An Tức', N'An Tuc', N'Xã An Tức', N'An Tuc Commune', N'an_tuc', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30580', N'Cô Tô', N'Co To', N'Thị trấn Cô Tô', N'Co To Township', N'co_to', N'891', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30583', N'Tân Tuyến', N'Tan Tuyen', N'Xã Tân Tuyến', N'Tan Tuyen Commune', N'tan_tuyen', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30586', N'Ô Lâm', N'O Lam', N'Xã Ô Lâm', N'O Lam Commune', N'o_lam', N'891', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30589', N'An Châu', N'An Chau', N'Thị trấn An Châu', N'An Chau Township', N'an_chau', N'892', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30592', N'An Hòa', N'An Hoa', N'Xã An Hòa', N'An Hoa Commune', N'an_hoa', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30595', N'Cần Đăng', N'Can Dang', N'Xã Cần Đăng', N'Can Dang Commune', N'can_dang', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30598', N'Vĩnh Hanh', N'Vinh Hanh', N'Xã Vĩnh Hanh', N'Vinh Hanh Commune', N'vinh_hanh', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30601', N'Bình Thạnh', N'Binh Thanh', N'Xã Bình Thạnh', N'Binh Thanh Commune', N'binh_thanh', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30604', N'Vĩnh Bình', N'Vinh Binh', N'Thị trấn Vĩnh Bình', N'Vinh Binh Township', N'vinh_binh', N'892', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30607', N'Bình Hòa', N'Binh Hoa', N'Xã Bình Hòa', N'Binh Hoa Commune', N'binh_hoa', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30610', N'Vĩnh An', N'Vinh An', N'Xã Vĩnh An', N'Vinh An Commune', N'vinh_an', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30613', N'Hòa Bình Thạnh', N'Hoa Binh Thanh', N'Xã Hòa Bình Thạnh', N'Hoa Binh Thanh Commune', N'hoa_binh_thanh', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30616', N'Vĩnh Lợi', N'Vinh Loi', N'Xã Vĩnh Lợi', N'Vinh Loi Commune', N'vinh_loi', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30619', N'Vĩnh Nhuận', N'Vinh Nhuan', N'Xã Vĩnh Nhuận', N'Vinh Nhuan Commune', N'vinh_nhuan', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30622', N'Tân Phú', N'Tan Phu', N'Xã Tân Phú', N'Tan Phu Commune', N'tan_phu', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30625', N'Vĩnh Thành', N'Vinh Thanh', N'Xã Vĩnh Thành', N'Vinh Thanh Commune', N'vinh_thanh', N'892', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30628', N'Chợ Mới', N'Cho Moi', N'Thị trấn Chợ Mới', N'Cho Moi Township', N'cho_moi', N'893', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30631', N'Mỹ Luông', N'My Luong', N'Thị trấn Mỹ Luông', N'My Luong Township', N'my_luong', N'893', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30634', N'Kiến An', N'Kien An', N'Xã Kiến An', N'Kien An Commune', N'kien_an', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30637', N'Mỹ Hội Đông', N'My Hoi Dong', N'Xã Mỹ Hội Đông', N'My Hoi Dong Commune', N'my_hoi_dong', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30640', N'Long Điền A', N'Long Dien A', N'Xã Long Điền A', N'Long Dien A Commune', N'long_dien_a', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30643', N'Tấn Mỹ', N'Tan My', N'Xã Tấn Mỹ', N'Tan My Commune', N'tan_my', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30646', N'Long Điền B', N'Long Dien B', N'Xã Long Điền B', N'Long Dien B Commune', N'long_dien_b', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30649', N'Kiến Thành', N'Kien Thanh', N'Xã Kiến Thành', N'Kien Thanh Commune', N'kien_thanh', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30652', N'Mỹ Hiệp', N'My Hiep', N'Xã Mỹ Hiệp', N'My Hiep Commune', N'my_hiep', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30655', N'Mỹ An', N'My An', N'Xã Mỹ An', N'My An Commune', N'my_an', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30658', N'Nhơn Mỹ', N'Nhon My', N'Xã Nhơn Mỹ', N'Nhon My Commune', N'nhon_my', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30661', N'Long Giang', N'Long Giang', N'Xã Long Giang', N'Long Giang Commune', N'long_giang', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30664', N'Long Kiến', N'Long Kien', N'Xã Long Kiến', N'Long Kien Commune', N'long_kien', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30667', N'Bình Phước Xuân', N'Binh Phuoc Xuan', N'Xã Bình Phước Xuân', N'Binh Phuoc Xuan Commune', N'binh_phuoc_xuan', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30670', N'An Thạnh Trung', N'An Thanh Trung', N'Xã An Thạnh Trung', N'An Thanh Trung Commune', N'an_thanh_trung', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30673', N'Hội An', N'Hoi An', N'Thị trấn Hội An', N'Hoi An Township', N'hoi_an', N'893', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30676', N'Hòa Bình', N'Hoa Binh', N'Xã Hòa Bình', N'Hoa Binh Commune', N'hoa_binh', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30679', N'Hòa An', N'Hoa An', N'Xã Hòa An', N'Hoa An Commune', N'hoa_an', N'893', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30682', N'Núi Sập', N'Nui Sap', N'Thị trấn Núi Sập', N'Nui Sap Township', N'nui_sap', N'894', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30685', N'Phú Hoà', N'Phu Hoa', N'Thị trấn Phú Hoà', N'Phu Hoa Township', N'phu_hoa', N'894', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30688', N'Óc Eo', N'Oc Eo', N'Thị trấn Óc Eo', N'Oc Eo Township', N'oc_eo', N'894', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30691', N'Tây Phú', N'Tay Phu', N'Xã Tây Phú', N'Tay Phu Commune', N'tay_phu', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30692', N'An Bình', N'An Binh', N'Xã An Bình', N'An Binh Commune', N'an_binh', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30694', N'Vĩnh Phú', N'Vinh Phu', N'Xã Vĩnh Phú', N'Vinh Phu Commune', N'vinh_phu', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30697', N'Vĩnh Trạch', N'Vinh Trach', N'Xã Vĩnh Trạch', N'Vinh Trach Commune', N'vinh_trach', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30700', N'Phú Thuận', N'Phu Thuan', N'Xã Phú Thuận', N'Phu Thuan Commune', N'phu_thuan', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30703', N'Vĩnh Chánh', N'Vinh Chanh', N'Xã Vĩnh Chánh', N'Vinh Chanh Commune', N'vinh_chanh', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30706', N'Định Mỹ', N'Dinh My', N'Xã Định Mỹ', N'Dinh My Commune', N'dinh_my', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30709', N'Định Thành', N'Dinh Thanh', N'Xã Định Thành', N'Dinh Thanh Commune', N'dinh_thanh', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30712', N'Mỹ Phú Đông', N'My Phu Dong', N'Xã Mỹ Phú Đông', N'My Phu Dong Commune', N'my_phu_dong', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30715', N'Vọng Đông', N'Vong Dong', N'Xã Vọng Đông', N'Vong Dong Commune', N'vong_dong', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30718', N'Vĩnh Khánh', N'Vinh Khanh', N'Xã Vĩnh Khánh', N'Vinh Khanh Commune', N'vinh_khanh', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30721', N'Thoại Giang', N'Thoai Giang', N'Xã Thoại Giang', N'Thoai Giang Commune', N'thoai_giang', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30724', N'Bình Thành', N'Binh Thanh', N'Xã Bình Thành', N'Binh Thanh Commune', N'binh_thanh', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'30727', N'Vọng Thê', N'Vong The', N'Xã Vọng Thê', N'Vong The Commune', N'vong_the', N'894', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31117', N'Cái Khế', N'Cai Khe', N'Phường Cái Khế', N'Cai Khe Ward', N'cai_khe', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31120', N'An Hòa', N'An Hoa', N'Phường An Hòa', N'An Hoa Ward', N'an_hoa', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31123', N'Thới Bình', N'Thoi Binh', N'Phường Thới Bình', N'Thoi Binh Ward', N'thoi_binh', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31126', N'An Nghiệp', N'An Nghiep', N'Phường An Nghiệp', N'An Nghiep Ward', N'an_nghiep', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31129', N'An Cư', N'An Cu', N'Phường An Cư', N'An Cu Ward', N'an_cu', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31135', N'Tân An', N'Tan An', N'Phường Tân An', N'Tan An Ward', N'tan_an', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31141', N'An Phú', N'An Phu', N'Phường An Phú', N'An Phu Ward', N'an_phu', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31144', N'Xuân Khánh', N'Xuan Khanh', N'Phường Xuân Khánh', N'Xuan Khanh Ward', N'xuan_khanh', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31147', N'Hưng Lợi', N'Hung Loi', N'Phường Hưng Lợi', N'Hung Loi Ward', N'hung_loi', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31149', N'An Khánh', N'An Khanh', N'Phường An Khánh', N'An Khanh Ward', N'an_khanh', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31150', N'An Bình', N'An Binh', N'Phường An Bình', N'An Binh Ward', N'an_binh', N'916', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31153', N'Châu Văn Liêm', N'Chau Van Liem', N'Phường Châu Văn Liêm', N'Chau Van Liem Ward', N'chau_van_liem', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31154', N'Thới Hòa', N'Thoi Hoa', N'Phường Thới Hòa', N'Thoi Hoa Ward', N'thoi_hoa', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31156', N'Thới Long', N'Thoi Long', N'Phường Thới Long', N'Thoi Long Ward', N'thoi_long', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31157', N'Long Hưng', N'Long Hung', N'Phường Long Hưng', N'Long Hung Ward', N'long_hung', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31159', N'Thới An', N'Thoi An', N'Phường Thới An', N'Thoi An Ward', N'thoi_an', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31162', N'Phước Thới', N'Phuoc Thoi', N'Phường Phước Thới', N'Phuoc Thoi Ward', N'phuoc_thoi', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31165', N'Trường Lạc', N'Truong Lac', N'Phường Trường Lạc', N'Truong Lac Ward', N'truong_lac', N'917', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31168', N'Bình Thủy', N'Binh Thuy', N'Phường Bình Thủy', N'Binh Thuy Ward', N'binh_thuy', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31169', N'Trà An', N'Tra An', N'Phường Trà An', N'Tra An Ward', N'tra_an', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31171', N'Trà Nóc', N'Tra Noc', N'Phường Trà Nóc', N'Tra Noc Ward', N'tra_noc', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31174', N'Thới An Đông', N'Thoi An Dong', N'Phường Thới An Đông', N'Thoi An Dong Ward', N'thoi_an_dong', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31177', N'An Thới', N'An Thoi', N'Phường An Thới', N'An Thoi Ward', N'an_thoi', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31178', N'Bùi Hữu Nghĩa', N'Bui Huu Nghia', N'Phường Bùi Hữu Nghĩa', N'Bui Huu Nghia Ward', N'bui_huu_nghia', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31180', N'Long Hòa', N'Long Hoa', N'Phường Long Hòa', N'Long Hoa Ward', N'long_hoa', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31183', N'Long Tuyền', N'Long Tuyen', N'Phường Long Tuyền', N'Long Tuyen Ward', N'long_tuyen', N'918', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31186', N'Lê Bình', N'Le Binh', N'Phường Lê Bình', N'Le Binh Ward', N'le_binh', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31189', N'Hưng Phú', N'Hung Phu', N'Phường Hưng Phú', N'Hung Phu Ward', N'hung_phu', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31192', N'Hưng Thạnh', N'Hung Thanh', N'Phường Hưng Thạnh', N'Hung Thanh Ward', N'hung_thanh', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31195', N'Ba Láng', N'Ba Lang', N'Phường Ba Láng', N'Ba Lang Ward', N'ba_lang', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31198', N'Thường Thạnh', N'Thuong Thanh', N'Phường Thường Thạnh', N'Thuong Thanh Ward', N'thuong_thanh', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31201', N'Phú Thứ', N'Phu Thu', N'Phường Phú Thứ', N'Phu Thu Ward', N'phu_thu', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31204', N'Tân Phú', N'Tan Phu', N'Phường Tân Phú', N'Tan Phu Ward', N'tan_phu', N'919', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31207', N'Thốt Nốt', N'Thot Not', N'Phường Thốt Nốt', N'Thot Not Ward', N'thot_not', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31210', N'Thới Thuận', N'Thoi Thuan', N'Phường Thới Thuận', N'Thoi Thuan Ward', N'thoi_thuan', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31211', N'Vĩnh Bình', N'Vinh Binh', N'Xã Vĩnh Bình', N'Vinh Binh Commune', N'vinh_binh', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31212', N'Thuận An', N'Thuan An', N'Phường Thuận An', N'Thuan An Ward', N'thuan_an', N'923', 8)
+GO
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31213', N'Tân Lộc', N'Tan Loc', N'Phường Tân Lộc', N'Tan Loc Ward', N'tan_loc', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31216', N'Trung Nhứt', N'Trung Nhut', N'Phường Trung Nhứt', N'Trung Nhut Ward', N'trung_nhut', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31217', N'Thạnh Hoà', N'Thanh Hoa', N'Phường Thạnh Hoà', N'Thanh Hoa Ward', N'thanh_hoa', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31219', N'Trung Kiên', N'Trung Kien', N'Phường Trung Kiên', N'Trung Kien Ward', N'trung_kien', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31222', N'Trung An', N'Trung An', N'Xã Trung An', N'Trung An Commune', N'trung_an', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31225', N'Trung Thạnh', N'Trung Thanh', N'Xã Trung Thạnh', N'Trung Thanh Commune', N'trung_thanh', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31227', N'Tân Hưng', N'Tan Hung', N'Phường Tân Hưng', N'Tan Hung Ward', N'tan_hung', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31228', N'Thuận Hưng', N'Thuan Hung', N'Phường Thuận Hưng', N'Thuan Hung Ward', N'thuan_hung', N'923', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31231', N'Thanh An', N'Thanh An', N'Thị trấn Thanh An', N'Thanh An Township', N'thanh_an', N'924', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31232', N'Vĩnh Thạnh', N'Vinh Thanh', N'Thị trấn Vĩnh Thạnh', N'Vinh Thanh Township', N'vinh_thanh', N'924', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31234', N'Thạnh Mỹ', N'Thanh My', N'Xã Thạnh Mỹ', N'Thanh My Commune', N'thanh_my', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31237', N'Vĩnh Trinh', N'Vinh Trinh', N'Xã Vĩnh Trinh', N'Vinh Trinh Commune', N'vinh_trinh', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31240', N'Thạnh An', N'Thanh An', N'Xã Thạnh An', N'Thanh An Commune', N'thanh_an', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31241', N'Thạnh Tiến', N'Thanh Tien', N'Xã Thạnh Tiến', N'Thanh Tien Commune', N'thanh_tien', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31243', N'Thạnh Thắng', N'Thanh Thang', N'Xã Thạnh Thắng', N'Thanh Thang Commune', N'thanh_thang', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31244', N'Thạnh Lợi', N'Thanh Loi', N'Xã Thạnh Lợi', N'Thanh Loi Commune', N'thanh_loi', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31246', N'Thạnh Qưới', N'Thanh Quoi', N'Xã Thạnh Qưới', N'Thanh Quoi Commune', N'thanh_quoi', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31249', N'Thạnh Phú', N'Thanh Phu', N'Xã Thạnh Phú', N'Thanh Phu Commune', N'thanh_phu', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31252', N'Thạnh Lộc', N'Thanh Loc', N'Xã Thạnh Lộc', N'Thanh Loc Commune', N'thanh_loc', N'924', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31255', N'Trung Hưng', N'Trung Hung', N'Xã Trung Hưng', N'Trung Hung Commune', N'trung_hung', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31258', N'Thới Lai', N'Thoi Lai', N'Thị trấn Thới Lai', N'Thoi Lai Township', N'thoi_lai', N'927', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31261', N'Cờ Đỏ', N'Co Do', N'Thị trấn Cờ Đỏ', N'Co Do Township', N'co_do', N'925', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31264', N'Thới Hưng', N'Thoi Hung', N'Xã Thới Hưng', N'Thoi Hung Commune', N'thoi_hung', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31267', N'Thới Thạnh', N'Thoi Thanh', N'Xã Thới Thạnh', N'Thoi Thanh Commune', N'thoi_thanh', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31268', N'Tân Thạnh', N'Tan Thanh', N'Xã Tân Thạnh', N'Tan Thanh Commune', N'tan_thanh', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31270', N'Xuân Thắng', N'Xuan Thang', N'Xã Xuân Thắng', N'Xuan Thang Commune', N'xuan_thang', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31273', N'Đông Hiệp', N'Dong Hiep', N'Xã Đông Hiệp', N'Dong Hiep Commune', N'dong_hiep', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31274', N'Đông Thắng', N'Dong Thang', N'Xã Đông Thắng', N'Dong Thang Commune', N'dong_thang', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31276', N'Thới Đông', N'Thoi Dong', N'Xã Thới Đông', N'Thoi Dong Commune', N'thoi_dong', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31277', N'Thới Xuân', N'Thoi Xuan', N'Xã Thới Xuân', N'Thoi Xuan Commune', N'thoi_xuan', N'925', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31279', N'Đông Bình', N'Dong Binh', N'Xã Đông Bình', N'Dong Binh Commune', N'dong_binh', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31282', N'Đông Thuận', N'Dong Thuan', N'Xã Đông Thuận', N'Dong Thuan Commune', N'dong_thuan', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31285', N'Thới Tân', N'Thoi Tan', N'Xã Thới Tân', N'Thoi Tan Commune', N'thoi_tan', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31286', N'Trường Thắng', N'Truong Thang', N'Xã Trường Thắng', N'Truong Thang Commune', N'truong_thang', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31288', N'Định Môn', N'Dinh Mon', N'Xã Định Môn', N'Dinh Mon Commune', N'dinh_mon', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31291', N'Trường Thành', N'Truong Thanh', N'Xã Trường Thành', N'Truong Thanh Commune', N'truong_thanh', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31294', N'Trường Xuân', N'Truong Xuan', N'Xã Trường Xuân', N'Truong Xuan Commune', N'truong_xuan', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31297', N'Trường Xuân A', N'Truong Xuan A', N'Xã Trường Xuân A', N'Truong Xuan A Commune', N'truong_xuan_a', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31298', N'Trường Xuân B', N'Truong Xuan B', N'Xã Trường Xuân B', N'Truong Xuan B Commune', N'truong_xuan_b', N'927', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31299', N'Phong Điền', N'Phong Dien', N'Thị trấn Phong Điền', N'Phong Dien Township', N'phong_dien', N'926', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31300', N'Nhơn Ái', N'Nhon Ai', N'Xã Nhơn Ái', N'Nhon Ai Commune', N'nhon_ai', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31303', N'Giai Xuân', N'Giai Xuan', N'Xã Giai Xuân', N'Giai Xuan Commune', N'giai_xuan', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31306', N'Tân Thới', N'Tan Thoi', N'Xã Tân Thới', N'Tan Thoi Commune', N'tan_thoi', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31309', N'Trường Long', N'Truong Long', N'Xã Trường Long', N'Truong Long Commune', N'truong_long', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31312', N'Mỹ Khánh', N'My Khanh', N'Xã Mỹ Khánh', N'My Khanh Commune', N'my_khanh', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31315', N'Nhơn Nghĩa', N'Nhon Nghia', N'Xã Nhơn Nghĩa', N'Nhon Nghia Commune', N'nhon_nghia', N'926', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31318', N'I', N'I', N'Phường I', N'I Ward', N'i', N'930', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31321', N'III', N'III', N'Phường III', N'III Ward', N'iii', N'930', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31324', N'IV', N'IV', N'Phường IV', N'IV Ward', N'iv', N'930', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31327', N'V', N'V', N'Phường V', N'V Ward', N'v', N'930', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31330', N'VII', N'VII', N'Phường VII', N'VII Ward', N'vii', N'930', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31333', N'Vị Tân', N'Vi Tan', N'Xã Vị Tân', N'Vi Tan Commune', N'vi_tan', N'930', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31336', N'Hoả Lựu', N'Hoa Luu', N'Xã Hoả Lựu', N'Hoa Luu Commune', N'hoa_luu', N'930', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31338', N'Tân Tiến', N'Tan Tien', N'Xã Tân Tiến', N'Tan Tien Commune', N'tan_tien', N'930', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31339', N'Hoả Tiến', N'Hoa Tien', N'Xã Hoả Tiến', N'Hoa Tien Commune', N'hoa_tien', N'930', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31340', N'Ngã Bảy', N'Nga Bay', N'Phường Ngã Bảy', N'Nga Bay Ward', N'nga_bay', N'931', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31341', N'Lái Hiếu', N'Lai Hieu', N'Phường Lái Hiếu', N'Lai Hieu Ward', N'lai_hieu', N'931', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31342', N'Một Ngàn', N'Mot Ngan', N'Thị trấn Một Ngàn', N'Mot Ngan Township', N'mot_ngan', N'932', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31343', N'Hiệp Thành', N'Hiep Thanh', N'Phường Hiệp Thành', N'Hiep Thanh Ward', N'hiep_thanh', N'931', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31344', N'Hiệp Lợi', N'Hiep Loi', N'Phường Hiệp Lợi', N'Hiep Loi Ward', N'hiep_loi', N'931', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31345', N'Tân Hoà', N'Tan Hoa', N'Xã Tân Hoà', N'Tan Hoa Commune', N'tan_hoa', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31346', N'Bảy Ngàn', N'Bay Ngan', N'Thị trấn Bảy Ngàn', N'Bay Ngan Township', N'bay_ngan', N'932', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31348', N'Trường Long Tây', N'Truong Long Tay', N'Xã Trường Long Tây', N'Truong Long Tay Commune', N'truong_long_tay', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31351', N'Trường Long A', N'Truong Long A', N'Xã Trường Long A', N'Truong Long A Commune', N'truong_long_a', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31357', N'Nhơn Nghĩa A', N'Nhon Nghia A', N'Xã Nhơn Nghĩa A', N'Nhon Nghia A Commune', N'nhon_nghia_a', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31359', N'Rạch Gòi', N'Rach Goi', N'Thị trấn Rạch Gòi', N'Rach Goi Township', N'rach_goi', N'932', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31360', N'Thạnh Xuân', N'Thanh Xuan', N'Xã Thạnh Xuân', N'Thanh Xuan Commune', N'thanh_xuan', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31362', N'Cái Tắc', N'Cai Tac', N'Thị trấn Cái Tắc', N'Cai Tac Township', N'cai_tac', N'932', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31363', N'Tân Phú Thạnh', N'Tan Phu Thanh', N'Xã Tân Phú Thạnh', N'Tan Phu Thanh Commune', N'tan_phu_thanh', N'932', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31366', N'Ngã Sáu', N'Nga Sau', N'Thị trấn Ngã Sáu', N'Nga Sau Township', N'nga_sau', N'933', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31369', N'Đông Thạnh', N'Dong Thanh', N'Xã Đông Thạnh', N'Dong Thanh Commune', N'dong_thanh', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31375', N'Đông Phú', N'Dong Phu', N'Xã Đông Phú', N'Dong Phu Commune', N'dong_phu', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31378', N'Phú Hữu', N'Phu Huu', N'Xã Phú Hữu', N'Phu Huu Commune', N'phu_huu', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31379', N'Phú Tân', N'Phu Tan', N'Xã Phú Tân', N'Phu Tan Commune', N'phu_tan', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31381', N'Mái Dầm', N'Mai Dam', N'Thị trấn Mái Dầm', N'Mai Dam Township', N'mai_dam', N'933', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31384', N'Đông Phước', N'Dong Phuoc', N'Xã Đông Phước', N'Dong Phuoc Commune', N'dong_phuoc', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31387', N'Đông Phước A', N'Dong Phuoc A', N'Xã Đông Phước A', N'Dong Phuoc A Commune', N'dong_phuoc_a', N'933', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31393', N'Kinh Cùng', N'Kinh Cung', N'Thị trấn Kinh Cùng', N'Kinh Cung Township', N'kinh_cung', N'934', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31396', N'Cây Dương', N'Cay Duong', N'Thị trấn Cây Dương', N'Cay Duong Township', N'cay_duong', N'934', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31399', N'Tân Bình', N'Tan Binh', N'Xã Tân Bình', N'Tan Binh Commune', N'tan_binh', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31402', N'Bình Thành', N'Binh Thanh', N'Xã Bình Thành', N'Binh Thanh Commune', N'binh_thanh', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31405', N'Thạnh Hòa', N'Thanh Hoa', N'Xã Thạnh Hòa', N'Thanh Hoa Commune', N'thanh_hoa', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31408', N'Long Thạnh', N'Long Thanh', N'Xã Long Thạnh', N'Long Thanh Commune', N'long_thanh', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31411', N'Đại Thành', N'Dai Thanh', N'Xã Đại Thành', N'Dai Thanh Commune', N'dai_thanh', N'931', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31414', N'Tân Thành', N'Tan Thanh', N'Xã Tân Thành', N'Tan Thanh Commune', N'tan_thanh', N'931', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31417', N'Phụng Hiệp', N'Phung Hiep', N'Xã Phụng Hiệp', N'Phung Hiep Commune', N'phung_hiep', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31420', N'Hòa Mỹ', N'Hoa My', N'Xã Hòa Mỹ', N'Hoa My Commune', N'hoa_my', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31423', N'Hòa An', N'Hoa An', N'Xã Hòa An', N'Hoa An Commune', N'hoa_an', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31426', N'Phương Bình', N'Phuong Binh', N'Xã Phương Bình', N'Phuong Binh Commune', N'phuong_binh', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31429', N'Hiệp Hưng', N'Hiep Hung', N'Xã Hiệp Hưng', N'Hiep Hung Commune', N'hiep_hung', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31432', N'Tân Phước Hưng', N'Tan Phuoc Hung', N'Xã Tân Phước Hưng', N'Tan Phuoc Hung Commune', N'tan_phuoc_hung', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31433', N'Búng Tàu', N'Bung Tau', N'Thị trấn Búng Tàu', N'Bung Tau Township', N'bung_tau', N'934', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31435', N'Phương Phú', N'Phuong Phu', N'Xã Phương Phú', N'Phuong Phu Commune', N'phuong_phu', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31438', N'Tân Long', N'Tan Long', N'Xã Tân Long', N'Tan Long Commune', N'tan_long', N'934', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31441', N'Nàng Mau', N'Nang Mau', N'Thị trấn Nàng Mau', N'Nang Mau Township', N'nang_mau', N'935', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31444', N'Vị Trung', N'Vi Trung', N'Xã Vị Trung', N'Vi Trung Commune', N'vi_trung', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31447', N'Vị Thuỷ', N'Vi Thuy', N'Xã Vị Thuỷ', N'Vi Thuy Commune', N'vi_thuy', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31450', N'Vị Thắng', N'Vi Thang', N'Xã Vị Thắng', N'Vi Thang Commune', N'vi_thang', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31453', N'Vĩnh Thuận Tây', N'Vinh Thuan Tay', N'Xã Vĩnh Thuận Tây', N'Vinh Thuan Tay Commune', N'vinh_thuan_tay', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31456', N'Vĩnh Trung', N'Vinh Trung', N'Xã Vĩnh Trung', N'Vinh Trung Commune', N'vinh_trung', N'935', 10)
+GO
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31459', N'Vĩnh Tường', N'Vinh Tuong', N'Xã Vĩnh Tường', N'Vinh Tuong Commune', N'vinh_tuong', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31462', N'Vị Đông', N'Vi Dong', N'Xã Vị Đông', N'Vi Dong Commune', N'vi_dong', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31465', N'Vị Thanh', N'Vi Thanh', N'Xã Vị Thanh', N'Vi Thanh Commune', N'vi_thanh', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31468', N'Vị Bình', N'Vi Binh', N'Xã Vị Bình', N'Vi Binh Commune', N'vi_binh', N'935', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31471', N'Thuận An', N'Thuan An', N'Phường Thuận An', N'Thuan An Ward', N'thuan_an', N'937', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31472', N'Trà Lồng', N'Tra Long', N'Phường Trà Lồng', N'Tra Long Ward', N'tra_long', N'937', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31473', N'Bình Thạnh', N'Binh Thanh', N'Phường Bình Thạnh', N'Binh Thanh Ward', N'binh_thanh', N'937', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31474', N'Long Bình', N'Long Binh', N'Xã Long Bình', N'Long Binh Commune', N'long_binh', N'937', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31475', N'Vĩnh Tường', N'Vinh Tuong', N'Phường Vĩnh Tường', N'Vinh Tuong Ward', N'vinh_tuong', N'937', 8)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31477', N'Long Trị', N'Long Tri', N'Xã Long Trị', N'Long Tri Commune', N'long_tri', N'937', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31478', N'Long Trị A', N'Long Tri A', N'Xã Long Trị A', N'Long Tri A Commune', N'long_tri_a', N'937', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31480', N'Long Phú', N'Long Phu', N'Xã Long Phú', N'Long Phu Commune', N'long_phu', N'937', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31481', N'Tân Phú', N'Tan Phu', N'Xã Tân Phú', N'Tan Phu Commune', N'tan_phu', N'937', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31483', N'Thuận Hưng', N'Thuan Hung', N'Xã Thuận Hưng', N'Thuan Hung Commune', N'thuan_hung', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31484', N'Thuận Hòa', N'Thuan Hoa', N'Xã Thuận Hòa', N'Thuan Hoa Commune', N'thuan_hoa', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31486', N'Vĩnh Thuận Đông', N'Vinh Thuan Dong', N'Xã Vĩnh Thuận Đông', N'Vinh Thuan Dong Commune', N'vinh_thuan_dong', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31489', N'Vĩnh Viễn', N'Vinh Vien', N'Thị trấn Vĩnh Viễn', N'Vinh Vien Township', N'vinh_vien', N'936', 9)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31490', N'Vĩnh Viễn A', N'Vinh Vien A', N'Xã Vĩnh Viễn A', N'Vinh Vien A Commune', N'vinh_vien_a', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31492', N'Lương Tâm', N'Luong Tam', N'Xã Lương Tâm', N'Luong Tam Commune', N'luong_tam', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31493', N'Lương Nghĩa', N'Luong Nghia', N'Xã Lương Nghĩa', N'Luong Nghia Commune', N'luong_nghia', N'936', 10)
+INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [code_name], [district_code], [administrative_unit_id]) VALUES (N'31495', N'Xà Phiên', N'Xa Phien', N'Xã Xà Phiên', N'Xa Phien Commune', N'xa_phien', N'936', 10)
+GO
 
 -- [address]
-INSERT INTO [address](recieved_name, detail_address, district, city_id, isDeleted) values
-('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
-('Hieu Nguyen', '12 Lý Thái Tổ', 'quận Hoàn Kiếm', 1, 1),
-('Hieu Nguyen', '01 Hoàng Diệu', 'quận Ba Đình', 1, 1),
-('Chinh Bach', '18 Trần Hưng Đạo', 'quận Hoàn Kiếm', 1, 1),
-('Chinh Bach', '33 Hàng Bông', 'quận Hoàn Kiếm', 1, 1),
-('Thanh Mai', '5B Lý Tự Trọng', 'quận Ninh Kiều', 57, 1),
-('Le Chau', '5B Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
-('Nhan Tran', '20C Trần Văn Khéo', 'quận Ninh Kiều', 57, 1),
-('Nhan Tran', '30B3E Trần Hưng Đạo', 'quận Ninh Kiều', 57, 1),
-('Hung Pham', '10B Lê Lợi', 'quận 1', 49, 1),
-('Hung Pham', '50K Đồng Khời', 'quận 1', 49, 1),
-('Kim Pham', '35G Đống Đa', 'quận Hải Châu', 31, 1),
-('Kim Pham', 'Số 20D Lê Duẩn', 'quận Hải Châu', 31, 1),
-('Quynh Nguyen', '10B Hạ Long', 'quận 4', 48, 1),
-('Quynh Nguyen', '50K Trần Phú', 'quận 1', 48, 1),
-('Tuan Dang', '45M Phạm Văn Đồng', 'quận Hải An', 20, 1),
-('Tuan Dang', '30F Quang Trung', 'quận Dương Kinh', 20, 1),
-('Minh Vo', '22A Nguyễn Thị Minh Khai', 'quận 3', 49, 1),
-('Minh Vo', '7B Nguyễn Thái Bình', 'quận 1', 49, 1),
-('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
-('Huong Truong', '50G Bạch Đằng', 'thị trấn Bắc Cạn', 4, 1),
-('Khai Nguyen', '24C Trần Phú', 'thị trấn Hà Giang', 2, 1),
-('Khai Nguyen', '36D Nguyễn Thái Học', 'phường Minh Khai', 2, 1),
-('Binh Tran', '34E Bạch Dương', 'quận Hải Châu', 31, 1),
-('Binh Tran', '78F Lê Duẩn', 'quận Thanh Khê', 31, 1),
-('Ngoc Nguyen', '22B Hải Tân', 'huyện Ninh Giang', 19, 1),
-('Ngoc Nguyen', '23E Hải Sơn', 'huyện Gia Lộc', 19, 1),
-('Thu Hang', '15C Tân Cương', 'xã Tân Cương', 12, 1),
-('Thu Hang', '14E Quyết Thắng', 'xã Quyết Thắng', 12, 1),
-('Tien Le', '26D Hòa Phú', 'xã Hòa Phú', 29, 1),
-('Tien Le', '187T Bạch Dương', 'xã Cư Kurin', 29, 1),
-('Phat Tran', '10A Lê Lợi', 'xã Mỹ Thạnh', 52, 1),
-('Phat Tran', '145B Nguyễn Văn Cừ', 'xã Châu Phú', 52, 1),
-('Vu Quang', '10A Nguyễn Đình Chiểu', 'xã Long Đức', 61, 1),
-('Vu Quang', '149D Lê Văn Duyệt', 'xã An Phú', 61, 1),
-('Anh Nguyen', '87C Nguyễn Văn Linh', 'xã Bình Tân', 58, 1),
-('Anh Nguyen', '19B Lê Lợi', 'xã Đức Hòa', 58, 1),
-('Thuy Truong', '87B Phạm Văn Đồng', 'huyện Mậu Đức', 33, 1),
-('Tram Vo', '600 Nguyễn Văn Cừ Nối dài', 'quận Ninh Kiều', 57, 1),
-('Tram Vo', '84D Mậu Thân', 'quận Ninh Kiều', 57, 1),
-('Thuan Nguyen', '10A Lê Lợi', 'huyện Bảo Lâm', 43, 1),
-('Thuan Nguyen', '178D Trần Hưng Đạo', 'huyện Di Linh', 43, 1),
-('Wei Ching', '65P Quang Trung', 'huyện Diên Khánh', 36, 1),
-('Wei Ching', '80T Trần Phú', 'huyện Vạn Ninh', 36, 1),
-('Bao Nguyen', '12G Lý Thường Kiệt', 'huyện Đắk Hà', 39, 1),
-('Bao Nguyen', '18I Phan Bội Châu', 'huyện Ngọc Hồi', 39, 1);
+INSERT INTO [address](recieved_name, detail_address, province_code, districts_code, wards_code, isDeleted) values
+('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 92, 916, 31144, 1),
+('Hieu Nguyen', '12 Lý Thái Tổ', 86, 855, 29542, 1),
+('Hieu Nguyen', '01 Hoàng Diệu', 89, 883, 30280, 1),
+('Chinh Bach', '18 Trần Hưng Đạo', 92, 917, 31153, 1),
+('Chinh Bach', '33 Hàng Bông', 93, 933, 31378, 1),
+('Thanh Mai', '5B Lý Tự Trọng', 86, 857, 29575, 1),
+('Le Chau', '5B Trần Văn Khéo', 89, 884, 30316, 1),
+('Nhan Tran', '20C Trần Văn Khéo', 92, 916, 31149, 1),
+('Nhan Tran', '30B3E Trần Hưng Đạo', 92, 916, 31150, 1),
+('Hung Pham', '10B Lê Lợi', 86, 858, 29623, 1),
+('Hung Pham', '50K Đồng Khời', 89, 886, 30337, 1),
+('Kim Pham', '35G Đống Đa', 92, 918, 31168, 1),
+('Kim Pham', 'Số 20D Lê Duẩn', 93, 930, 31318, 1),
+('Quynh Nguyen', '10B Hạ Long', 86, 859, 29659, 1),
+('Quynh Nguyen', '50K Trần Phú',89, 887, 30376, 1),
+('Tuan Dang', '45M Phạm Văn Đồng', 92, 919, 31186, 1),
+('Tuan Dang', '30F Quang Trung', 93, 931, 31340, 1),
+('Minh Vo', '22A Nguyễn Thị Minh Khai', 86, 860, 29719, 1),
+('Minh Vo', '7B Nguyễn Thái Bình', 89, 888, 30406, 1),
+('Huong Truong', '50G Bạch Đằng', 92, 923, 31207, 1),
+('Huong Truong', '50G Bạch Đằng', 93, 932, 31342, 1),
+('Khai Nguyen', '24C Trần Phú', 86, 861, 29770, 1),
+('Khai Nguyen', '36D Nguyễn Thái Học', 89, 889, 30463, 1),
+('Binh Tran', '34E Bạch Dương', 92, 924, 31211, 1),
+('Binh Tran', '78F Lê Duẩn', 93, 933, 31366, 1),
+('Ngoc Nguyen', '22B Hải Tân', 86, 862, 29821, 1),
+('Ngoc Nguyen', '23E Hải Sơn', 89, 890, 30502, 1),
+('Thu Hang', '15C Tân Cương', 92, 925, 31222, 1),
+('Thu Hang', '14E Quyết Thắng', 93, 934, 31393, 1),
+('Tien Le', '26D Hòa Phú', 86, 863, 29773, 1),
+('Tien Le', '187T Bạch Dương', 89, 891, 30544, 1),
+('Phat Tran', '10A Lê Lợi', 92, 926, 31299, 1),
+('Phat Tran', '145B Nguyễn Văn Cừ', 93, 935, 31441, 1),
+('Vu Quang', '10A Nguyễn Đình Chiểu', 86, 855, 29545, 1),
+('Vu Quang', '149D Lê Văn Duyệt', 89, 892, 30589, 1),
+('Anh Nguyen', '87C Nguyễn Văn Linh', 92, 927, 31258, 1),
+('Anh Nguyen', '19B Lê Lợi', 93, 936, 31483, 1),
+('Thuy Truong', '87B Phạm Văn Đồng', 86, 857, 29578, 1),
+('Tram Vo', '600 Nguyễn Văn Cừ Nối dài', 92, 916, 31141, 1),
+('Tram Vo', '84D Mậu Thân', 92, 916, 31129, 1),
+('Thuan Nguyen', '10A Lê Lợi', 89, 893, 30628, 1),
+('Thuan Nguyen', '178D Trần Hưng Đạo', 92, 917, 31154, 1),
+('Wei Ching', '65P Quang Trung', 93, 937, 31471, 1),
+('Wei Ching', '80T Trần Phú', 86, 858, 29626, 1),
+('Bao Nguyen', '12G Lý Thường Kiệt', 89, 894, 30682, 1),
+('Bao Nguyen', '18I Phan Bội Châu', 92, 918, 31169, 1);
 go
 
 -- [user_address]
@@ -388,114 +805,87 @@ insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [pr
 -- Chocolate Cakes
 (1, '20x30', 10, './', 163000, 1),
 (1, '30x40', 5, './', 208000, 1),
-
 (2, '20x30', 6, './', 173000, 1),
 (2, '25x35', 4, './', 188000, 1),
 (2, '30x40', 3, './', 213000, 1),
-
 (3, '20x30', 7, './', 165000, 1),
 (3, '25x35', 6, './', 180000, 1),
-
 (4, '20x30', 9, './', 170000, 1),
 (4, '25x35', 5, './', 195000, 1),
 (4, '30x40', 4, './', 220000, 1),
-
 (5, '25x35', 12, './', 180000, 1),
 (5, '30x40', 8, './', 200000, 1),
 (5, '35x45', 6, './', 225000, 1),
-
 -- Vanilla Cakes
 (6, '20x30', 4, './', 118000, 1),
 (6, '30x40', 2, './', 150000, 1),
-
 (7, '20x30', 6, './', 130000, 1),
 (7, '25x35', 5, './', 150000, 1),
 (7, '30x40', 4, './', 175000, 1),
-
 (8, '20x30', 7, './', 125000, 1),
 (8, '25x35', 6, './', 145000, 1),
 (8, '30x40', 5, './', 170000, 1),
-
 (9, '20x30', 4, './', 135000, 1),
 (9, '25x35', 3, './', 155000, 1),
 (9, '30x40', 2, './', 185000, 1),
-
 (10, '25x35', 8, './', 155000, 1),
 (10, '30x40', 6, './', 175000, 1),
 (10, '35x45', 5, './', 205000, 1),
-
 -- Pineapple Cakes
 (11, '20x30', 5, './', 163000, 1),
 (11, '25x35', 7, './', 173000, 1),
 (11, '30x40', 3, './', 193000, 1),
-
 (12, '20x30', 6, './', 165000, 1),
 (12, '25x35', 4, './', 175000, 1),
 (12, '30x40', 5, './', 185000, 1),
-
 (13, '25x35', 8, './', 178000, 1),
 (13, '30x40', 6, './', 185000, 1),
 (13, '35x45', 4, './', 195000, 1),
-
 (14, '20x30', 7, './', 180000, 1),
 (14, '25x35', 5, './', 190000, 1),
 (14, '30x40', 3, './', 200000, 1),
-
 (15, '30x40', 6, './', 372000, 1),
 (15, '35x45', 4, './', 388000, 1),
 (15, '20x25', 3, './', 400000, 1),
-
 -- Fruit Cakes
 (16, '20x30', 5, './', 236000, 1),
 (16, '25x35', 4, './', 250000, 1),
 (16, '30x40', 3, './', 265000, 1),
-
 (17, '25x35', 7, './', 245000, 1),
 (17, '30x40', 5, './', 260000, 1),
 (17, '35x45', 4, './', 275000, 1),
-
 (18, '25x35', 6, './', 236000, 1),
 (18, '30x40', 5, './', 250000, 1),
 (18, '35x45', 4, './', 265000, 1),
-
 (19, '20x30', 8, './', 239000, 1),
 (19, '25x35', 6, './', 255000, 1),
 (19, '30x40', 4, './', 270000, 1),
-
 (20, '25x35', 7, './', 245000, 1),
 (20, '30x40', 6, './', 260000, 1),
 (20, '35x45', 5, './', 275000, 1),
-
 -- Cakes For Boys
 (26, '20x30', 8, './', 416000, 1),
 (26, '25x35', 6, './', 436000, 1),
 (26, '30x40', 5, './', 456000, 1),
-
 (27, '30x40', 7, './', 470000, 1),
 (27, '35x45', 9, './', 490000, 1),
 (27, '20x25', 6, './', 510000, 1),
-
 (28, '22x26', 5, './', 520000, 1),
 (28, '24x30', 7, './', 540000, 1),
 (28, '26x32', 4, './', 560000, 1),
-
 (29, '20x30', 10, './', 430000, 1),
 (29, '25x35', 8, './', 470000, 1),
 (29, '30x40', 7, './', 490000, 1),
-
 (30, '30x40', 8, './', 450000, 1),
 (30, '35x45', 10, './', 480000, 1),
 (30, '20x25', 7, './', 500000, 1),
-
 -- Cakes For Girls
 (31, '22x26', 6, './', 510000, 1),
 (31, '24x30', 8, './', 540000, 1),
 (31, '26x32', 5, './', 570000, 1),
-
 (32, '20x30', 9, './', 450000, 1),
 (32, '25x35', 7, './', 495000, 1),
 (32, '30x40', 6, './', 510000, 1),
-
 (33, '30x40', 9, './', 450000, 1),
 (33, '35x45', 11, './', 495000, 1),
 (33, '20x25', 8, './', 510000, 1),
@@ -1048,75 +1438,75 @@ insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
 (7, 100, 'Ivory paper material, 350 gsm base tray and 300 gsm flap, 210 gsm bag', 1),
 --Size
 --Thanh
-(8, 1, '16x20', 1),
-(8, 2, '16x20', 1),
-(8, 3, '20x24', 1),
-(8, 4, '16x15', 1),
-(8, 5, '20x24', 1),
-(8, 6, '20x24', 1),
-(8, 7, '8x10', 1),
-(8, 8, '16x20', 1),
-(8, 9, '20x24', 1),
-(8, 10, '16x15', 1),
-(8, 11, '20x24', 1),
-(8, 12, '16x20', 1),
-(8, 13, '18x24', 1),
-(8, 14, '18x24', 1),
-(8, 15, '18x24', 1),
-(8, 16, '18x24', 1),
-(8, 17, '18x24', 1),
-(8, 18, '18x24', 1),
-(8, 19, '16x20', 1),
-(8, 20, '20x24', 1),
-(8, 21, '18x24', 1),
-(8, 22, '18x24', 1),
-(8, 23, '18x24', 1),
-(8, 24, '8x12', 1),
-(8, 25, '8x12', 1),
+--(8, 1, '16x20', 1),
+--(8, 2, '16x20', 1),
+--(8, 3, '20x24', 1),
+--(8, 4, '16x15', 1),
+--(8, 5, '20x24', 1),
+--(8, 6, '20x24', 1),
+--(8, 7, '8x10', 1),
+--(8, 8, '16x20', 1),
+--(8, 9, '20x24', 1),
+--(8, 10, '16x15', 1),
+--(8, 11, '20x24', 1),
+--(8, 12, '16x20', 1),
+--(8, 13, '18x24', 1),
+--(8, 14, '18x24', 1),
+--(8, 15, '18x24', 1),
+--(8, 16, '18x24', 1),
+--(8, 17, '18x24', 1),
+--(8, 18, '18x24', 1),
+--(8, 19, '16x20', 1),
+--(8, 20, '20x24', 1),
+--(8, 21, '18x24', 1),
+--(8, 22, '18x24', 1),
+--(8, 23, '18x24', 1),
+--(8, 24, '8x12', 1),
+--(8, 25, '8x12', 1),
 --Chinh
-(8, 26, '16x20', 1),
-(8, 27, '16x20', 1),
-(8, 28, '20x24', 1),
-(8, 29, '16x15', 1),
-(8, 30, '20x24', 1),
-(8, 31, '20x24', 1),
-(8, 32, '8x10', 1),
-(8, 33, '16x20', 1),
-(8, 34, '20x24', 1),
-(8, 35, '16x15', 1),
-(8, 36, '20x24', 1),
-(8, 37, '16x20', 1),
-(8, 38, '18x24', 1),
-(8, 39, '18x24', 1),
-(8, 40, '18x24', 1),
-(8, 41, '18x24', 1),
-(8, 42, '18x24', 1),
-(8, 43, '18x24', 1),
-(8, 44, '16x20', 1),
-(8, 45, '20x24', 1),
-(8, 46, '18x24', 1),
-(8, 47, '18x24', 1),
-(8, 48, '18x24', 1),
-(8, 49, '8x12', 1),
-(8, 50, '8x12', 1),
+--(8, 26, '16x20', 1),
+--(8, 27, '16x20', 1),
+--(8, 28, '20x24', 1),
+--(8, 29, '16x15', 1),
+--(8, 30, '20x24', 1),
+--(8, 31, '20x24', 1),
+--(8, 32, '8x10', 1),
+--(8, 33, '16x20', 1),
+--(8, 34, '20x24', 1),
+--(8, 35, '16x15', 1),
+--(8, 36, '20x24', 1),
+--(8, 37, '16x20', 1),
+--(8, 38, '18x24', 1),
+--(8, 39, '18x24', 1),
+--(8, 40, '18x24', 1),
+--(8, 41, '18x24', 1),
+--(8, 42, '18x24', 1),
+--(8, 43, '18x24', 1),
+--(8, 44, '16x20', 1),
+--(8, 45, '20x24', 1),
+--(8, 46, '18x24', 1),
+--(8, 47, '18x24', 1),
+--(8, 48, '18x24', 1),
+--(8, 49, '8x12', 1),
+--(8, 50, '8x12', 1),
 --Bao
-(8, 51, '16x20', 1), --400
-(8, 52, '16x20', 1),
-(8, 53, '20x24', 1), --500
-(8, 54, '10x12', 1), --350
-(8, 55, '24x30', 1), --550 
-(8, 56, '20x24',1),
-(8, 57, '8x10',1), --180
-(8, 58, '16x20',1),
-(8, 59, '20x24',1),
-(8, 60, '10x12',1), 
-(8, 61, '24x30',1),
-(8, 62, '16x20',1),
-(8, 63, '16x20', 1),
-(8, 64, '10x12', 1),
-(8, 65, '16x20', 1), 
-(8, 66, '20x24', 1),
-(8, 67, '24x30', 1),
+--(8, 51, '16x20', 1), --400
+--(8, 52, '16x20', 1),
+--(8, 53, '20x24', 1), --500
+--(8, 54, '10x12', 1), --350
+--(8, 55, '24x30', 1), --550 
+--(8, 56, '20x24',1),
+--(8, 57, '8x10',1), --180
+--(8, 58, '16x20',1),
+--(8, 59, '20x24',1),
+--(8, 60, '10x12',1), 
+--(8, 61, '24x30',1),
+--(8, 62, '16x20',1),
+--(8, 63, '16x20', 1),
+--(8, 64, '10x12', 1),
+--(8, 65, '16x20', 1), 
+--(8, 66, '20x24', 1),
+--(8, 67, '24x30', 1),
 (8, 68, '20x24', 1),
 (8, 69, '8x10', 1),
 (8, 70, '16x20', 1),
@@ -1446,56 +1836,56 @@ go
 
 -- [shop_order]
 insert into [shop_order]([user_id], [shipping_method_id], [shipping_address_id], [payment_method], [order_status_id], [order_total], [coupons_code], [order_date], [approved_date], [shipping_date], [arrived_date], [canceled_date], [canceled_reason]) values
-(1, 1, 1, 1, 5, 1318000, 'XMAS2024', '2024-09-01 01:13:39', '2024-09-01 13:13:39', '2024-09-02 12:13:39', '2024-09-04 01:13:39', null, null, 1),
-(1, 2, 1, 1, 5, 1048000, 'NEWYEAR2025', '2024-05-26 19:49:27', '2024-05-27 07:49:27', '2024-05-28 05:49:27', '2024-05-30 19:49:27', null, null, 1),
-(2, 3, 2, 2, 5, 2239000, 'SAVE15', '2024-06-12 12:59:50', '2024-06-13 00:59:50', '2024-06-13 20:59:50', '2024-06-16 12:59:50', null, null, 1),
-(2, 4, 2, 3, 5, 3261000, 'SAVE20K', '2024-02-15 22:38:19', '2024-02-16 10:38:19', '2024-02-17 07:38:19', '2024-02-19 22:38:19', null, null, 1),
-(3, 5, 4, 4, 5, 4911000, 'BLACKFRIDAY30', '2024-04-22 13:23:05', '2024-04-23 01:23:05', '2024-04-23 23:23:05', '2024-04-26 13:23:05', null, null, 1),
-(3, 1, 4, 4, 5, 334000, 'THANKSGIVING20', '2024-09-29 15:00:37', '2024-09-30 03:00:37', '2024-10-01 02:00:37', '2024-10-02 15:00:37', null, null, 1),
-(4, 2, 6, 5, 5, 583000, 'CUSTOMER20', '2024-09-29 16:55:47', '2024-09-30 04:55:47', '2024-10-01 03:55:47', '2024-10-03 16:55:47', null, null, 1),
-(4, 3, 6, 5, 5, 1502000, 'FREESHIP50', '2024-07-04 19:17:56', '2024-07-05 07:17:56', '2024-07-06 03:17:56', '2024-07-07 19:17:56', null, null, 1),
-(5, 4, 7, 6, 5, 1036000, 'FREESHIP50', '2024-04-20 16:21:30', '2024-04-21 04:21:30', '2024-04-22 02:21:30', '2024-04-24 16:21:30', null, null, 1),
-(5, 5, 7, 6, 5, 1173000, 'WELCOME30', '2024-09-10 10:48:34', '2024-09-10 22:48:34', '2024-09-11 21:48:34', '2024-09-13 10:48:34', null, null, 1),
-(6, 1, 8, 7, 5, 1712000, 'SINGLEDAY', '2024-01-04 04:01:43', '2024-01-04 16:01:43', '2024-01-05 13:01:43', '2024-01-07 04:01:43', null, null, 1),
-(6, 2, 8, 8, 5, 958000, 'MOTHERDAY100', '2024-02-23 07:38:35', '2024-02-23 19:38:35', '2024-02-24 15:38:35', '2024-02-26 07:38:35', null, null, 1),
-(7, 3, 10, 9, 5, 1406000, 'VIPCUSTOMER1000K', '2024-04-29 09:45:22', '2024-04-29 21:45:22', '2024-04-30 17:45:22', '2024-05-03 09:45:22', null, null, 1),
-(7, 4, 10, 9, 5, 3055000, 'LOYALTY20K', '2024-10-08 01:16:19', '2024-10-08 13:16:19', '2024-10-09 11:16:19', '2024-10-12 01:16:19', null, null, 1),
-(8, 5, 12, 10, 5, 2706000, NULL, '2024-07-22 23:18:36', '2024-07-23 11:18:36', '2024-07-24 08:18:36', '2024-07-25 23:18:36', null, null, 1),
-(8, 1, 12, 11, 5, 772000, NULL, '2024-08-24 00:05:05', '2024-08-24 12:05:05', '2024-08-25 11:05:05', '2024-08-28 00:05:05', null, null, 1),
-(9, 2, 14, 12, 5, 373000, 'XMAS2024', '2024-09-10 02:39:48', '2024-09-10 14:39:48', '2024-09-11 13:39:48', '2024-09-13 02:39:48', null, null, 1),
-(9, 3, 14, 12, 5, 2330000, 'NEWYEAR2025', '2024-10-23 02:13:17', '2024-10-23 14:13:17', '2024-10-24 13:13:17', '2024-10-26 02:13:17', null, null, 1),
-(10, 4, 16, 13, 5, 1754000, 'SAVE15', '2024-09-21 09:42:03', '2024-09-21 21:42:03', '2024-09-22 17:42:03', '2024-09-24 09:42:03', null, null, 1),
-(10, 5, 16, 14, 5, 1837000, 'SAVE20K', '2024-09-01 15:52:01', '2024-09-02 03:52:01', '2024-09-03 02:52:01', '2024-09-05 15:52:01', null, null, 1),
-(11, 1, 18, 15, 5, 2663000, 'BLACKFRIDAY30', '2024-09-18 14:38:18', '2024-09-19 02:38:18', '2024-09-20 01:38:18', '2024-09-21 14:38:18', null, null, 1),
-(11, 2, 18, 15, 5, 5174000, 'BLACKFRIDAY30', '2024-11-05 07:46:04', '2024-11-05 19:46:04', '2024-11-06 18:46:04', '2024-11-09 07:46:04', null, null, 1),
-(12, 3, 20, 16, 5, 2923000, 'CUSTOMER20', '2024-03-16 21:30:47', '2024-03-17 09:30:47', '2024-03-18 06:30:47', '2024-03-19 21:30:47', null, null, 1),
-(12, 4, 20, 16, 5, 621000, 'FREESHIP50', '2024-04-21 00:21:57', '2024-04-21 12:21:57', '2024-04-22 11:21:57', '2024-04-25 00:21:57', null, null, 1),
-(13, 5, 22, 17, 5, 1874000, 'FREESHIP300', '2024-05-27 18:34:04', '2024-05-28 06:34:04', '2024-05-29 03:34:04', '2024-05-31 18:34:04', null, null, 1),
-(13, 1, 22, 17, 5, 2019000, 'WELCOME30', '2024-05-07 04:09:23', '2024-05-07 16:09:23', '2024-05-08 13:09:23', '2024-05-11 04:09:23', null, null, 1),
-(14, 2, 24, 18, 5, 1860000, 'SINGLEDAY', '2024-09-30 20:12:11', '2024-10-01 08:12:11', '2024-10-02 04:12:11', '2024-10-03 20:12:11', null, null, 1),
-(14, 3, 24, 18, 5, 1518000, 'MOTHERDAY100', '2024-03-18 04:27:09', '2024-03-18 16:27:09', '2024-03-19 13:27:09', '2024-03-21 04:27:09', null, null, 1),
-(15, 4, 26, 19, 5, 3773000, 'VIPCUSTOMER1000K', '2024-01-07 08:02:39', '2024-01-07 20:02:39', '2024-01-08 18:02:39', '2024-01-10 08:02:39', null, null, 1),
-(15, 5, 27, 19, 5, 2730000, 'LOYALTY20K', '2024-07-14 05:40:40', '2024-07-14 17:40:40', '2024-07-15 15:40:40', '2024-07-17 05:40:40', null, null, 1),
-(16, 1, 28, 20, 5, 953000, NULL, '2024-05-21 05:07:30', '2024-05-21 17:07:30', '2024-05-22 16:07:30', '2024-05-25 05:07:30', null, null, 1),
-(16, 2, 29, 20, 5, 1491000, NULL, '2024-06-09 04:48:31', '2024-06-09 16:48:31', '2024-06-10 14:48:31', '2024-06-12 04:48:31', null, null, 1),
-(17, 3, 30, 21, 5, 2390000, 'XMAS2024', '2024-06-18 11:40:16', '2024-06-18 23:40:16', '2024-06-19 19:40:16', '2024-06-22 11:40:16', null, null, 1),
-(17, 4, 30, 21, 5, 1734000, 'NEWYEAR2025', '2024-09-06 19:15:22', '2024-09-07 07:15:22', '2024-09-08 06:15:22', '2024-09-10 19:15:22', null, null, 1),
-(18, 5, 32, 22, 5, 3167000, 'SAVE20K', '2024-01-24 10:02:34', '2024-01-24 22:02:34', '2024-01-25 21:02:34', '2024-01-28 10:02:34', null, null, 1),
-(18, 1, 32, 22, 5, 7763000, 'BLACKFRIDAY30', '2024-07-29 18:32:36', '2024-07-30 06:32:36', '2024-07-31 02:32:36', '2024-08-01 18:32:36', null, null, 1),
-(19, 2, 34, 23, 5, 759000, 'BLACKFRIDAY30', '2024-01-19 07:54:33', '2024-01-19 19:54:33', '2024-01-20 17:54:33', '2024-01-23 07:54:33', null, null, 1),
-(19, 3, 34, 23, 5, 1930000, 'CUSTOMER20', '2024-03-30 18:27:31', '2024-03-31 06:27:31', '2024-04-01 02:27:31', '2024-04-02 18:27:31', null, null, 1),
-(20, 4, 36, 24, 5, 2489000, 'FREESHIP50', '2024-10-02 18:13:13', '2024-10-03 06:13:13', '2024-10-04 05:13:13', '2024-10-06 18:13:13', null, null, 1),
-(20, 5, 36, 25, 5, 2236000, 'FREESHIP300', '2024-09-13 21:14:13', '2024-09-14 09:14:13', '2024-09-15 06:14:13', '2024-09-16 21:14:13', null, null, 1),
-(21, 1, 38, 26, 5, 2603000, 'WELCOME30', '2024-08-08 07:06:10', '2024-08-08 19:06:10', '2024-08-09 18:06:10', '2024-08-11 07:06:10', null, null, 1),
-(21, 2, 38, 26, 5, 4798000, 'SINGLEDAY', '2024-12-29 21:00:49', '2024-12-30 09:00:49', '2024-12-31 05:00:49', '2025-01-01 21:00:49', null, null, 1),
-(22, 3, 39, 27, 5, 897000, 'MOTHERDAY100', '2024-01-20 00:11:19', '2024-01-20 12:11:19', '2024-01-21 10:11:19', '2024-01-23 00:11:19', null, null, 1),
-(22, 4, 39, 27, 5, 2498000, 'VIPCUSTOMER1000K', '2024-10-31 23:35:21', '2024-11-01 11:35:21', '2024-11-02 10:35:21', '2024-11-03 23:35:21', null, null, 1),
-(23, 5, 41, 28, 5, 2518000, 'LOYALTY20K', '2024-04-01 17:38:10', '2024-04-02 05:38:10', '2024-04-03 04:38:10', '2024-04-05 17:38:10', null, null, 1),
-(23, 1, 41, 28, 5, 2035000, NULL, '2024-07-15 15:08:06', '2024-07-16 03:08:06', '2024-07-16 23:08:06', '2024-07-19 15:08:06', null, null, 1),
-(24, 2, 43, 29, 5, 5998000, NULL, '2024-06-14 16:29:23', '2024-06-15 04:29:23', '2024-06-16 00:29:23', '2024-06-18 16:29:23', null, null, 1),
-(24, 3, 43, 29, 5, 3865000, 'WELCOME30', '2024-11-18 18:27:10', '2024-11-19 06:27:10', '2024-11-20 05:27:10', '2024-11-21 18:27:10', null, null, 1),
-(25, 4, 45, 30, 5, 797000, 'THANKSGIVING20', '2024-12-26 10:48:16', '2024-12-26 22:48:16', '2024-12-27 18:48:16', '2024-12-30 10:48:16', null, null, 1),
-(25, 5, 45, 30, 5, 3012000, 'SINGLEDAY', '2024-06-29 10:47:26', '2024-06-29 22:47:26', '2024-06-30 19:47:26', '2024-07-03 10:47:26', null, null, 1);
+(1, 1, 1, 1, 5, 1318000, 'XMAS2024', '2024-09-01 01:13:39', '2024-09-01 13:13:39', '2024-09-02 12:13:39', '2024-09-04 01:13:39', null, null),
+(1, 2, 1, 1, 5, 1048000, 'NEWYEAR2025', '2024-05-26 19:49:27', '2024-05-27 07:49:27', '2024-05-28 05:49:27', '2024-05-30 19:49:27', null, null),
+(2, 3, 2, 2, 5, 2239000, 'SAVE15', '2024-06-12 12:59:50', '2024-06-13 00:59:50', '2024-06-13 20:59:50', '2024-06-16 12:59:50', null, null),
+(2, 4, 2, 3, 5, 3261000, 'SAVE20K', '2024-02-15 22:38:19', '2024-02-16 10:38:19', '2024-02-17 07:38:19', '2024-02-19 22:38:19', null, null),
+(3, 5, 4, 4, 5, 4911000, 'BLACKFRIDAY30', '2024-04-22 13:23:05', '2024-04-23 01:23:05', '2024-04-23 23:23:05', '2024-04-26 13:23:05', null, null),
+(3, 1, 4, 4, 5, 334000, 'THANKSGIVING20', '2024-09-29 15:00:37', '2024-09-30 03:00:37', '2024-10-01 02:00:37', '2024-10-02 15:00:37', null, null),
+(4, 2, 6, 5, 5, 583000, 'CUSTOMER20', '2024-09-29 16:55:47', '2024-09-30 04:55:47', '2024-10-01 03:55:47', '2024-10-03 16:55:47', null, null),
+(4, 3, 6, 5, 5, 1502000, 'FREESHIP50', '2024-07-04 19:17:56', '2024-07-05 07:17:56', '2024-07-06 03:17:56', '2024-07-07 19:17:56', null, null),
+(5, 4, 7, 6, 5, 1036000, 'FREESHIP50', '2024-04-20 16:21:30', '2024-04-21 04:21:30', '2024-04-22 02:21:30', '2024-04-24 16:21:30', null, null),
+(5, 5, 7, 6, 5, 1173000, 'WELCOME30', '2024-09-10 10:48:34', '2024-09-10 22:48:34', '2024-09-11 21:48:34', '2024-09-13 10:48:34', null, null),
+(6, 1, 8, 7, 5, 1712000, 'SINGLEDAY', '2024-01-04 04:01:43', '2024-01-04 16:01:43', '2024-01-05 13:01:43', '2024-01-07 04:01:43', null, null),
+(6, 2, 8, 8, 5, 958000, 'MOTHERDAY100', '2024-02-23 07:38:35', '2024-02-23 19:38:35', '2024-02-24 15:38:35', '2024-02-26 07:38:35', null, null),
+(7, 3, 10, 9, 5, 1406000, 'VIPCUSTOMER1000K', '2024-04-29 09:45:22', '2024-04-29 21:45:22', '2024-04-30 17:45:22', '2024-05-03 09:45:22', null, null),
+(7, 4, 10, 9, 5, 3055000, 'LOYALTY20K', '2024-10-08 01:16:19', '2024-10-08 13:16:19', '2024-10-09 11:16:19', '2024-10-12 01:16:19', null, null),
+(8, 5, 12, 10, 5, 2706000, NULL, '2024-07-22 23:18:36', '2024-07-23 11:18:36', '2024-07-24 08:18:36', '2024-07-25 23:18:36', null, null),
+(8, 1, 12, 11, 5, 772000, NULL, '2024-08-24 00:05:05', '2024-08-24 12:05:05', '2024-08-25 11:05:05', '2024-08-28 00:05:05', null, null),
+(9, 2, 14, 12, 5, 373000, 'XMAS2024', '2024-09-10 02:39:48', '2024-09-10 14:39:48', '2024-09-11 13:39:48', '2024-09-13 02:39:48', null, null),
+(9, 3, 14, 12, 5, 2330000, 'NEWYEAR2025', '2024-10-23 02:13:17', '2024-10-23 14:13:17', '2024-10-24 13:13:17', '2024-10-26 02:13:17', null, null),
+(10, 4, 16, 13, 5, 1754000, 'SAVE15', '2024-09-21 09:42:03', '2024-09-21 21:42:03', '2024-09-22 17:42:03', '2024-09-24 09:42:03', null, null),
+(10, 5, 16, 14, 5, 1837000, 'SAVE20K', '2024-09-01 15:52:01', '2024-09-02 03:52:01', '2024-09-03 02:52:01', '2024-09-05 15:52:01', null, null),
+(11, 1, 18, 15, 5, 2663000, 'BLACKFRIDAY30', '2024-09-18 14:38:18', '2024-09-19 02:38:18', '2024-09-20 01:38:18', '2024-09-21 14:38:18', null, null),
+(11, 2, 18, 15, 5, 5174000, 'BLACKFRIDAY30', '2024-11-05 07:46:04', '2024-11-05 19:46:04', '2024-11-06 18:46:04', '2024-11-09 07:46:04', null, null),
+(12, 3, 20, 16, 5, 2923000, 'CUSTOMER20', '2024-03-16 21:30:47', '2024-03-17 09:30:47', '2024-03-18 06:30:47', '2024-03-19 21:30:47', null, null),
+(12, 4, 20, 16, 5, 621000, 'FREESHIP50', '2024-04-21 00:21:57', '2024-04-21 12:21:57', '2024-04-22 11:21:57', '2024-04-25 00:21:57', null, null),
+(13, 5, 22, 17, 5, 1874000, 'FREESHIP300', '2024-05-27 18:34:04', '2024-05-28 06:34:04', '2024-05-29 03:34:04', '2024-05-31 18:34:04', null, null),
+(13, 1, 22, 17, 5, 2019000, 'WELCOME30', '2024-05-07 04:09:23', '2024-05-07 16:09:23', '2024-05-08 13:09:23', '2024-05-11 04:09:23', null, null),
+(14, 2, 24, 18, 5, 1860000, 'SINGLEDAY', '2024-09-30 20:12:11', '2024-10-01 08:12:11', '2024-10-02 04:12:11', '2024-10-03 20:12:11', null, null),
+(14, 3, 24, 18, 5, 1518000, 'MOTHERDAY100', '2024-03-18 04:27:09', '2024-03-18 16:27:09', '2024-03-19 13:27:09', '2024-03-21 04:27:09', null, null),
+(15, 4, 26, 19, 5, 3773000, 'VIPCUSTOMER1000K', '2024-01-07 08:02:39', '2024-01-07 20:02:39', '2024-01-08 18:02:39', '2024-01-10 08:02:39', null, null),
+(15, 5, 27, 19, 5, 2730000, 'LOYALTY20K', '2024-07-14 05:40:40', '2024-07-14 17:40:40', '2024-07-15 15:40:40', '2024-07-17 05:40:40', null, null),
+(16, 1, 28, 20, 5, 953000, NULL, '2024-05-21 05:07:30', '2024-05-21 17:07:30', '2024-05-22 16:07:30', '2024-05-25 05:07:30', null, null),
+(16, 2, 29, 20, 5, 1491000, NULL, '2024-06-09 04:48:31', '2024-06-09 16:48:31', '2024-06-10 14:48:31', '2024-06-12 04:48:31', null, null),
+(17, 3, 30, 21, 5, 2390000, 'XMAS2024', '2024-06-18 11:40:16', '2024-06-18 23:40:16', '2024-06-19 19:40:16', '2024-06-22 11:40:16', null, null),
+(17, 4, 30, 21, 5, 1734000, 'NEWYEAR2025', '2024-09-06 19:15:22', '2024-09-07 07:15:22', '2024-09-08 06:15:22', '2024-09-10 19:15:22', null, null),
+(18, 5, 32, 22, 5, 3167000, 'SAVE20K', '2024-01-24 10:02:34', '2024-01-24 22:02:34', '2024-01-25 21:02:34', '2024-01-28 10:02:34', null, null),
+(18, 1, 32, 22, 5, 7763000, 'BLACKFRIDAY30', '2024-07-29 18:32:36', '2024-07-30 06:32:36', '2024-07-31 02:32:36', '2024-08-01 18:32:36', null, null),
+(19, 2, 34, 23, 5, 759000, 'BLACKFRIDAY30', '2024-01-19 07:54:33', '2024-01-19 19:54:33', '2024-01-20 17:54:33', '2024-01-23 07:54:33', null, null),
+(19, 3, 34, 23, 5, 1930000, 'CUSTOMER20', '2024-03-30 18:27:31', '2024-03-31 06:27:31', '2024-04-01 02:27:31', '2024-04-02 18:27:31', null, null),
+(20, 4, 36, 24, 5, 2489000, 'FREESHIP50', '2024-10-02 18:13:13', '2024-10-03 06:13:13', '2024-10-04 05:13:13', '2024-10-06 18:13:13', null, null),
+(20, 5, 36, 25, 5, 2236000, 'FREESHIP300', '2024-09-13 21:14:13', '2024-09-14 09:14:13', '2024-09-15 06:14:13', '2024-09-16 21:14:13', null, null),
+(21, 1, 38, 26, 5, 2603000, 'WELCOME30', '2024-08-08 07:06:10', '2024-08-08 19:06:10', '2024-08-09 18:06:10', '2024-08-11 07:06:10', null, null),
+(21, 2, 38, 26, 5, 4798000, 'SINGLEDAY', '2024-12-29 21:00:49', '2024-12-30 09:00:49', '2024-12-31 05:00:49', '2025-01-01 21:00:49', null, null),
+(22, 3, 39, 27, 5, 897000, 'MOTHERDAY100', '2024-01-20 00:11:19', '2024-01-20 12:11:19', '2024-01-21 10:11:19', '2024-01-23 00:11:19', null, null),
+(22, 4, 39, 27, 5, 2498000, 'VIPCUSTOMER1000K', '2024-10-31 23:35:21', '2024-11-01 11:35:21', '2024-11-02 10:35:21', '2024-11-03 23:35:21', null, null),
+(23, 5, 41, 28, 5, 2518000, 'LOYALTY20K', '2024-04-01 17:38:10', '2024-04-02 05:38:10', '2024-04-03 04:38:10', '2024-04-05 17:38:10', null, null),
+(23, 1, 41, 28, 5, 2035000, NULL, '2024-07-15 15:08:06', '2024-07-16 03:08:06', '2024-07-16 23:08:06', '2024-07-19 15:08:06', null, null),
+(24, 2, 43, 29, 5, 5998000, NULL, '2024-06-14 16:29:23', '2024-06-15 04:29:23', '2024-06-16 00:29:23', '2024-06-18 16:29:23', null, null),
+(24, 3, 43, 29, 5, 3865000, 'WELCOME30', '2024-11-18 18:27:10', '2024-11-19 06:27:10', '2024-11-20 05:27:10', '2024-11-21 18:27:10', null, null),
+(25, 4, 45, 30, 5, 797000, 'THANKSGIVING20', '2024-12-26 10:48:16', '2024-12-26 22:48:16', '2024-12-27 18:48:16', '2024-12-30 10:48:16', null, null),
+(25, 5, 45, 30, 5, 3012000, 'SINGLEDAY', '2024-06-29 10:47:26', '2024-06-29 22:47:26', '2024-06-30 19:47:26', '2024-07-03 10:47:26', null, null);
 go
 -- [order_line]
 insert into [order_line]([product_item_id], [order_id], [qty], [price], [note]) values
@@ -1708,67 +2098,67 @@ insert into [user_review_status]([status]) values --pending, accepted, rejected
 ('rejected');
 go
 -- [user_review]
-insert into [user_review]([user_id], [order_product_id], [rating], [feedback], [review_image], [status_id], [comment_date] , [approved_date], [valid_date], [isHide], [isDeleted]) values
-(1, 1, 1, 5, N'This taste is like the heaven in my mouth. I love it. I will order another in future.', N'', 1, CAST(N'2024-09-04T02:13:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
-(2, 2, 1, 4, N'The flavor is melting on my tongue.', N'', 1, CAST(N'2024-09-04T02:15:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
-(3, 3, 1, 3, N'The flavor is normal but I still like it.', N'', 1, CAST(N'2024-09-04T02:17:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
-(4, 7, 2, 2, N'Not like my imagine.', N'', 1, CAST(N'2024-06-16T13:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
-(5, 8, 2, 5, N'This is very good!', N'', 1, CAST(N'2024-06-16T14:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
-(6, 9, 2, 5, N'How they can make it! I love it!', N'', 1, CAST(N'2024-06-16T15:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
-(7, 13, 3, 5, N'Amazing taste I never seen.', N'', 1, CAST(N'2024-04-26T16:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
-(8, 14, 3, 4, N'That OK!', N'', 1, CAST(N'2024-04-26T17:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
-(9, 15, 3, 5, N'This thing is extremely good!', N'', 1, CAST(N'2024-04-26T14:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
-(10, 19, 4, 5, N'Sweety!', N'', 1, CAST(N'2024-10-03T17:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
-(11, 20, 4, 2, N'More sweet than I needed!', N'', 1, CAST(N'2024-10-03T18:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
-(12, 21, 4, 4, N'I love sweet! ', N'', 1, CAST(N'2024-10-03T19:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
-(13, 25, 5, 5, N'The cake was absolutely amazing! It tasted better than any other cake I''ve had.', N'', 1, CAST(N'2024-04-24T16:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
-(14, 26, 5, 5, N'Your cakes are always so moist and flavorful. I''m a repeat customer for sure.', N'', 1, CAST(N'2024-04-24T17:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
-(15, 27, 5, 5, N'The decoration on my wedding cake was stunning. It was the perfect centerpiece.', N'', 1, CAST(N'2024-04-24T18:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
-(16, 31, 6, 5, N'I ordered a custom cake for my daughter''s birthday and it was exactly what I envisioned.', N'', 1, CAST(N'2024-01-07T06:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
-(17, 32, 6, 5, N'The cupcakes were a huge hit at my baby shower. Everyone loved the flavors.', N'', 1, CAST(N'2024-01-07T05:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
-(18, 33, 6, 5, N'I''ve tried several of your cakes and they''re all delicious. Keep up the great work!', N'', 1, CAST(N'2024-01-07T07:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
-(19, 37, 7, 5, N'Your cake shop is my go-to for special occasions. The quality is always top-notch.', N'', 1, CAST(N'2024-05-03T09:45:22.000' AS DateTime), CAST(N'2024-05-03T10:45:22.000' AS DateTime), CAST(N'2024-05-10T10:45:00.000' AS DateTime), -1, 1),
-(20, 38, 7, 5, N'The customer service was excellent. They helped me choose the perfect cake for my needs.', N'', 1, CAST(N'2024-05-03T09:48:22.000' AS DateTime), CAST(N'2024-05-03T10:48:22.000' AS DateTime), CAST(N'2024-05-10T10:48:00.000' AS DateTime), -1, 1),
-(21, 39, 7, 5, N'The cake was so fresh and the frosting was light and fluffy.', N'', 1, CAST(N'2024-05-03T09:49:22.000' AS DateTime), CAST(N'2024-05-03T10:49:22.000' AS DateTime), CAST(N'2024-05-10T10:49:00.000' AS DateTime), -1, 1),
-(22, 43, 8, 5, N'I''m impressed with the variety of flavors and fillings you offer.', N'', 1, CAST(N'2024-07-25T23:20:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
-(23, 44, 8, 3, N'The cake was okay, but not the best I''ve had.', N'', 1, CAST(N'2024-07-25T23:21:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
-(24, 45, 8, 3, N'The cake was a bit too sweet for my taste.', N'', 1, CAST(N'2024-07-25T23:33:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
-(25, 49, 9, 4, N'The decoration was simple, but I liked it.', N'', 1, CAST(N'2024-09-13T03:39:48.000' AS DateTime), CAST(N'2024-09-13T05:39:48.000' AS DateTime), CAST(N'2024-09-20T05:39:00.000' AS DateTime), -1, 1),
-(26, 50, 9, 2, N'The customer service was average.', N'', 1, CAST(N'2024-09-13T04:39:48.000' AS DateTime), CAST(N'2024-09-13T05:39:48.000' AS DateTime), CAST(N'2024-09-20T05:39:00.000' AS DateTime), -1, 1),
-(27, 51, 9, 4, N'The cake was a good value for the price.', N'', 1, CAST(N'2024-09-13T02:40:48.000' AS DateTime), CAST(N'2024-09-13T05:40:48.000' AS DateTime), CAST(N'2024-09-20T05:40:00.000' AS DateTime), -1, 1),
-(28, 55, 10, 3, N'The cake was fresh, but lacked flavor.', N'', 1, CAST(N'2024-09-24T09:44:03.000' AS DateTime), CAST(N'2024-09-24T10:44:03.000' AS DateTime), CAST(N'2024-10-01T10:44:00.000' AS DateTime), -1, 1),
-(29, 56, 10, 5, N'The cake was so beautiful, it was almost too pretty to eat!', N'', 1, CAST(N'2024-09-24T09:45:03.000' AS DateTime), CAST(N'2024-09-24T10:45:03.000' AS DateTime), CAST(N'2024-10-01T10:45:00.000' AS DateTime), -1, 1),
-(30, 57, 10, 5, N'I''ve tried cakes from other shops, but yours are the best by far.', N'', 1, CAST(N'2024-09-24T09:46:03.000' AS DateTime), CAST(N'2024-09-24T10:46:03.000' AS DateTime), CAST(N'2024-10-01T10:46:00.000' AS DateTime), -1, 1),
-(31, 61, 11, 5, N'The cake was the perfect ending to our wedding reception.', N'', 1, CAST(N'2024-09-21T14:55:18.000' AS DateTime), CAST(N'2024-09-21T17:55:18.000' AS DateTime), CAST(N'2024-09-28T17:55:00.000' AS DateTime), -1, 1),
-(32, 62, 11, 5, N'I''m so glad I chose your cake shop for my daughter''s birthday.', N'', 1, CAST(N'2024-09-21T15:38:18.000' AS DateTime), CAST(N'2024-09-21T17:38:18.000' AS DateTime), CAST(N'2024-09-28T17:38:00.000' AS DateTime), -1, 1),
-(33, 63, 11, 5, N'The cake was the talk of the party.', N'', 1, CAST(N'2024-09-21T16:38:18.000' AS DateTime), CAST(N'2024-09-21T17:38:18.000' AS DateTime), CAST(N'2024-09-28T17:38:00.000' AS DateTime), -1, 1),
-(34, 67, 12, 1, N'The cake was a complete disaster.', N'', 1, CAST(N'2024-03-19T22:30:47.000' AS DateTime), CAST(N'2024-03-19T23:30:47.000' AS DateTime), CAST(N'2024-03-26T23:30:00.000' AS DateTime), -1, 1),
-(35, 68, 12, 1, N'The cake was a total waste of money.', N'', 1, CAST(N'2024-03-19T22:45:47.000' AS DateTime), CAST(N'2024-03-19T23:45:47.000' AS DateTime), CAST(N'2024-03-26T23:45:00.000' AS DateTime), -1, 1),
-(36, 69, 12, 1, N'I was so disappointed with the cake.', N'', 1, CAST(N'2024-03-19T22:55:47.000' AS DateTime), CAST(N'2024-03-19T23:55:47.000' AS DateTime), CAST(N'2024-03-26T23:55:00.000' AS DateTime), -1, 1),
-(37, 73, 13, 3, N'The cake was just okay.', N'', 1, CAST(N'2024-05-31T18:44:04.000' AS DateTime), CAST(N'2024-05-31T19:44:04.000' AS DateTime), CAST(N'2024-06-07T19:44:00.000' AS DateTime), -1, 1),
-(38, 74, 13, 2, N'The cake was a bit disappointing.', N'', 1, CAST(N'2024-05-31T18:50:04.000' AS DateTime), CAST(N'2024-05-31T19:50:04.000' AS DateTime), CAST(N'2024-06-07T19:50:00.000' AS DateTime), -1, 1),
-(39, 75, 13, 3, N'The cake was average.', N'', 1, CAST(N'2024-05-31T18:58:04.000' AS DateTime), CAST(N'2024-05-31T19:58:04.000' AS DateTime), CAST(N'2024-06-07T19:58:00.000' AS DateTime), -1, 1),
-(40, 79, 14, 3, N'The cake was a bit overpriced.', N'', 1, CAST(N'2024-10-03T20:13:11.000' AS DateTime), CAST(N'2024-10-03T23:13:11.000' AS DateTime), CAST(N'2024-10-10T23:13:00.000' AS DateTime), -1, 1),
-(41, 80, 14, 5, N'The cake was the highlight of the party.', N'', 1, CAST(N'2024-10-03T21:12:11.000' AS DateTime), CAST(N'2024-10-03T23:12:11.000' AS DateTime), CAST(N'2024-10-10T23:12:00.000' AS DateTime), -1, 1),
-(42, 81, 14, 5, N'The cake was so delicious, it melted in my mouth.', N'', 1, CAST(N'2024-10-03T22:12:11.000' AS DateTime), CAST(N'2024-10-03T23:12:11.000' AS DateTime), CAST(N'2024-10-10T23:12:00.000' AS DateTime), -1, 1),
-(43, 85, 15, 5, N'The cake was exactly what I wanted.', N'', 1, CAST(N'2024-01-10T08:30:39.000' AS DateTime), CAST(N'2024-01-10T09:30:39.000' AS DateTime), CAST(N'2024-01-17T09:30:00.000' AS DateTime), -1, 1),
-(44, 86, 15, 5, N'I''m so impressed with the quality of your cakes.', N'', 1, CAST(N'2024-01-10T08:33:39.000' AS DateTime), CAST(N'2024-01-10T09:33:39.000' AS DateTime), CAST(N'2024-01-17T09:33:00.000' AS DateTime), -1, 1),
-(45, 87, 15, 5, N'I will definitely order from your cake shop again.', N'', 1, CAST(N'2024-01-10T08:48:39.000' AS DateTime), CAST(N'2024-01-10T09:48:39.000' AS DateTime), CAST(N'2024-01-17T09:48:00.000' AS DateTime), -1, 1),
-(46, 91, 16, 1, N'The taste like shit I poop it', N'', 3, CAST(N'2024-05-25T05:08:30.000' AS DateTime), CAST(N'2024-05-25T06:08:30.000' AS DateTime), CAST(N'2024-06-01T06:08:00.000' AS DateTime), -1, 1),
-(47, 92, 16, 3, N'HANAHANDASWSDAWS', N'', 2, CAST(N'2024-05-25T05:13:30.000' AS DateTime), CAST(N'2024-05-25T06:13:30.000' AS DateTime), CAST(N'2024-06-01T06:13:00.000' AS DateTime), -1, 1),
-(48, 93, 16, 4, N'DDDDDDDDDDDDDD', N'', 2, CAST(N'2024-05-25T05:14:30.000' AS DateTime), CAST(N'2024-05-25T06:14:30.000' AS DateTime), CAST(N'2024-06-01T06:14:00.000' AS DateTime), -1, 1),
-(49, 97, 17, 1, N'What the fuck! what did you make?', N'', 3, CAST(N'2024-06-22T11:46:16.000' AS DateTime), CAST(N'2024-06-22T12:46:16.000' AS DateTime), CAST(N'2024-06-29T12:46:00.000' AS DateTime), -1, 1),
-(50, 98, 17, 1, N'Smelt like a bitch in the sunrise of the beach', N'', 3, CAST(N'2024-06-22T11:54:16.000' AS DateTime), CAST(N'2024-06-22T12:54:16.000' AS DateTime), CAST(N'2024-06-29T12:54:00.000' AS DateTime), -1, 1),
-(51, 99, 17, 5, N'Hello Hello', N'', 2, CAST(N'2024-06-22T12:30:16.000' AS DateTime), CAST(N'2024-06-22T12:30:16.000' AS DateTime), CAST(N'2024-06-29T12:30:00.000' AS DateTime), -1, 1),
-(52, 103, 18, 3, N'Bad or not bad is the rule of the world', N'', 2, CAST(N'2024-01-28T10:48:34.000' AS DateTime), CAST(N'2024-01-28T13:48:34.000' AS DateTime), CAST(N'2024-02-04T13:48:00.000' AS DateTime), -1, 1),
-(53, 104, 18, 2, N'Haha and Hehe is friend', N'', 2, CAST(N'2024-01-28T11:02:34.000' AS DateTime), CAST(N'2024-01-28T13:02:34.000' AS DateTime), CAST(N'2024-02-04T13:02:00.000' AS DateTime), -1, 1),
-(54, 105, 18, 4, N'Bokoboko chupapimonhanho', N'', 2, CAST(N'2024-01-28T12:02:34.000' AS DateTime), CAST(N'2024-01-28T13:02:34.000' AS DateTime), CAST(N'2024-02-04T13:02:00.000' AS DateTime), -1, 1),
-(55, 109, 19, 5, N'The War never changes', N'', 3, CAST(N'2024-01-23T07:55:33.000' AS DateTime), CAST(N'2024-01-23T08:55:33.000' AS DateTime), CAST(N'2024-01-30T08:55:00.000' AS DateTime), -1, 1),
-(56, 110, 19, 1, N'That''s why the capitalist work', N'', 2, CAST(N'2024-01-23T07:57:33.000' AS DateTime), CAST(N'2024-01-23T08:57:33.000' AS DateTime), CAST(N'2024-01-30T08:57:00.000' AS DateTime), -1, 1),
-(57, 111, 19, 1, N'F the P of T cake', N'', 2, CAST(N'2024-01-23T07:59:33.000' AS DateTime), CAST(N'2024-01-23T08:59:33.000' AS DateTime), CAST(N'2024-01-30T08:59:00.000' AS DateTime), -1, 1),
-(58, 115, 20, 3, N'Ninani', N'', 2, CAST(N'2024-10-06T19:13:13.000' AS DateTime), CAST(N'2024-10-06T20:13:13.000' AS DateTime), CAST(N'2024-10-13T20:13:00.000' AS DateTime), -1, 1),
-(59, 116, 20, 2, N'HOHOHO Hola ga charelon', N'', 2, CAST(N'2024-10-06T19:14:13.000' AS DateTime), CAST(N'2024-10-06T20:14:13.000' AS DateTime), CAST(N'2024-10-13T20:14:00.000' AS DateTime), -1, 1),
-(60, 117, 20, 5, N'Skibidibidiiiiiiiiii', N'', 2, CAST(N'2024-10-06T19:15:13.000' AS DateTime), CAST(N'2024-10-06T20:15:13.000' AS DateTime), CAST(N'2024-10-13T20:15:00.000' AS DateTime), -1, 1);
+insert into [user_review]([order_product_id], [user_id], [rating], [feedback], [review_image], [status_id], [comment_date] , [approved_date], [valid_date], [isHide], [isDeleted]) values
+(1, 1, 5, N'This taste is like the heaven in my mouth. I love it. I will order another in future.', N'', 1, CAST(N'2024-09-04T02:13:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
+(2, 1, 4, N'The flavor is melting on my tongue.', N'', 1, CAST(N'2024-09-04T02:15:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
+(3, 1, 3, N'The flavor is normal but I still like it.', N'', 1, CAST(N'2024-09-04T02:17:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
+(7, 2, 2, N'Not like my imagine.', N'', 1, CAST(N'2024-06-16T13:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
+(8, 2, 5, N'This is very good!', N'', 1, CAST(N'2024-06-16T14:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
+(9, 2, 5, N'How they can make it! I love it!', N'', 1, CAST(N'2024-06-16T15:59:50.000' AS DateTime), CAST(N'2024-06-16T16:59:50.000' AS DateTime), CAST(N'2024-06-23T16:59:00.000' AS DateTime), -1, 1),
+(13, 3, 5, N'Amazing taste I never seen.', N'', 1, CAST(N'2024-04-26T16:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
+(14, 3, 4, N'That OK!', N'', 1, CAST(N'2024-04-26T17:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
+(15, 3, 5, N'This thing is extremely good!', N'', 1, CAST(N'2024-04-26T14:23:05.000' AS DateTime), CAST(N'2024-04-26T18:23:05.000' AS DateTime), CAST(N'2024-05-03T18:23:00.000' AS DateTime), -1, 1),
+(19, 4, 5, N'Sweety!', N'', 1, CAST(N'2024-10-03T17:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
+(20, 4, 2, N'More sweet than I needed!', N'', 1, CAST(N'2024-10-03T18:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
+(21, 4, 4, N'I love sweet! ', N'', 1, CAST(N'2024-10-03T19:55:47.000' AS DateTime), CAST(N'2024-10-03T20:55:47.000' AS DateTime), CAST(N'2024-10-10T20:55:00.000' AS DateTime), -1, 1),
+(25, 5, 5, N'The cake was absolutely amazing! It tasted better than any other cake I''ve had.', N'', 1, CAST(N'2024-04-24T16:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
+(26, 5, 5, N'Your cakes are always so moist and flavorful. I''m a repeat customer for sure.', N'', 1, CAST(N'2024-04-24T17:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
+(27, 5, 5, N'The decoration on my wedding cake was stunning. It was the perfect centerpiece.', N'', 1, CAST(N'2024-04-24T18:21:30.000' AS DateTime), CAST(N'2024-04-24T19:21:30.000' AS DateTime), CAST(N'2024-05-01T19:21:00.000' AS DateTime), -1, 1),
+(31, 6, 5, N'I ordered a custom cake for my daughter''s birthday and it was exactly what I envisioned.', N'', 1, CAST(N'2024-01-07T06:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
+(32, 6, 5, N'The cupcakes were a huge hit at my baby shower. Everyone loved the flavors.', N'', 1, CAST(N'2024-01-07T05:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
+(33, 6, 5, N'I''ve tried several of your cakes and they''re all delicious. Keep up the great work!', N'', 1, CAST(N'2024-01-07T07:01:43.000' AS DateTime), CAST(N'2024-01-07T08:01:43.000' AS DateTime), CAST(N'2024-01-14T08:01:00.000' AS DateTime), -1, 1),
+(37, 7, 5, N'Your cake shop is my go-to for special occasions. The quality is always top-notch.', N'', 1, CAST(N'2024-05-03T09:45:22.000' AS DateTime), CAST(N'2024-05-03T10:45:22.000' AS DateTime), CAST(N'2024-05-10T10:45:00.000' AS DateTime), -1, 1),
+(38, 7, 5, N'The customer service was excellent. They helped me choose the perfect cake for my needs.', N'', 1, CAST(N'2024-05-03T09:48:22.000' AS DateTime), CAST(N'2024-05-03T10:48:22.000' AS DateTime), CAST(N'2024-05-10T10:48:00.000' AS DateTime), -1, 1),
+(39, 7, 5, N'The cake was so fresh and the frosting was light and fluffy.', N'', 1, CAST(N'2024-05-03T09:49:22.000' AS DateTime), CAST(N'2024-05-03T10:49:22.000' AS DateTime), CAST(N'2024-05-10T10:49:00.000' AS DateTime), -1, 1),
+(43, 8, 5, N'I''m impressed with the variety of flavors and fillings you offer.', N'', 1, CAST(N'2024-07-25T23:20:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
+(44, 8, 3, N'The cake was okay, but not the best I''ve had.', N'', 1, CAST(N'2024-07-25T23:21:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
+(45, 8, 3, N'The cake was a bit too sweet for my taste.', N'', 1, CAST(N'2024-07-25T23:33:36.000' AS DateTime), CAST(N'2024-07-25T23:50:36.000' AS DateTime), CAST(N'2024-08-01T23:50:00.000' AS DateTime), -1, 1),
+(49, 9, 4, N'The decoration was simple, but I liked it.', N'', 1, CAST(N'2024-09-13T03:39:48.000' AS DateTime), CAST(N'2024-09-13T05:39:48.000' AS DateTime), CAST(N'2024-09-20T05:39:00.000' AS DateTime), -1, 1),
+(50, 9, 2, N'The customer service was average.', N'', 1, CAST(N'2024-09-13T04:39:48.000' AS DateTime), CAST(N'2024-09-13T05:39:48.000' AS DateTime), CAST(N'2024-09-20T05:39:00.000' AS DateTime), -1, 1),
+(51, 9, 4, N'The cake was a good value for the price.', N'', 1, CAST(N'2024-09-13T02:40:48.000' AS DateTime), CAST(N'2024-09-13T05:40:48.000' AS DateTime), CAST(N'2024-09-20T05:40:00.000' AS DateTime), -1, 1),
+(55, 10, 3, N'The cake was fresh, but lacked flavor.', N'', 1, CAST(N'2024-09-24T09:44:03.000' AS DateTime), CAST(N'2024-09-24T10:44:03.000' AS DateTime), CAST(N'2024-10-01T10:44:00.000' AS DateTime), -1, 1),
+(56, 10, 5, N'The cake was so beautiful, it was almost too pretty to eat!', N'', 1, CAST(N'2024-09-24T09:45:03.000' AS DateTime), CAST(N'2024-09-24T10:45:03.000' AS DateTime), CAST(N'2024-10-01T10:45:00.000' AS DateTime), -1, 1),
+(57, 10, 5, N'I''ve tried cakes from other shops, but yours are the best by far.', N'', 1, CAST(N'2024-09-24T09:46:03.000' AS DateTime), CAST(N'2024-09-24T10:46:03.000' AS DateTime), CAST(N'2024-10-01T10:46:00.000' AS DateTime), -1, 1),
+(61, 11, 5, N'The cake was the perfect ending to our wedding reception.', N'', 1, CAST(N'2024-09-21T14:55:18.000' AS DateTime), CAST(N'2024-09-21T17:55:18.000' AS DateTime), CAST(N'2024-09-28T17:55:00.000' AS DateTime), -1, 1),
+(62, 11, 5, N'I''m so glad I chose your cake shop for my daughter''s birthday.', N'', 1, CAST(N'2024-09-21T15:38:18.000' AS DateTime), CAST(N'2024-09-21T17:38:18.000' AS DateTime), CAST(N'2024-09-28T17:38:00.000' AS DateTime), -1, 1),
+(63, 11, 5, N'The cake was the talk of the party.', N'', 1, CAST(N'2024-09-21T16:38:18.000' AS DateTime), CAST(N'2024-09-21T17:38:18.000' AS DateTime), CAST(N'2024-09-28T17:38:00.000' AS DateTime), -1, 1),
+(67, 12, 1, N'The cake was a complete disaster.', N'', 1, CAST(N'2024-03-19T22:30:47.000' AS DateTime), CAST(N'2024-03-19T23:30:47.000' AS DateTime), CAST(N'2024-03-26T23:30:00.000' AS DateTime), -1, 1),
+(68, 12, 1, N'The cake was a total waste of money.', N'', 1, CAST(N'2024-03-19T22:45:47.000' AS DateTime), CAST(N'2024-03-19T23:45:47.000' AS DateTime), CAST(N'2024-03-26T23:45:00.000' AS DateTime), -1, 1),
+(69, 12, 1, N'I was so disappointed with the cake.', N'', 1, CAST(N'2024-03-19T22:55:47.000' AS DateTime), CAST(N'2024-03-19T23:55:47.000' AS DateTime), CAST(N'2024-03-26T23:55:00.000' AS DateTime), -1, 1),
+(73, 13, 3, N'The cake was just okay.', N'', 1, CAST(N'2024-05-31T18:44:04.000' AS DateTime), CAST(N'2024-05-31T19:44:04.000' AS DateTime), CAST(N'2024-06-07T19:44:00.000' AS DateTime), -1, 1),
+(74, 13, 2, N'The cake was a bit disappointing.', N'', 1, CAST(N'2024-05-31T18:50:04.000' AS DateTime), CAST(N'2024-05-31T19:50:04.000' AS DateTime), CAST(N'2024-06-07T19:50:00.000' AS DateTime), -1, 1),
+(75, 13, 3, N'The cake was average.', N'', 1, CAST(N'2024-05-31T18:58:04.000' AS DateTime), CAST(N'2024-05-31T19:58:04.000' AS DateTime), CAST(N'2024-06-07T19:58:00.000' AS DateTime), -1, 1),
+(79, 14, 3, N'The cake was a bit overpriced.', N'', 1, CAST(N'2024-10-03T20:13:11.000' AS DateTime), CAST(N'2024-10-03T23:13:11.000' AS DateTime), CAST(N'2024-10-10T23:13:00.000' AS DateTime), -1, 1),
+(80, 14, 5, N'The cake was the highlight of the party.', N'', 1, CAST(N'2024-10-03T21:12:11.000' AS DateTime), CAST(N'2024-10-03T23:12:11.000' AS DateTime), CAST(N'2024-10-10T23:12:00.000' AS DateTime), -1, 1),
+(81, 14, 5, N'The cake was so delicious, it melted in my mouth.', N'', 1, CAST(N'2024-10-03T22:12:11.000' AS DateTime), CAST(N'2024-10-03T23:12:11.000' AS DateTime), CAST(N'2024-10-10T23:12:00.000' AS DateTime), -1, 1),
+(85, 15, 5, N'The cake was exactly what I wanted.', N'', 1, CAST(N'2024-01-10T08:30:39.000' AS DateTime), CAST(N'2024-01-10T09:30:39.000' AS DateTime), CAST(N'2024-01-17T09:30:00.000' AS DateTime), -1, 1),
+(86, 15, 5, N'I''m so impressed with the quality of your cakes.', N'', 1, CAST(N'2024-01-10T08:33:39.000' AS DateTime), CAST(N'2024-01-10T09:33:39.000' AS DateTime), CAST(N'2024-01-17T09:33:00.000' AS DateTime), -1, 1),
+(87, 15, 5, N'I will definitely order from your cake shop again.', N'', 1, CAST(N'2024-01-10T08:48:39.000' AS DateTime), CAST(N'2024-01-10T09:48:39.000' AS DateTime), CAST(N'2024-01-17T09:48:00.000' AS DateTime), -1, 1),
+(91, 16, 1, N'The taste like shit I poop it', N'', 3, CAST(N'2024-05-25T05:08:30.000' AS DateTime), CAST(N'2024-05-25T06:08:30.000' AS DateTime), CAST(N'2024-06-01T06:08:00.000' AS DateTime), -1, 1),
+(92, 16, 3, N'HANAHANDASWSDAWS', N'', 2, CAST(N'2024-05-25T05:13:30.000' AS DateTime), CAST(N'2024-05-25T06:13:30.000' AS DateTime), CAST(N'2024-06-01T06:13:00.000' AS DateTime), -1, 1),
+(93, 16, 4, N'DDDDDDDDDDDDDD', N'', 2, CAST(N'2024-05-25T05:14:30.000' AS DateTime), CAST(N'2024-05-25T06:14:30.000' AS DateTime), CAST(N'2024-06-01T06:14:00.000' AS DateTime), -1, 1),
+(97, 17, 1, N'What the fuck! what did you make?', N'', 3, CAST(N'2024-06-22T11:46:16.000' AS DateTime), CAST(N'2024-06-22T12:46:16.000' AS DateTime), CAST(N'2024-06-29T12:46:00.000' AS DateTime), -1, 1),
+(98, 17, 1, N'Smelt like a bitch in the sunrise of the beach', N'', 3, CAST(N'2024-06-22T11:54:16.000' AS DateTime), CAST(N'2024-06-22T12:54:16.000' AS DateTime), CAST(N'2024-06-29T12:54:00.000' AS DateTime), -1, 1),
+(99, 17, 5, N'Hello Hello', N'', 2, CAST(N'2024-06-22T12:30:16.000' AS DateTime), CAST(N'2024-06-22T12:30:16.000' AS DateTime), CAST(N'2024-06-29T12:30:00.000' AS DateTime), -1, 1),
+(103, 18, 3, N'Bad or not bad is the rule of the world', N'', 2, CAST(N'2024-01-28T10:48:34.000' AS DateTime), CAST(N'2024-01-28T13:48:34.000' AS DateTime), CAST(N'2024-02-04T13:48:00.000' AS DateTime), -1, 1),
+(104, 18, 2, N'Haha and Hehe is friend', N'', 2, CAST(N'2024-01-28T11:02:34.000' AS DateTime), CAST(N'2024-01-28T13:02:34.000' AS DateTime), CAST(N'2024-02-04T13:02:00.000' AS DateTime), -1, 1),
+(105, 18, 4, N'Bokoboko chupapimonhanho', N'', 2, CAST(N'2024-01-28T12:02:34.000' AS DateTime), CAST(N'2024-01-28T13:02:34.000' AS DateTime), CAST(N'2024-02-04T13:02:00.000' AS DateTime), -1, 1),
+(109, 19, 5, N'The War never changes', N'', 3, CAST(N'2024-01-23T07:55:33.000' AS DateTime), CAST(N'2024-01-23T08:55:33.000' AS DateTime), CAST(N'2024-01-30T08:55:00.000' AS DateTime), -1, 1),
+(110, 19, 1, N'That''s why the capitalist work', N'', 2, CAST(N'2024-01-23T07:57:33.000' AS DateTime), CAST(N'2024-01-23T08:57:33.000' AS DateTime), CAST(N'2024-01-30T08:57:00.000' AS DateTime), -1, 1),
+(111, 19, 1, N'F the P of T cake', N'', 2, CAST(N'2024-01-23T07:59:33.000' AS DateTime), CAST(N'2024-01-23T08:59:33.000' AS DateTime), CAST(N'2024-01-30T08:59:00.000' AS DateTime), -1, 1),
+(115, 20, 3, N'Ninani', N'', 2, CAST(N'2024-10-06T19:13:13.000' AS DateTime), CAST(N'2024-10-06T20:13:13.000' AS DateTime), CAST(N'2024-10-13T20:13:00.000' AS DateTime), -1, 1),
+(116, 20, 2, N'HOHOHO Hola ga charelon', N'', 2, CAST(N'2024-10-06T19:14:13.000' AS DateTime), CAST(N'2024-10-06T20:14:13.000' AS DateTime), CAST(N'2024-10-13T20:14:00.000' AS DateTime), -1, 1),
+(117, 20, 5, N'Skibidibidiiiiiiiiii', N'', 2, CAST(N'2024-10-06T19:15:13.000' AS DateTime), CAST(N'2024-10-06T20:15:13.000' AS DateTime), CAST(N'2024-10-13T20:15:00.000' AS DateTime), -1, 1);
 go
 -- based on order from user pick random product from random user to create some samples for user review table --> expected samples (50-70), 5-7 review toxic , 10 pending
 -- ideal review each product should have 2-3 review, 1 vai sp ko co review

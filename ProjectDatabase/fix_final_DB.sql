@@ -253,14 +253,14 @@ GO
 CREATE TABLE [category] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[cateName] NVARCHAR(255) NOT NULL,
-	[parent_id] INT NOT NULL,
+	[parent_id] INT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
 
 CREATE TABLE [administrative_units] (
-	[id] INT NOT NULL IDENTITY UNIQUE,
+	[id] INT NOT NULL UNIQUE,
 	[full_name] NVARCHAR(255),
 	[full_name_en] NVARCHAR(255),
 	[short_name] NVARCHAR(255),
@@ -272,7 +272,7 @@ CREATE TABLE [administrative_units] (
 GO
 
 CREATE TABLE [administrative_regions] (
-	[id] INT NOT NULL IDENTITY UNIQUE,
+	[id] INT NOT NULL UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
 	[name_en] NVARCHAR(255) NOT NULL,
 	[code_name] NVARCHAR(255),
