@@ -14,7 +14,7 @@ CREATE TABLE [user_site] (
 	[email] NVARCHAR(255) NOT NULL,
 	[phone] NVARCHAR(11),
 	[password] NVARCHAR(32),
-	[isDeleted] INT NOT NULL,
+	[status] INT NOT NULL,
 	[account_create_date] DATETIME NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -32,7 +32,6 @@ CREATE TABLE [address] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[recieved_name] NVARCHAR(255) NOT NULL,
 	[detail_address] NVARCHAR(255) NOT NULL,
-	[province_code] NVARCHAR(20) NOT NULL,
 	[districts_code] NVARCHAR(20) NOT NULL,
 	[wards_code] NVARCHAR(20) NOT NULL,
 	[isDeleted] INT NOT NULL,
@@ -46,6 +45,7 @@ CREATE TABLE [product] (
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
 	[product_image] TEXT NOT NULL,
+	[product_rating] INT,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -88,7 +88,7 @@ CREATE TABLE [shop_order] (
 	[payment_method] INT NOT NULL,
 	[order_status_id] INT NOT NULL,
 	[order_total] BIGINT NOT NULL,
-	[coupons_code] NVARCHAR(255),
+	[coupons] INT,
 	[order_date] DATE NOT NULL,
 	[approved_date] DATETIME,
 	[shipping_date] DATETIME,
@@ -126,11 +126,12 @@ GO
 
 CREATE TABLE [admin] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
-	[fullname] NVARCHAR(255) NOT NULL,
+	[firstname] NVARCHAR(255) NOT NULL,
+	[lastname] NVARCHAR(255) NOT NULL,
 	[username] NVARCHAR(255) NOT NULL,
+	[avatar_img] TEXT NOT NULL,
 	[email] NVARCHAR(255) NOT NULL,
 	[password] NVARCHAR(255) NOT NULL,
-	[avatar_img] TEXT NOT NULL,
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -142,6 +143,7 @@ CREATE TABLE [order_line] (
 	[order_id] INT NOT NULL,
 	[qty] INT NOT NULL,
 	[price] BIGINT NOT NULL,
+	[discount_price] BIGINT,
 	[note] TEXT,
 	PRIMARY KEY([id])
 );
@@ -151,13 +153,13 @@ CREATE TABLE [banners] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[title] NVARCHAR(255),
 	[image] TEXT NOT NULL,
-	[sortOrder] INT NOT NULL,
+	[link] NVARCHAR(MAX),
 	[isDeleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
 
-CREATE TABLE [product_wishlist] (
+CREATE TABLE [product_cart] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[user_id] INT NOT NULL,
 	[product_item_id] INT NOT NULL,
@@ -189,7 +191,7 @@ CREATE TABLE [discount] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
-	[discount_rate] INT NOT NULL,
+	[discount_rate] DECIMAL NOT NULL,
 	[start_date] DATETIME NOT NULL,
 	[end_date] DATETIME NOT NULL,
 	[isDeleted] INT NOT NULL,
@@ -332,6 +334,13 @@ CREATE INDEX [provinces_index_0]
 ON [provinces] ([administrative_unit_id], [administrative_region_id]);
 GO
 
+CREATE TABLE [user_status] (
+	[id] INT NOT NULL IDENTITY UNIQUE,
+	[status] NVARCHAR(255) NOT NULL,
+	PRIMARY KEY([id])
+);
+GO
+
 ALTER TABLE [user_address]
 ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
@@ -372,11 +381,11 @@ ALTER TABLE [shop_order]
 ADD FOREIGN KEY([shipping_address_id]) REFERENCES [address]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
-ALTER TABLE [product_wishlist]
+ALTER TABLE [product_cart]
 ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [product_wishlist]
+ALTER TABLE [product_cart]
 ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
@@ -457,14 +466,22 @@ ADD FOREIGN KEY([district_code]) REFERENCES [districts]([code])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
 ALTER TABLE [address]
-ADD FOREIGN KEY([province_code]) REFERENCES [provinces]([code])
-ON UPDATE NO ACTION ON DELETE NO ACTION;
-GO
-ALTER TABLE [address]
 ADD FOREIGN KEY([districts_code]) REFERENCES [districts]([code])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
 ALTER TABLE [address]
 ADD FOREIGN KEY([wards_code]) REFERENCES [wards]([code])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [shop_order]
+ADD FOREIGN KEY([coupons]) REFERENCES [coupons]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [user_site]
+ADD FOREIGN KEY([status]) REFERENCES [user_status]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [shop_order]
+ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
