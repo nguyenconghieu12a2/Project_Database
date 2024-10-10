@@ -39,7 +39,7 @@ INSERT INTO [user_site](firstname, lastname, username, gender, birthday, [image]
 go
 
 -- [admin]
-insert into [admin]([firstname], [lastname], [username], [avatar_img], [email], [password], [isDeleted]) values
+insert into [admin]([firstname], [lastname], [username], [avatar_img], [email], [password], [is_deleted]) values
 ('Nguyen Cong', 'Hieu', 'nchieu', 'male.jpg', 'hieunc@gmail.com', 'ee608a70e3a536f1af3726bbd8bd0b55', 1), --nchieu
 ('Tran Gia', 'Bao', 'tgbao', 'male.jpg', 'baotg@gmail.com', 'e405faf13f35eb5807579887f2e44220', 1), --tgbao
 ('Bach Cong', 'Chinh', 'bcchinh', 'male.jpg', 'chinhbc@gmail.com', 'b985d6107f576d8fce6bfc9c3ac7d57a', 1), --bcchinh
@@ -49,7 +49,7 @@ go
 -- admin includes 4 of us
 -- postpone this section until the images is ready !!!!
 
-INSERT [dbo].[administrative_regions] ([id], [name], [name_en], [code_name], [code_name_en]) VALUES (8, N'Đồng bằng sông Cửu Long', N'Mekong River Delta', N'dong_bang_song_cuu_long', N'southwest')
+INSERT [dbo].[administrative_regions] ([id], [name], [name_en], [code_name], [code_name_en]) VALUES (8, N'Đồng bằng sông Cửu Long', N'Mekong River Delta', N'dong_bang_song_cuu_long', N'southwest');
 GO
 INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (1, N'Thành phố trực thuộc trung ương', N'Municipality', N'Thành phố', N'City', N'thanh_pho_truc_thuoc_trung_uong', N'municipality')
 INSERT [dbo].[administrative_units] ([id], [full_name], [full_name_en], [short_name], [short_name_en], [code_name], [code_name_en]) VALUES (2, N'Tỉnh', N'Province', N'Tỉnh', N'Province', N'tinh', N'province')
@@ -532,7 +532,7 @@ INSERT [dbo].[wards] ([code], [name], [name_en], [full_name], [full_name_en], [c
 GO
 
 -- [address]
-INSERT INTO [address](recieved_name, detail_address, districts_code, wards_code, isDeleted) values
+INSERT INTO [address]([recieved_name], [detail_address], [districts_code], [wards_code], [is_deleted]) values
 ('Bao Tran', '67P7C Nguyễn Văn Cừ Nối dài', 916, 31144, 1),
 ('Hieu Nguyen', '12 Lý Thái Tổ', 855, 29542, 1),
 ('Hieu Nguyen', '01 Hoàng Diệu', 883, 30280, 1),
@@ -582,7 +582,7 @@ INSERT INTO [address](recieved_name, detail_address, districts_code, wards_code,
 go
 
 -- [user_address]
-INSERT INTO [user_address]([user_id], address_id, is_default, isDeleted) VALUES
+INSERT INTO [user_address]([user_id], address_id, is_default, [is_deleted]) VALUES
 (1, 1, 1, 1),
 (2, 2, 1, 1),
 (2, 3, 0, 1),
@@ -638,12 +638,12 @@ go
 --DECLARE @maxId INT; SELECT @maxId = MAX(id) FROM [category]; DBCC CHECKIDENT ('[category]', RESEED, 0);
 --DELETE FROM [category]
 -- [product_category]
-insert into [category]([cateName], [parent_id], [isDeleted]) values
+insert into [category]([cate_name], [parent_id], [is_deleted]) values
 ('Cakes', null, 1),
 ('Ingredients', null, 1),
 ('Cooking Tools', null, 1);
 go
-insert into [category]([cateName], [parent_id], [isDeleted]) values
+insert into [category]([cate_name], [parent_id], [is_deleted]) values
 -- Cakes
 ('Flavour Cakes', 1, 1),
 ('Theme Cakes', 1, 1),
@@ -657,7 +657,7 @@ insert into [category]([cateName], [parent_id], [isDeleted]) values
 ('Cake Tools', 3, 1),
 ('Others', 3, 1);
 go
-insert into [category]([cateName], [parent_id], [isDeleted]) values
+insert into [category]([cate_name], [parent_id], [is_deleted]) values
 -- Flavour Cakes
 ('Chocolate Cakes', 4, 1),
 ('Vanilla Cakes', 4, 1),
@@ -693,7 +693,7 @@ insert into [category]([cateName], [parent_id], [isDeleted]) values
 go
 --============================================================================================================== 1ng duy nhat (Thanh)
 -- [product]
-insert into [product]([categoryID], [name], [description], [product_image], [isDeleted]) values
+insert into [product]([categoryID], [name], [description], [product_image], [is_deleted]) values
 --Chocolate Cakes
 (13, 'Classic Chocolate Truffle Cake', 'Satiate your taste a buds right away! Enrich with chocolate sponge & truffle cream. Topped with white chocolate garnish and cherry, it is sure to leave you omnomnom!', 'images/choco_truffle', 1),
 (13, 'Chocolate Vanilla Half & Half Cake', 'The perfect blend of tempting chocolate and irresistible vanilla flavours topped up with a cherry and some chocolate shavings.', 'images/hvanilla_hchoco', 1),
@@ -820,7 +820,7 @@ insert into [product]([categoryID], [name], [description], [product_image], [isD
 (35, 'Brown roll bag with bold text 5x11cm (100 pcs)', '', 'images/roll_bag', 1);
 go
 -- [product_item]
-insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [price], [isDeleted]) values
+insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [price], [is_deleted]) values
 --Chocolate Cakes
 -- Chocolate Cakes
 (1, '20x30', 10, './', 163000, 1),
@@ -1044,7 +1044,7 @@ insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [pr
 (101, '', 120, './', 27000, 1);
 go
 -- [productDesTitle]
-insert into [productDesTitle]([desTitleName], [isDeleted]) values
+insert into [productDesTitle]([desTitleName], [is_deleted]) values
 ('Weight', 1),
 ('Ingredients', 1),
 ('Storage', 1),
@@ -1058,7 +1058,7 @@ insert into [productDesTitle]([desTitleName], [isDeleted]) values
 ('Usage', 1);
 go
 -- [productDesInfo]
-insert into [productDesInfo](desTitleID, proID, desInfo, isDeleted) values
+insert into [productDesInfo](desTitleID, proID, desInfo, [is_deleted]) values
 --Weight
 --Thanh
 (1, 1, '400 grams', 1),
@@ -1729,7 +1729,7 @@ go
 -- NOTE: product-wishlist: just fill 3-5 product for the first 5 accounts
 --============================================================================================================== 1ng duy nhat (Thanh)
 -- [discount]
-insert into [discount]([name], [description], [discount_rate], [start_date], end_date, isDeleted) values
+insert into [discount]([name], [description], [discount_rate], [start_date], end_date, [is_deleted]) values
 ('Summer Sale 2024', 'Discount for summer reason', 20, '2024-06-01', '2024-09-30', 1),
 ('New Year Offer 2025', 'Special discount for New Year', 30, '2025-01-01', '2025-03-31', 1),
 ('Welcome Discount', 'Discount for a new customer', 10, '2024-01-01', '2025-01-01', 1),
@@ -1749,7 +1749,7 @@ insert into [discount]([name], [description], [discount_rate], [start_date], end
 go
 
 -- [discount_category]
-INSERT INTO [discount_category]([category_id], [discount_id], [isDeleted]) values
+INSERT INTO [discount_category]([category_id], [discount_id], [is_deleted]) values
 (1, 6, 1),
 (2, 6, 1),
 (3, 6, 1),
@@ -1776,7 +1776,7 @@ INSERT INTO [discount_category]([category_id], [discount_id], [isDeleted]) value
 go
 
 -- [coupons]
-insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, isDeleted) values
+insert into [coupons](code, [name], quantity, price_discount, [start_date], end_date, [is_deleted]) values
 ('XMAS2024', 'Christmas Discount', 100, 20000, '2024-12-20', '2024-12-25', 1),
 ('NEWYEAR2025', 'New Year Special', 140, 50000, '2025-01-01', '2025-01-31', 1),
 ('SAVE15', 'Discount 15.000 VND', 500, 15000, '2024-01-01', '2024-12-31', 1),
@@ -1795,7 +1795,7 @@ go
 -- creative some discount event for some category or some discount for special days, creative some coupons to discount ship extra price or discount for product price
 
 -- [shipping_method]
-insert into [shipping_method]([name], price, isDeleted) values
+insert into [shipping_method]([name], price, [is_deleted]) values
 ('Express Shipping', 50000, 1),
 ('Economy Shipping', 20000, 1),
 ('Same Day Shipping', 80000, 1),
@@ -1804,7 +1804,7 @@ insert into [shipping_method]([name], price, isDeleted) values
 go
 
 -- [order_status]
-insert into [order_status]([status], [isDeleted]) values
+insert into [order_status]([status], [is_deleted]) values
 ('Confirm', 1),
 ('Ordered', 1),
 ('Shipping', 1),
@@ -1813,7 +1813,7 @@ insert into [order_status]([status], [isDeleted]) values
 go
 
 -- [payment_method]
-insert into [payment_method]([name], [isDeleted]) values
+insert into [payment_method]([name], [is_deleted]) values
 ('COD (Cash on delivery)', 1),
 ('Credit Card', 1);
 go
@@ -2118,7 +2118,7 @@ insert into [user_review_status]([status]) values --pending, accepted, rejected
 ('rejected');
 go
 -- [user_review]
-insert into [user_review]([order_product_id], [user_id], [rating], [feedback], [review_image], [status_id], [comment_date] , [approved_date], [valid_date], [isHide], [isDeleted]) values
+insert into [user_review]([order_product_id], [user_id], [rating], [feedback], [review_image], [status_id], [comment_date] , [approved_date], [valid_date], [isHide], [is_deleted]) values
 (1, 1, 5, N'This taste is like the heaven in my mouth. I love it. I will order another in future.', N'', 1, CAST(N'2024-09-04T02:13:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
 (2, 1, 4, N'The flavor is melting on my tongue.', N'', 1, CAST(N'2024-09-04T02:15:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
 (3, 1, 3, N'The flavor is normal but I still like it.', N'', 1, CAST(N'2024-09-04T02:17:39.000' AS DateTime), CAST(N'2024-09-04T04:13:39.000' AS DateTime), CAST(N'2024-09-11T04:13:00.000' AS DateTime), -1, 1),
@@ -2184,7 +2184,7 @@ go
 -- ideal review each product should have 2-3 review, 1 vai sp ko co review
 --============================================================================================================== 1ng (Chinh)
 -- [banners]
-insert into [banners]([title], [image], [link], [isDeleted]) values
+insert into [banners]([title], [image], [link], [is_deleted]) values
 ('The supreme sweety with chocolate!', 'banner1.jpg', '', 1),
 ('Shiny blink! blink!', 'banner2.jpg', '', 1),
 ('Yummy Yummy!', 'banner3.jpg', '', 1),

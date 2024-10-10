@@ -21,10 +21,12 @@ CREATE TABLE [user_site] (
 GO
 
 CREATE TABLE [user_address] (
+	[id] INT IDENTITY UNIQUE,
 	[user_id] INT NOT NULL,
 	[address_id] INT NOT NULL,
 	[is_default] INT NOT NULL,
-	[isDeleted] INT NOT NULL
+	[is_deleted] INT NOT NULL,
+	PRIMARY KEY([id])
 );
 GO
 
@@ -34,7 +36,7 @@ CREATE TABLE [address] (
 	[detail_address] NVARCHAR(255) NOT NULL,
 	[districts_code] NVARCHAR(20) NOT NULL,
 	[wards_code] NVARCHAR(20) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -46,7 +48,7 @@ CREATE TABLE [product] (
 	[description] TEXT,
 	[product_image] TEXT NOT NULL,
 	[product_rating] INT,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -58,7 +60,7 @@ CREATE TABLE [product_item] (
 	[qty_in_stock] BIGINT NOT NULL,
 	[product_image] TEXT NOT NULL,
 	[price] BIGINT NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -102,7 +104,7 @@ GO
 CREATE TABLE [order_status] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[status] NVARCHAR(255) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -119,7 +121,7 @@ CREATE TABLE [user_review] (
 	[approved_date] DATETIME,
 	[valid_date] DATETIME,
 	[isHide] INT,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -132,7 +134,7 @@ CREATE TABLE [admin] (
 	[avatar_img] TEXT NOT NULL,
 	[email] NVARCHAR(255) NOT NULL,
 	[password] NVARCHAR(255) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -154,17 +156,17 @@ CREATE TABLE [banners] (
 	[title] NVARCHAR(255),
 	[image] TEXT NOT NULL,
 	[link] NVARCHAR(MAX),
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
-
+---------
 CREATE TABLE [product_cart] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[user_id] INT NOT NULL,
 	[product_item_id] INT NOT NULL,
 	[product_id] INT NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -174,7 +176,7 @@ CREATE TABLE [productDesInfo] (
 	[desTitleID] INT NOT NULL,
 	[proID] INT NOT NULL,
 	[desInfo] NVARCHAR(255) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([desInfoID])
 );
 GO
@@ -182,7 +184,7 @@ GO
 CREATE TABLE [productDesTitle] (
 	[desTitleID] INT NOT NULL IDENTITY UNIQUE,
 	[desTitleName] NVARCHAR(255) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([desTitleID])
 );
 GO
@@ -194,15 +196,16 @@ CREATE TABLE [discount] (
 	[discount_rate] DECIMAL NOT NULL,
 	[start_date] DATETIME NOT NULL,
 	[end_date] DATETIME NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
 
 CREATE TABLE [discount_category] (
+	[id] INT  NOT NULL IDENTITY UNIQUE, 
 	[category_id] INT NOT NULL,
 	[discount_id] INT NOT NULL,
-	[isDeleted] INT NOT NULL
+	[is_deleted] INT NOT NULL
 );
 GO
 
@@ -210,7 +213,7 @@ CREATE TABLE [shipping_method] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
 	[price] BIGINT NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -218,7 +221,7 @@ GO
 CREATE TABLE [payment_method] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -240,7 +243,7 @@ CREATE TABLE [coupons] (
 	[price_discount] BIGINT NOT NULL,
 	[start_date] DATETIME NOT NULL,
 	[end_date] DATETIME NOT NULL,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
@@ -254,9 +257,9 @@ GO
 
 CREATE TABLE [category] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
-	[cateName] NVARCHAR(255) NOT NULL,
+	[cate_name] NVARCHAR(255) NOT NULL,
 	[parent_id] INT,
-	[isDeleted] INT NOT NULL,
+	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
 GO
