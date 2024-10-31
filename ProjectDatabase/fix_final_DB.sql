@@ -96,7 +96,7 @@ CREATE TABLE [shop_order] (
 	[shipping_date] DATETIME,
 	[arrived_date] DATETIME,
 	[canceled_date] DATETIME,
-	[canceled_reason] DATE,
+	[canceled_reason] TEXT,
 	PRIMARY KEY([id])
 );
 GO
@@ -119,6 +119,7 @@ CREATE TABLE [user_review] (
 	[status_id] INT NOT NULL,
 	[comment_date] DATETIME NOT NULL,
 	[approved_date] DATETIME,
+	[reject_date] DATETIME,
 	[valid_date] DATETIME,
 	[isHide] INT,
 	[is_deleted] INT NOT NULL,
@@ -133,7 +134,7 @@ CREATE TABLE [admin] (
 	[username] NVARCHAR(255) NOT NULL,
 	[avatar_img] TEXT NOT NULL,
 	[email] NVARCHAR(255) NOT NULL,
-	[password] NVARCHAR(255) NOT NULL,
+	[password] NVARCHAR(32) NOT NULL,
 	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -156,7 +157,7 @@ CREATE TABLE [banners] (
 	[title] NVARCHAR(255),
 	[image] TEXT NOT NULL,
 	[link] NVARCHAR(MAX),
-	[is_deleted] INT NOT NULL,
+	[is_deleted] INT
 	PRIMARY KEY([id])
 );
 GO
@@ -344,6 +345,15 @@ CREATE TABLE [user_status] (
 );
 GO
 
+--CREATE TABLE [forgot_password] (
+--	[fpid] INT NOT NULL IDENTITY UNIQUE,
+--	[otp] INT,
+--	[expirationTime] DATE,
+--	[admin] INT,
+--	PRIMARY KEY([fpid])
+--);
+--GO
+
 ALTER TABLE [user_address]
 ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
@@ -488,3 +498,7 @@ ALTER TABLE [shop_order]
 ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
+--ALTER TABLE [forgot_password]
+--ADD FOREIGN KEY([admin]) REFERENCES [admin]([id])
+--ON UPDATE NO ACTION ON DELETE NO ACTION;
+--GO
