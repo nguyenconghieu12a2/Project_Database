@@ -15,6 +15,7 @@ CREATE TABLE [user_site] (
 	[phone] NVARCHAR(11),
 	[password] NVARCHAR(32),
 	[status] INT NOT NULL,
+	[banned_reason] TEXT,
 	[account_create_date] DATETIME NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -121,7 +122,7 @@ CREATE TABLE [user_review] (
 	[approved_date] DATETIME,
 	[reject_date] DATETIME,
 	[valid_date] DATETIME,
-	[isHide] INT,
+	[is_hide] INT,
 	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([id])
 );
@@ -146,7 +147,7 @@ CREATE TABLE [order_line] (
 	[order_id] INT NOT NULL,
 	[qty] INT NOT NULL,
 	[price] BIGINT NOT NULL,
-	[discount_price] BIGINT,
+	[discount_price] BIGINT NOT NULL,
 	[note] TEXT,
 	PRIMARY KEY([id])
 );
@@ -176,7 +177,7 @@ CREATE TABLE [productDesInfo] (
 	[desInfoID] INT NOT NULL IDENTITY UNIQUE,
 	[desTitleID] INT NOT NULL,
 	[proID] INT NOT NULL,
-	[desInfo] NVARCHAR(255) NOT NULL,
+	[des_info] NVARCHAR(255) NOT NULL,
 	[is_deleted] INT NOT NULL,
 	PRIMARY KEY([desInfoID])
 );
