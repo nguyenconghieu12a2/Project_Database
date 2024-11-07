@@ -162,16 +162,6 @@ CREATE TABLE [banners] (
 	PRIMARY KEY([id])
 );
 GO
----------
-CREATE TABLE [product_cart] (
-	[id] INT NOT NULL IDENTITY UNIQUE,
-	[user_id] INT NOT NULL,
-	[product_item_id] INT NOT NULL,
-	[product_id] INT NOT NULL,
-	[is_deleted] INT NOT NULL,
-	PRIMARY KEY([id])
-);
-GO
 
 CREATE TABLE [productDesInfo] (
 	[desInfoID] INT NOT NULL IDENTITY UNIQUE,
@@ -394,14 +384,6 @@ GO
 ALTER TABLE [shop_order]
 ADD FOREIGN KEY([shipping_address_id]) REFERENCES [address]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
-GO
-ALTER TABLE [product_cart]
-ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
-ON UPDATE CASCADE ON DELETE CASCADE;
-GO
-ALTER TABLE [product_cart]
-ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
-ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [productDesInfo]
 ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
