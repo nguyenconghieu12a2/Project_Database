@@ -163,21 +163,37 @@ CREATE TABLE [banners] (
 );
 GO
 
-CREATE TABLE [productDesInfo] (
-	[desInfoID] INT NOT NULL IDENTITY UNIQUE,
-	[desTitleID] INT NOT NULL,
-	[proID] INT NOT NULL,
+--CREATE TABLE [productDesInfo] (
+--	[desInfoID] INT NOT NULL IDENTITY UNIQUE,
+--	[desTitleID] INT NOT NULL,
+--	[proID] INT NOT NULL,
+--	[des_info] NVARCHAR(255) NOT NULL,
+--	[is_deleted] INT NOT NULL,
+--	PRIMARY KEY([desInfoID])
+--);
+
+CREATE TABLE [product_des_info] (
+	[des_info_id] INT NOT NULL IDENTITY UNIQUE,
+	[des_title_id] INT NOT NULL,
+	[product_id] INT NOT NULL,
 	[des_info] NVARCHAR(255) NOT NULL,
 	[is_deleted] INT NOT NULL,
-	PRIMARY KEY([desInfoID])
+	PRIMARY KEY([des_info_id])
 );
 GO
 
-CREATE TABLE [productDesTitle] (
-	[desTitleID] INT NOT NULL IDENTITY UNIQUE,
-	[desTitleName] NVARCHAR(255) NOT NULL,
+--CREATE TABLE [productDesTitle] (
+--	[desTitleID] INT NOT NULL IDENTITY UNIQUE,
+--	[desTitleName] NVARCHAR(255) NOT NULL,
+--	[is_deleted] INT NOT NULL,
+--	PRIMARY KEY([desTitleID])
+--);
+
+CREATE TABLE [product_des_title] (
+	[des_title_id] INT NOT NULL IDENTITY UNIQUE,
+	[des_title_name] NVARCHAR(255) NOT NULL,
 	[is_deleted] INT NOT NULL,
-	PRIMARY KEY([desTitleID])
+	PRIMARY KEY([des_title_id])
 );
 GO
 
@@ -385,12 +401,20 @@ ALTER TABLE [shop_order]
 ADD FOREIGN KEY([shipping_address_id]) REFERENCES [address]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
-ALTER TABLE [productDesInfo]
-ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
+--ALTER TABLE [productDesInfo]
+--ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
+--ON UPDATE CASCADE ON DELETE CASCADE;
+--GO
+--ALTER TABLE [productDesInfo]
+--ADD FOREIGN KEY([desTitleID]) REFERENCES [productDesTitle]([desTitleID])
+--ON UPDATE CASCADE ON DELETE CASCADE;
+--GO
+ALTER TABLE [product_des_info]
+ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [productDesInfo]
-ADD FOREIGN KEY([desTitleID]) REFERENCES [productDesTitle]([desTitleID])
+ALTER TABLE [product_des_info]
+ADD FOREIGN KEY([des_title_id]) REFERENCES [product_des_title]([des_title_id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [discount_category]

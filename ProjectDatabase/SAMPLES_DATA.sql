@@ -1045,7 +1045,8 @@ insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [pr
 (101, '', 120, './', 27000, 1);
 go
 -- [productDesTitle]
-insert into [productDesTitle]([desTitleName], [is_deleted]) values
+--insert into [productDesTitle]([desitleName], [is_deleted]) values
+insert into [product_des_title]([des_title_name], [is_deleted]) values
 ('Weight', 1),
 ('Ingredients', 1),
 ('Storage', 1),
@@ -1059,7 +1060,8 @@ insert into [productDesTitle]([desTitleName], [is_deleted]) values
 ('Usage', 1);
 go
 -- [productDesInfo]
-insert into [productDesInfo](desTitleID, proID, des_info, [is_deleted]) values
+--insert into [productDesInfo](desTitleID, proID, des_info, [is_deleted]) values
+insert into [product_des_info](des_title_id, product_id, des_info, [is_deleted]) values
 --Weight
 --Thanh
 (1, 1, '400 grams', 1),
@@ -1834,7 +1836,7 @@ go
 
 -- [payment_method]
 insert into [payment_method]([name], [is_deleted]) values
-('COD (Cash on delivery)', 1),
+('COD', 1),
 ('Credit Card', 1);
 go
 -- [user_payment_method]
@@ -2205,11 +2207,11 @@ go
 --============================================================================================================== 1ng (Chinh)
 -- [banners]
 insert into [banners]([title], [image], [link], [is_deleted]) values
-('The supreme sweety with chocolate!', 'banner1.jpg', '', 1),
-('Shiny blink! blink!', 'banner2.jpg', '', 1),
-('Yummy Yummy!', 'banner3.jpg', '', 1),
-('Scream Scream Scream', 'banner4.jpg', '', 1),
-('The Cake is the best!', 'banner5.jpg', '', 1);
+('The supreme sweety with chocolate!', 'banner1.jpg', '#', 1),
+('Shiny blink! blink!', 'banner2.jpg', '#', 1),
+('Yummy Yummy!', 'banner3.jpg', '#', 1),
+('Scream Scream Scream', 'banner4.jpg', '#', 1),
+('The Cake is the best!', 'banner5.jpg', '#', 1);
 go
 --5-7 banners
 
