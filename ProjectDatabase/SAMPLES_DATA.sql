@@ -1044,8 +1044,8 @@ insert into [product_item]([pro_id], [size],[qty_in_stock], [product_image], [pr
 (100, '', 100, './', 25000,1),
 (101, '', 120, './', 27000, 1);
 go
--- [productDesTitle]
-insert into [productDesTitle]([desTitleName], [is_deleted]) values
+-- [product_des_title]
+insert into [product_des_title]([desTitleName], [is_deleted]) values
 ('Weight', 1),
 ('Ingredients', 1),
 ('Storage', 1),
@@ -1058,8 +1058,8 @@ insert into [productDesTitle]([desTitleName], [is_deleted]) values
 ('Flavor', 1),
 ('Usage', 1);
 go
--- [productDesInfo]
-insert into [productDesInfo](desTitleID, proID, des_info, [is_deleted]) values
+-- [product_des_info]
+insert into [product_des_info](desTitleID, proID, des_info, [is_deleted]) values
 --Weight
 --Thanh
 (1, 1, '400 grams', 1),

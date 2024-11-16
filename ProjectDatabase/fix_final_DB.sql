@@ -173,7 +173,7 @@ CREATE TABLE [product_cart] (
 );
 GO
 
-CREATE TABLE [productDesInfo] (
+CREATE TABLE [product_des_info] (
 	[desInfoID] INT NOT NULL IDENTITY UNIQUE,
 	[desTitleID] INT NOT NULL,
 	[proID] INT NOT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE [productDesInfo] (
 );
 GO
 
-CREATE TABLE [productDesTitle] (
+CREATE TABLE [product_des_title] (
 	[desTitleID] INT NOT NULL IDENTITY UNIQUE,
 	[desTitleName] NVARCHAR(255) NOT NULL,
 	[is_deleted] INT NOT NULL,
@@ -403,12 +403,12 @@ ALTER TABLE [product_cart]
 ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [productDesInfo]
+ALTER TABLE [product_des_info]
 ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [productDesInfo]
-ADD FOREIGN KEY([desTitleID]) REFERENCES [productDesTitle]([desTitleID])
+ALTER TABLE [product_des_info]
+ADD FOREIGN KEY([desTitleID]) REFERENCES [product_des_title]([desTitleID])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [discount_category]
