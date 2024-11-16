@@ -331,20 +331,28 @@ ALTER TABLE [shop_order]
 ADD FOREIGN KEY([shipping_address_id]) REFERENCES [address]([id])
 ON UPDATE NO ACTION ON DELETE NO ACTION;
 GO
+<<<<<<< HEAD
 ALTER TABLE [product_wishlist]
 ADD FOREIGN KEY([user_id]) REFERENCES [user_site]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [product_wishlist]
+=======
+--ALTER TABLE [productDesInfo]
+--ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
+--ON UPDATE CASCADE ON DELETE CASCADE;
+--GO
+--ALTER TABLE [productDesInfo]
+--ADD FOREIGN KEY([desTitleID]) REFERENCES [productDesTitle]([desTitleID])
+--ON UPDATE CASCADE ON DELETE CASCADE;
+--GO
+ALTER TABLE [product_des_info]
+>>>>>>> 4659157c406b8f16c980fa9d2cc306b65f7187db
 ADD FOREIGN KEY([product_id]) REFERENCES [product]([id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
-ALTER TABLE [productDesInfo]
-ADD FOREIGN KEY([proID]) REFERENCES [product]([id])
-ON UPDATE CASCADE ON DELETE CASCADE;
-GO
-ALTER TABLE [productDesInfo]
-ADD FOREIGN KEY([desTitleID]) REFERENCES [productDesTitle]([desTitleID])
+ALTER TABLE [product_des_info]
+ADD FOREIGN KEY([des_title_id]) REFERENCES [product_des_title]([des_title_id])
 ON UPDATE CASCADE ON DELETE CASCADE;
 GO
 ALTER TABLE [sub_Category]
