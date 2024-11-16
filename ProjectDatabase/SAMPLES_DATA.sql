@@ -1732,7 +1732,27 @@ insert into shopping_cart ([user_id]) values
 (2),
 (3),
 (4),
-(5);
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11),
+(12),
+(13),
+(14),
+(15),
+(16),
+(17),
+(18),
+(19),
+(20),
+(21),
+(22),
+(23),
+(24),
+(25);
 --shopping_cart_item
 insert into shopping_cart_item ([cart_id], [product_item_id], [qty], [note]) values
 (1, 6, 2, 'hihi'),
