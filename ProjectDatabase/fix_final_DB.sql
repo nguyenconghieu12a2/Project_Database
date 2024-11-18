@@ -201,7 +201,7 @@ CREATE TABLE [discount] (
 	[id] INT NOT NULL IDENTITY UNIQUE,
 	[name] NVARCHAR(255) NOT NULL,
 	[description] TEXT,
-	[discount_rate] DECIMAL NOT NULL,
+	[discount_rate] DECIMAL(5,2) NOT NULL,
 	[start_date] DATETIME NOT NULL,
 	[end_date] DATETIME NOT NULL,
 	[is_deleted] INT NOT NULL,
